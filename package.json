@@ -1,0 +1,16 @@
+{
+  "name": "panda-bot",
+  "version": "1.0.0",
+  "description": "A Panda Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon run ./src/index.js",
+    "start": "node run ./src/index.js"
+  },
+  "author": "Pandaa-dev",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "nodemon": "^2.0.6"
+  }
+}
