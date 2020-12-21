@@ -39,14 +39,14 @@ client.on('ready', () => {
 
         const args = message.content.slice(prefix.length).trim().split(/ +/);
         const command = args.shift().toLowerCase();
-        console.log(command)
 
         if(!client.commands.has(command)) return
         if(client.commands.has(command)){
-            console.log(args)
             try {
-             await  cmdHandler(client.commands.get(command), message, client)
-            } catch(e){
+             const commandDep = await client.commands.get(command)
+               cmdHandler(commandDep, message, args, args.join(' '), client)
+            }
+             catch(e){
                 message.channel.send('An error happened... please report it to Pandaa#0001')
             }
         }
