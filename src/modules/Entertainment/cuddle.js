@@ -1,6 +1,6 @@
 const {MessageEmbed} = require('discord.js')
 module.exports = {
-    name: 'Hug',
+    name: 'Cuddle',
     description: 'A simple smooch to make your day better!', 
     usage(prefix){
         const returnArray = []
@@ -16,23 +16,23 @@ module.exports = {
     maxArgs: 5,
     highValue: false, 
     emoji: "\`🤗\`",
-    uniqueText: "hugs",
-    giflinks: [ "https://i.pinimg.com/originals/aa/7d/bf/aa7dbf982985810bf8c60f7b6a1906be.gif",
-                "https://i.pinimg.com/originals/4d/89/d7/4d89d7f963b41a416ec8a55230dab31b.gif",
-                "https://i.pinimg.com/originals/0a/16/52/0a1652de311806ce55820a7115993853.gif", 
-                "https://media.tenor.com/images/b6d0903e0d54e05bb993f2eb78b39778/tenor.gif"
-                ],
+    uniqueText: "cuddles with",
+    giflinks: ["https://media.giphy.com/media/lrPOpnwExOTZYTGyke/giphy.gif", 
+                "https://i.pinimg.com/originals/a1/da/c5/a1dac5ff2bfa45269ba666c6c36d011f.gif",
+                "https://media.tenor.com/images/2bb9e56d8982c9e806d33aed404a62c0/tenor.gif",
+                "https://c.tenor.com/tEJ0EhvOE5QAAAAM/peach-cat-hug.gif"
+            ],
     async execute( message, args, text, client){
         //Deleting the message
         message.delete()
         .then(msg => msg )
         .catch(error => console.log(error))
-        const gifLink = this.giflinks[Math.floor(Math.random() * this.giflinks.length)]
 
         // Getting the appropriate Time      
         const d = new Date(); 
         const h = d.getUTCHours();
         const m = d.getUTCMinutes()
+        const gifLink = this.giflinks[Math.floor(Math.random() * this.giflinks.length)]
 
         //Embed Message
         const embed = new MessageEmbed()
@@ -40,6 +40,7 @@ module.exports = {
         .setColor(0000000)
         .setThumbnail(gifLink)
         .setDescription(this.emoji+ " <@!" + message.author.id + "> " +  this.uniqueText + ' ' +  (text) + ' ' + this.emoji);
+        //  client.user.avatarURL()
         
   
 

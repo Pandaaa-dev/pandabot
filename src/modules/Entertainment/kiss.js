@@ -1,6 +1,6 @@
 const {MessageEmbed} = require('discord.js')
 module.exports = {
-    name: 'Hug',
+    name: 'Kiss',
     description: 'A simple smooch to make your day better!', 
     usage(prefix){
         const returnArray = []
@@ -15,24 +15,24 @@ module.exports = {
     minArgs: 1,
     maxArgs: 5,
     highValue: false, 
-    emoji: "\`🤗\`",
-    uniqueText: "hugs",
-    giflinks: [ "https://i.pinimg.com/originals/aa/7d/bf/aa7dbf982985810bf8c60f7b6a1906be.gif",
-                "https://i.pinimg.com/originals/4d/89/d7/4d89d7f963b41a416ec8a55230dab31b.gif",
-                "https://i.pinimg.com/originals/0a/16/52/0a1652de311806ce55820a7115993853.gif", 
-                "https://media.tenor.com/images/b6d0903e0d54e05bb993f2eb78b39778/tenor.gif"
-                ],
+    emoji: "\`😘\`",
+    uniqueText: "blows a kiss to",
+    giflinks: [ "https://media1.tenor.com/images/b6dbb9c1a1804380291e48992c10b88b/tenor.gif?itemid=5150642", 
+                "https://media0.giphy.com/media/psnhZeXcQgbU292n5z/giphy.gif", 
+                "https://i.pinimg.com/originals/65/19/e8/6519e870af23780241a17e90ca91306d.gif",
+                "https://media1.tenor.com/images/54b4357dc2a9f066a89f4843fa16352d/tenor.gif?itemid=7298386"
+            ],
     async execute( message, args, text, client){
         //Deleting the message
         message.delete()
         .then(msg => msg )
         .catch(error => console.log(error))
-        const gifLink = this.giflinks[Math.floor(Math.random() * this.giflinks.length)]
 
         // Getting the appropriate Time      
         const d = new Date(); 
         const h = d.getUTCHours();
         const m = d.getUTCMinutes()
+        const gifLink = this.giflinks[Math.floor(Math.random() * this.giflinks.length)]
 
         //Embed Message
         const embed = new MessageEmbed()
@@ -40,9 +40,6 @@ module.exports = {
         .setColor(0000000)
         .setThumbnail(gifLink)
         .setDescription(this.emoji+ " <@!" + message.author.id + "> " +  this.uniqueText + ' ' +  (text) + ' ' + this.emoji);
-        
-  
-
         //Sending the response  
         try {
         return await message.channel.send(embed)

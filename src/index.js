@@ -25,7 +25,9 @@ client.on('ready', () => {
         files.forEach(file => {
             const filePath = path.join(__dirname, moduleDir, singularModule, file)
             const command = require(filePath)
-            client.commands.set(command.name, command);
+            // console.log(command.name.toLowerCase())
+            if(command.name == undefined) return
+            client.commands.set(command.name.toLowerCase(), command);
 
         })
 
