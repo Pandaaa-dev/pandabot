@@ -40,9 +40,6 @@ module.exports = {
         .setColor(0000000)
         .setThumbnail(gifLink)
         .setDescription(this.emoji+ " <@!" + message.author.id + "> " +  this.uniqueText + ' ' +  (text) + ' ' + this.emoji);
-        
-  
-
         //Sending the response  
         try {
         return await message.channel.send(embed)

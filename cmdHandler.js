@@ -3,7 +3,9 @@ const errorEmbed = require("./utilities/errorEmbed")
 const validPermissions = require("./utilities/validPerms")
 const deleteMsg = require("./utilities/deleteMsg")
 
-const cmdHandler = async (command, message, args, text, client) => {
+const cmdHandler = async (command, message, args, text, client , connection) => {
+
+    const prefix = client.guilds_config.get(message.guild.id).prefix
   
       //Checking if ive given the correct permission in the command Dependency  
       if(command.requiredPermissions.length >= 1){
@@ -24,15 +26,13 @@ const cmdHandler = async (command, message, args, text, client) => {
       }
       
       //Check if the command is not being used correctly
-      if(args.length < command.minArgs || args.length > command.maxArgs) {
+      if((args.length < command.minArgs && command.maxArgs != Infinity) || args.length > command.maxArgs) {
         deleteMsg(message)
-      const arr =command.usage("!")
+      const arr = command.usage(prefix)
       const embed = cmdErrorEmbed(command, client, message, arr)
           message.channel.send(embed)
         return
       }
-
-
        //Check if the member has the required permissions to run the command
        if(command.requiredPermissions.length >= 1){
           let hasPerms = true
@@ -43,7 +43,9 @@ const cmdHandler = async (command, message, args, text, client) => {
           })
           if(hasPerms == false) {
             deleteMsg(message)
-            const desc = "You do not have the required permissions to run this command!" 
+            const desc = `You do not have the required permissions to run this command! 
+                          The permissions needed for this:
+                          \`${command.requiredPermissions.join(`\n`)}\`` 
               const embed = errorEmbed(command, client, message, "Not the right permissions!", desc )
           
                 message.channel.send(embed)
@@ -54,8 +56,13 @@ const cmdHandler = async (command, message, args, text, client) => {
       //Special Check for Moderation commands
         if(command.highValue){
             if(!message.mentions.users.first()) {
-              const embed = errorEmbed(command, client, message, "No Mentions!", `This command absolutely needs mentions to work. So pleaase
-              mention someone!`)
+              const errorMsg = `This command absolutely needs mentions to work. So please mention someone!
+                  Correct Usage:
+                  ${command.usage("!")}
+              `
+              const arr = command.usage("!")
+              // cmdErrorEmbed = (command, client,! message, arr)
+              const embed = cmdErrorEmbed(command, client, message, arr)
               deleteMsg(message)
               message.channel.send(embed)
               return
