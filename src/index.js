@@ -7,13 +7,15 @@ const cmdHandler = require('../cmdHandler')
 
 require('./db/db')
 
-const connection = require('./db/db')
+const connection = require('./db/db');
+const { isRegExp } = require('util');
 
 
 client.commands = new Discord.Collection() 
 
 client.guilds_config = new Discord.Collection()
 client.xp_level = new Discord.Collection()
+client.muted_members = new Discord.Collection()
 
 
 
@@ -26,6 +28,14 @@ client.once('ready', async () => {
         })
     })
     
+    connection.query(`SELECT * FROM guild_config.muted_members`, (err, res)=> {
+        if(err) console.log(err)
+        if(!res.length) return 
+        res.forEach(member => {e
+            client.muted_members.set(member.userid, member)
+        })
+    })
+
     console.log(client.user.username + ' has logged in!')
 
     //Initiating the command Handler
@@ -63,14 +73,34 @@ client.once('ready', async () => {
         if(client.commands.has(command)){
             try {
              const commandDep = await client.commands.get(command)
-               cmdHandler(commandDep, message, args, args.join(' '), client)
+              return cmdHandler(commandDep, message, args, args.join(' '), client)
             }
              catch(e){
-                message.channel.send('An error happened... please report it to Pandaa#0001')
+               return message.channel.send('An error happened... please report it to Pandaa#0001')
             }
         }
     
+        
     })
+
+    client.on('guildMemberAdd', async member => {
+        const guildConfig = client.guilds_config.get(member.guild.id)
+        const guild = client.guilds_config.get(member.guild.id);
+        if(guild.nonewaccounts <0 || !guild.nonewaccounts) return
+        const memberAccountTimestamp =  member.user.createdTimestamp/(1000*60*60*24)
+        const presentTimestamp = Date.now()/(1000*60*60*24)
+        const accountAge = presentTimestamp - memberAccountTimestamp
+        if(accountAge <= guild.nonewaccounts){
+            member.kick("Account not older than the given age.")
+        }
+       if(client.muted_members.get(member.id)){
+           if(member.guild.roles.cache.find(role => role.id == guildConfig.muterole)){
+           member.roles.add(guildConfig.muterole)
+       }
+        }
+    })
+
+
     client.on('databaseUpdate', async (tableName, wherekey, whereVal, updateKey, updateValue) => {
         connection.query(`UPDATE ${tableName}
                         SET ${updateKey} = "${updateValue}"
@@ -81,6 +111,16 @@ client.once('ready', async () => {
                         })
     })
 
+    client.on('databaseInsert', async (tableName, valuekey1, valuekey2, valuekey3, valuekey4, value1, value2, value3,value4) => {
+        connection.query(`INSERT INTO ${tableName}(${valuekey1}, ${valuekey2}, ${valuekey3}, ${valuekey4})
+                            VALUES("${value1}", "${value2}", ${value3}, ${value4});
+                        `, (rej, res) => {
+                            if(rej) console.log(rej)
+                            console.log(res)
+                        })
+    })
+
+
 
     client.on('guildCreate', async guild => {
         const id = guild.id.toString()
@@ -89,9 +129,10 @@ client.once('ready', async () => {
         const privatelog = null 
         const publiclog = null
         const muterole = null
+        const nonewaccounts = null
         connection.query(`
-        INSERT INTO guild_config.guild_details(guildid, prefix, premium, privatelog, publiclog, muterole)
-        values("${id}", "${prefix}", ${premium}, ${privatelog}, ${publiclog}, ${muterole});
+        INSERT INTO guild_config.guild_details(guildid, prefix, premium, privatelog, publiclog, nonewaccounts, muterole)
+        values("${id}", "${prefix}", ${premium}, ${privatelog}, ${publiclog}, ${nonewaccounts}, ${muterole});
         `, (err, res) => {
             if(err) console.log(err);
             console.log(res)
@@ -109,9 +150,39 @@ client.once('ready', async () => {
         })
     })
 
-    client.on('myevent', string => {
-        console.log("Emitter Ran!")
+   
+
+
+
+    client.setInterval((() => {
+        connection.query("SELECT * FROM GUILD_CONFIG.MUTED_MEMBERS WHERE expiresin < current_timestamp()", (rej, res) => {
+            if(rej) console.log(rej)
+            let v = new Date()
+            console.log(res, v.toISOString(), res.length>0)
+            if(res.length > 0){
+                res.forEach(member => {
+                    client.emit("unmuteFromDatabase", member.guildid, member.userid)
+                    connection.query("DELETE FROM GUILD_CONFIG.MUTED_MEMBERS WHERE userid = \"" + member.userid + "\"", (rej, res)=> {
+                        if(rej) console.log(rej)
+                        console.log(res, "Done")
+                    })
+                })
+            }
+        })
+    }), (60000*5))
+
+    client.on("unmuteFromDatabase", (guildid, userid)=> {
+      const guild = client.guilds.cache.find(guild => guild.id == guildid)
+      console.log(guild)
+      console.log(userid)
+      if(!guild || guild == undefined ) return
+        const member = guild.members.cache.find(member => member.id == +userid)
+        console.log(member)
+        if(!member || member == undefined) return
+        const muteroleid = client.guilds_config.get(guildid).muterole
+        member.roles.remove(muteroleid)
     })
+
 
 client.login(TOKEN)
 

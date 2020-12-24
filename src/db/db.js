@@ -21,6 +21,7 @@ const connection = mysql.createConnection({...DB})
                     premium boolean,
                     privatelog varchar(255),
                     publiclog varchar(255),
+                    nonewaccounts int(255),
                     muterole varchar(255),
                     primary key(guildid));`, (err, res)=> {
   if(err) console.log(err)
@@ -31,6 +32,13 @@ connection.query(`CREATE TABLE IF NOT EXISTS xp_level(
                   userid varchar(255),
                   points varchar(255),
                   primary key(guildid));`, (err, res)=> {
+if(err) console.log(err)
+})
+connection.query(`CREATE TABLE IF NOT EXISTS muted_members(
+  guildid varchar(255),
+  userid varchar(255),
+  currtime TIMESTAMP,
+  expiresin TIMESTAMP);`, (err, res)=> {
 if(err) console.log(err)
 })
 module.exports = connection
