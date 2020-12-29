@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nodemon run ./src/index.js",
-    "start": "node run ./src/index.js"
+    "start": "node ./src/index.js"
   },
   "author": "Pandaa-dev",
   "license": "ISC",

@@ -16,7 +16,9 @@ client.commands = new Discord.Collection()
 client.guilds_config = new Discord.Collection()
 client.xp_level = new Discord.Collection()
 client.muted_members = new Discord.Collection()
-
+client.noPictureChannels = new Discord.Collection()
+client.onlyPictureChannels = new Discord.Collection()
+client.noLinkChannels = new Discord.Collection()
 
 
 client.once('ready', async () => {
@@ -27,6 +29,12 @@ client.once('ready', async () => {
             client.guilds_config.set(eachguild.guildid, eachguild)
         })
     })
+    connection.query(`SELECT * FROM guild_config.only_pictures`, (err, res)=> {
+        if(err) console.log(err)
+        res.forEach(eachChannel => {
+            client.noPictureChannels.set(eachChannel.channelid, eachChannel)
+        })
+    })
     
     connection.query(`SELECT * FROM guild_config.muted_members`, (err, res)=> {
         if(err) console.log(err)
@@ -35,7 +43,12 @@ client.once('ready', async () => {
             client.muted_members.set(member.userid, member)
         })
     })
-
+    connection.query(`SELECT * FROM guild_config.no_links`, (err, res)=> {
+        if(err) console.log(err)
+        res.forEach(eachChannel => {
+            client.noLinkChannels.set(eachChannel.channelid, eachChannel)
+        })
+    })
     console.log(client.user.username + ' has logged in!')
 
     //Initiating the command Handler
@@ -120,6 +133,44 @@ client.once('ready', async () => {
                         })
     })
 
+    client.on('setOnlyPicturesChannelDB', async (channelid, guildid) => {
+        connection.query(`INSERT INTO guild_config.only_pictures(channelid, guildid)
+                        VALUES(${channelid}, ${guildid});
+        `)
+    } )
+    client.on('deleteOnlyPicturesChannelDB', async (channelid) => {
+        connection.query(`DELETE FROM guild_config.only_pictures
+                          WHERE channelid = ${channelid};
+        `)
+    } )
+    client.on('setnoLinksChannelDB', async (channelid, guildid) => {
+        connection.query(`INSERT INTO guild_config.no_links(channelid, guildid)
+                        VALUES(${channelid}, ${guildid});
+        `)
+    } )
+    client.on('deletenoLinksChannelDB', async (channelid) => {
+        connection.query(`DELETE FROM guild_config.no_links
+                          WHERE channelid = ${channelid};
+        `)
+    } )
+    client.on('setNewVerificationChannelDB', async (channelid, guildid) => {
+        connection.query(`UPDATE guild_config.guild_details
+        SET verificationchannelid = "${channelid}"
+        WHERE guildid = "${guildid}";`) 
+    } )
+
+    client.on('updateVerificationChannelToNullDB', async (guildid) => {
+        connection.query(`UPDATE guild_config.guild_details
+        SET verificationchannelid = NULL
+        WHERE guildid = "${guildid}";`) 
+    } )
+    
+    client.on('setVerificationMessageDB', async (guildid, message) => {
+        // console.log(message)
+         connection.query(`UPDATE guild_config.guild_details
+                          SET verificationmessage = "${message}"
+                          WHERE guildid = ${guildid};`)
+    })
 
 
     client.on('guildCreate', async guild => {
@@ -182,8 +233,6 @@ client.once('ready', async () => {
         const muteroleid = client.guilds_config.get(guildid).muterole
         member.roles.remove(muteroleid)
     })
-
-
 client.login(TOKEN)
 
 module.exports = client

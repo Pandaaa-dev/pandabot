@@ -31,6 +31,13 @@ module.exports = {
     async execute( message, args, text, client){
 
         if(args.length == 0){
+            
+            if(client.noPictureChannels.get(message.channel.id)){
+                message.channel.send(basicEmbed(client, message, args, text, "NoPictures turned off!", "👍" ,"NoPictures for this channel has been turned off!"))
+                client.noPictureChannels.delete(message.channel.id)
+                return message.channel.permissionOverwrites.map(ovr => ovr.delete())
+            }
+
             if(message.channel.type == "text" || message.channel.type == "news" || message.channel.type == "category" || message.channel.type == "store"){
                 const roleArray = []
                 message.guild.roles.cache.forEach(role => {
@@ -45,6 +52,7 @@ module.exports = {
             })
             console.log(roleArray)
             message.channel.overwritePermissions(roleArray, ".nopictures enabled")
+            client.noPictureChannels.set(message.channel.id, message.guild.id)
             message.channel.send(basicEmbed(client, message, args, text, "NoPictures set!", "👍" ,"No user with their highest role below me will be able to send pictures in this channel now."))
         }
         }
