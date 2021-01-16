@@ -28,7 +28,7 @@ module.exports = {
     giflinks: [ 
         // Gif links for the embed
     ],
-    async execute( message, args, text, client){
+    async execute( message, args, text, client,connection){
 
         if(args.length == 0){
             

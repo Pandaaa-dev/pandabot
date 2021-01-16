@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "nodemon run ./src/index.js",
-    "start": "node ./src/index.js"
+    "start": "node ./src/index.js",
+    "repo": "git add . && git commit -m 'automated commit' && git push -u origin dev"
   },
   "author": "Pandaa-dev",
   "license": "ISC",

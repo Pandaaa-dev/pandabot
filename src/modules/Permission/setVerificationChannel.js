@@ -27,10 +27,13 @@ module.exports = {
     giflinks: [ 
         // Gif links for the embed
     ],
-    async execute( message, args, text, client){
+    async execute( message, args, text, client,connection){
         const prevConfig = client.guilds_config.get(message.guild.id)
             if(client.guilds_config.get(message.guild.id).verificationchannelid){
-                client.emit('updateVerificationChannelToNullDB', message.guild.id)
+                // client.emit('updateVerificationChannelToNullDB', message.guild.id)
+                connection.query(`UPDATE guild_config.guild_details
+                SET verificationchannelid = NULL
+                WHERE guildid = "${message.guild.id}";`) 
                 const newConfig = {
                     ...prevConfig,
                     verificationchannelid: null
@@ -42,7 +45,10 @@ module.exports = {
                 ...prevConfig, 
                 verificationchannelid: message.channel.id
             })
-            client.emit('setNewVerificationChannelDB', message.channel.id.toString(), message.guild.id.toString())
+            connection.query(`UPDATE guild_config.guild_details
+            SET verificationchannelid = "${message.channel.id.tostring()}"
+            WHERE guildid = "${message.guild.id.toString()}";`) 
+            // client.emit('setNewVerificationChannelDB', message.channel.id.toString(), message.guild.id.toString())
             return  message.channel.send(basicEmbed(client, message, args, text, "Verification turned on!", "👍" ,"Verification for this server has been turned on on this channel!"))
     }
 }

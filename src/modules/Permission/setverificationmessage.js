@@ -28,17 +28,10 @@ module.exports = {
     giflinks: [ 
         // Gif links for the embed
     ],
-    async execute( message, args, text, client){
-        // const splitString = text.split('%')
-        // console.log(splitString)
-
-        // const index = splitString.indexOf("server__name")
-
-        // splitString[index] = message.guild.name
-
-        // console.log(splitString.join(' '))
-
-        client.emit('setVerificationMessageDB', message.guild.id,  text);
+    async execute( message, args, text, client,connection){
+        connection.query(`UPDATE guild_config.guild_details
+        SET verificationmessage = "${text}"
+        WHERE guildid = ${message.guild.id};`)
         const prevValue = client.guilds_config.get(message.guild.id);
         client.guilds_config.set(message.guild.id, {
             ...prevValue, 

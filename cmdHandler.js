@@ -81,7 +81,7 @@ const cmdHandler = async (command, message, args, text, client , connection) => 
                   })
               if(isLowerThanMentionedUser) return     
         }      
-    command.execute(message, args, text, client)
+    command.execute(message, args, text, client, connection)
 
 }
 module.exports = cmdHandler

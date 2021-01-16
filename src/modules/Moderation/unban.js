@@ -29,7 +29,7 @@ module.exports = {
     "https://i.gifer.com/RcBm.gif",
     "https://i.imgur.com/104VR9D.gif"
     ],
-    async execute( message, args, text, client){
+    async execute( message, args, text, client,connection){
             message.delete()
         const bannedMembersCollection = await message.guild.fetchBans()
 

@@ -39,7 +39,7 @@ client.once('ready', async () => {
     connection.query(`SELECT * FROM guild_config.muted_members`, (err, res)=> {
         if(err) console.log(err)
         if(!res.length) return 
-        res.forEach(member => {e
+        res.forEach(member => {
             client.muted_members.set(member.userid, member)
         })
     })
@@ -86,7 +86,7 @@ client.once('ready', async () => {
         if(client.commands.has(command)){
             try {
              const commandDep = await client.commands.get(command)
-              return cmdHandler(commandDep, message, args, args.join(' '), client)
+              return cmdHandler(commandDep, message, args, args.join(' '), client, connection)
             }
              catch(e){
                return message.channel.send('An error happened... please report it to Pandaa#0001')
@@ -112,66 +112,6 @@ client.once('ready', async () => {
        }
         }
     })
-
-
-    client.on('databaseUpdate', async (tableName, wherekey, whereVal, updateKey, updateValue) => {
-        connection.query(`UPDATE ${tableName}
-                        SET ${updateKey} = "${updateValue}"
-                        WHERE ${wherekey} = "${whereVal}";
-                        `, (rej, res) => {
-                            if(rej) console.log(rej)
-                            console.log(res)
-                        })
-    })
-
-    client.on('databaseInsert', async (tableName, valuekey1, valuekey2, valuekey3, valuekey4, value1, value2, value3,value4) => {
-        connection.query(`INSERT INTO ${tableName}(${valuekey1}, ${valuekey2}, ${valuekey3}, ${valuekey4})
-                            VALUES("${value1}", "${value2}", ${value3}, ${value4});
-                        `, (rej, res) => {
-                            if(rej) console.log(rej)
-                            console.log(res)
-                        })
-    })
-
-    client.on('setOnlyPicturesChannelDB', async (channelid, guildid) => {
-        connection.query(`INSERT INTO guild_config.only_pictures(channelid, guildid)
-                        VALUES(${channelid}, ${guildid});
-        `)
-    } )
-    client.on('deleteOnlyPicturesChannelDB', async (channelid) => {
-        connection.query(`DELETE FROM guild_config.only_pictures
-                          WHERE channelid = ${channelid};
-        `)
-    } )
-    client.on('setnoLinksChannelDB', async (channelid, guildid) => {
-        connection.query(`INSERT INTO guild_config.no_links(channelid, guildid)
-                        VALUES(${channelid}, ${guildid});
-        `)
-    } )
-    client.on('deletenoLinksChannelDB', async (channelid) => {
-        connection.query(`DELETE FROM guild_config.no_links
-                          WHERE channelid = ${channelid};
-        `)
-    } )
-    client.on('setNewVerificationChannelDB', async (channelid, guildid) => {
-        connection.query(`UPDATE guild_config.guild_details
-        SET verificationchannelid = "${channelid}"
-        WHERE guildid = "${guildid}";`) 
-    } )
-
-    client.on('updateVerificationChannelToNullDB', async (guildid) => {
-        connection.query(`UPDATE guild_config.guild_details
-        SET verificationchannelid = NULL
-        WHERE guildid = "${guildid}";`) 
-    } )
-    
-    client.on('setVerificationMessageDB', async (guildid, message) => {
-        // console.log(message)
-         connection.query(`UPDATE guild_config.guild_details
-                          SET verificationmessage = "${message}"
-                          WHERE guildid = ${guildid};`)
-    })
-
 
     client.on('guildCreate', async guild => {
         const id = guild.id.toString()
@@ -201,10 +141,6 @@ client.once('ready', async () => {
         })
     })
 
-   
-
-
-
     client.setInterval((() => {
         connection.query("SELECT * FROM GUILD_CONFIG.MUTED_MEMBERS WHERE expiresin < current_timestamp()", (rej, res) => {
             if(rej) console.log(rej)
@@ -212,7 +148,14 @@ client.once('ready', async () => {
             console.log(res, v.toISOString(), res.length>0)
             if(res.length > 0){
                 res.forEach(member => {
-                    client.emit("unmuteFromDatabase", member.guildid, member.userid)
+                    const guild = client.guilds.cache.find(guild => guild.id == member.guildid)
+                    if(!guild || guild == undefined ) return
+                      const roleToDeletemember = guild.members.cache.find(member => member.id == +member.userid)
+                      console.log(member)
+                      if(!member || member == undefined) return
+                      const muteroleid = client.guilds_config.get(member.guildid).muterole
+                      const guildMember = guild.member(member.userid)
+                      guildMember.roles.remove(muteroleid)
                     connection.query("DELETE FROM GUILD_CONFIG.MUTED_MEMBERS WHERE userid = \"" + member.userid + "\"", (rej, res)=> {
                         if(rej) console.log(rej)
                         console.log(res, "Done")
@@ -220,19 +163,8 @@ client.once('ready', async () => {
                 })
             }
         })
-    }), (60000*5))
+    }), (60000*15))
 
-    client.on("unmuteFromDatabase", (guildid, userid)=> {
-      const guild = client.guilds.cache.find(guild => guild.id == guildid)
-      console.log(guild)
-      console.log(userid)
-      if(!guild || guild == undefined ) return
-        const member = guild.members.cache.find(member => member.id == +userid)
-        console.log(member)
-        if(!member || member == undefined) return
-        const muteroleid = client.guilds_config.get(guildid).muterole
-        member.roles.remove(muteroleid)
-    })
 client.login(TOKEN)
 
 module.exports = client

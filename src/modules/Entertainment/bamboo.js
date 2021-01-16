@@ -24,7 +24,7 @@ module.exports = {
                 "https://i.imgur.com/IYIImQt.gif",
               "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7a75a58-68f9-48c7-a737-00c50e59cd1f/d4x85xk-e0bbda11-8211-435b-8d54-1e66c261d81b.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYzdhNzVhNTgtNjhmOS00OGM3LWE3MzctMDBjNTBlNTljZDFmXC9kNHg4NXhrLWUwYmJkYTExLTgyMTEtNDM1Yi04ZDU0LTFlNjZjMjYxZDgxYi5naWYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.P93nTnwWZWwyka7ytrrYDGHJKGuOGepE_EYXLGF828c",
               "https://i.pinimg.com/originals/04/3a/c0/043ac046318c6c057191219848cd6a94.gif"],
-    async execute( message, args, text, client){
+    async execute( message, args, text, client, connection){
         message.delete()
         .then(msg => msg )
         .catch(error => console.log(error))

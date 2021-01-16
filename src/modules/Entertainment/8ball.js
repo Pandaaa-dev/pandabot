@@ -3,8 +3,8 @@ const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
-    name: 'nonewaccounts',
-    description: 'Kicks all new accounts below selected time', 
+    name: '8ball',
+    description: '8 ball command', 
     usage(prefix){
         const returnArray = []
 
@@ -21,21 +21,23 @@ module.exports = {
     ], 
     isNSFW: false,
     minArgs: 1,
-    maxArgs: 1,
+    maxArgs: Infinity,
     highValue: false, 
     emoji: null,
-    uniqueText: "set nonewaccounts",
+    uniqueText: "uniquetext",
     giflinks: [ 
         // Gif links for the embed
     ],
-    async execute( message, args, text, client,connection){
-        const guild = message.guild
-        const guildconfig = client.guilds_config.get(guild.id)
-        client.emit('databaseUpdate', "guild_config.guild_details", "guildid", guild.id, "nonewaccounts", +args[0])
-        const newConfig = {
-            ...guildconfig,
-            nonewaccounts: +args[0]
-        }
-        client.guilds_config.set(guild.id, newConfig)
+    async execute( message, args, text, client){
+            //Real logic mf
+        const possibilities = ['Yes.', 'No.', 'Absolutely not.', 'Absolutely', "Sorry but aint no chance in hell honey.", "Possibly...", "Perhaps...?", "Idk dude i just work here part-time" ]
+
+        const fullMessage = `
+        Question by <@${message.author.id}>:
+        ${text}
+        
+        Answer:\n${possibilities[Math.floor(Math.random() * possibilities.length)]}
+        `
+        message.channel.send(basicEmbed(client, message, args, text, '8 Ball Special!', `🎱`, fullMessage))
     }
 }

@@ -24,7 +24,7 @@ module.exports = {
                 "https://media.tenor.com/images/51e2ba00b6246dbfbbd97a2f38c8307c/tenor.gif",
                 "https://i.kym-cdn.com/photos/images/newsfeed/001/054/543/c22.gif"
                 ],
-    async execute( message, args, text, client){
+    async execute( message, args, text, client,connection){
         message.delete()
         message.mentions.users.map(user=> {
            const member = message.guild.member(user)

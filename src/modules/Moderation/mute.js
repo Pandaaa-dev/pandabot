@@ -27,7 +27,7 @@ module.exports = {
     giflinks: [ 
         // Gif links for the embed
     ],
-    async execute(message, args, text, client){
+    async execute(message, args, text, client,connection){
         // const duration = args.pop().toString().toLowerCase();
 
         const guildConfig = client.guilds_config.get(message.guild.id)
@@ -89,18 +89,12 @@ module.exports = {
             var expirydate = new Date();
             expirydate.setMinutes( expirydate.getMinutes() + +argsWithoutMention[0].split('')[0] );
            const dbdate = expirydate.toISOString().slice(0, 19).replace('T', ' ');
-           
-           client.emit("databaseInsert", 
-           tableName,  
-           "guildid",
-            "userid",
-            "currtime",
-            "expiresin", 
-             message.guild.id, 
-             mutedMember.id,  
-             "CURRENT_TIMESTAMP()",
-                 `DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL ${+argsWithoutMention[0].split('')[0]} MINUTE)`)
-
+            connection.query(`INSERT INTO ${tableName}(${"guildid"}, ${"userid"}, ${"currtime"}, ${"expiresin"})
+                 VALUES("${message.guild.id}", "${mutedMember.id}", ${"CURRENT_TIMESTAMP()"}, ${`DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL ${+argsWithoutMention[0].split('')[0]} MINUTE)`});
+             `, (rej, res) => {
+                 if(rej) console.log(rej)
+                 console.log(res)
+             })
                  client.muted_members.set(mutedMember.id, {
                      guildid: mutedMember.guild.id,
                      userid: mutedMember.id,
@@ -115,17 +109,13 @@ module.exports = {
           if(argsWithoutMention[0].split('').length == 3 ){
               const number = +(argsWithoutMention[0].split('')[0] + +argsWithoutMention[0].split('')[1])
               console.log(number)
-            
-             client.emit("databaseInsert", 
-              tableName, 
-                 "guildid",
-                  "userid",
-                  "currtime",
-                  "expiresin", 
-                   message.guild.id, 
-                   mutedMember.id,  
-                   "CURRENT_TIMESTAMP()",
-                  `DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL ${number} MINUTE)`)
+                  connection.query(`INSERT INTO ${tableName}(${"guildid"}, ${"userid"}, ${"currtime"}, ${"expiresin"})
+                  VALUES("${message.guild.id}", "${mutedMember.id}", ${"CURRENT_TIMESTAMP()"}, ${`DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL ${number} MINUTE)`});
+              `, (rej, res) => {
+                  if(rej) console.log(rej)
+                  console.log(res)
+              })
+
                   var expirydate = new Date();
                   expirydate.setMinutes( expirydate.getMinutes() + number );
                  const dbdate = expirydate.toISOString().slice(0, 19).replace('T', ' ');
@@ -143,16 +133,12 @@ module.exports = {
             if(argsWithoutMention[0].split('').length == 4 ){
                 const number = +(argsWithoutMention[0].split('')[0] + argsWithoutMention[0].split('')[1] + argsWithoutMention[0].split('')[2])
                 console.log(number)
-               client.emit("databaseInsert", 
-                tableName, 
-                   "guildid",
-                    "userid",
-                    "currtime",
-                    "expiresin", 
-                     message.guild.id, 
-                     mutedMember.id,  
-                     "CURRENT_TIMESTAMP()",
-                    `DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL ${number} MINUTE)`)
+                    connection.query(`INSERT INTO ${tableName}(${"guildid"}, ${"userid"}, ${"currtime"}, ${"expiresin"})
+                    VALUES("${message.guild.id}", "${mutedMember.id}", ${"CURRENT_TIMESTAMP()"}, ${`DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL ${number} MINUTE)`});
+                `, (rej, res) => {
+                    if(rej) console.log(rej)
+                    console.log(res)
+                })
                     
                     var expirydate = new Date();
                     expirydate.setMinutes( expirydate.getMinutes() + number );

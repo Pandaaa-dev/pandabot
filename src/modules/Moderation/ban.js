@@ -28,7 +28,7 @@ module.exports = {
                "https://media1.tenor.com/images/b909e525194ec8edb6d370f5f01fcc64/tenor.gif?itemid=5140211",
                "https://image.myanimelist.net/ui/xUjg9eFRCjwANWb4t4P8QZZq5M6GQNuEuCZeTrYu9ZMMzi2iAraolpDIGftgi31iTFSccWZlkHBRC97UnEbrfdnM3U4Km9KT4h2DXGLVtF0"
     ],
-    async execute( message, args, text, client){
+    async execute( message, args, text, client,connection){
         message.delete()
         message.mentions.users.map(user=> {
            const member = message.guild.member(user)

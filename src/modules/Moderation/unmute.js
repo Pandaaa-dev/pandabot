@@ -28,7 +28,7 @@ module.exports = {
     giflinks: [ 
         
     ],
-    async execute( message, args, text, client){
+    async execute( message, args, text, client,connection){
           const guild_config = client.guilds_config.get(message.guild.id);
             console.log(guild_config);
             if(!guild_config.muterole){

@@ -28,7 +28,7 @@ module.exports = {
     giflinks: [ 
         // Gif links for the embed
     ],
-    async execute( message, args, text, client){
+    async execute( message, args, text, client,connection){
          const guildConfig = client.guilds_config.get(message.guild.id)
          const newPrefix = args[0];
          const newConfig = {
@@ -36,7 +36,13 @@ module.exports = {
              prefix: newPrefix
          }
          client.guilds_config.set(message.guild.id, newConfig)
-         client.emit("databaseUpdate", "guild_config.guild_details", "guildid", message.guild.id, "prefix", newPrefix )
+         connection.query(`UPDATE ${"guild_config.guild_details"}
+         SET ${"prefix"} = "${newPrefix}"
+         WHERE ${"guildid"} = "${message.guild.id}";
+         `, (rej, res) => {
+             if(rej) console.log(rej)    
+             console.log(res)
+         })
          console.log(client.guilds_config.get(message.guild.id))
         
          message.channel.send(basicEmbed(client, message, args, text, "Prefix Changed!", 

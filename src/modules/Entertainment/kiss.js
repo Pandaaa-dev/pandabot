@@ -22,7 +22,7 @@ module.exports = {
                 "https://i.pinimg.com/originals/65/19/e8/6519e870af23780241a17e90ca91306d.gif",
                 "https://media1.tenor.com/images/54b4357dc2a9f066a89f4843fa16352d/tenor.gif?itemid=7298386"
             ],
-    async execute( message, args, text, client){
+    async execute( message, args, text, client,connection){
         //Deleting the message
         message.delete()
         .then(msg => msg )

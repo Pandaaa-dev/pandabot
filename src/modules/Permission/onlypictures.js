@@ -28,9 +28,12 @@ module.exports = {
     giflinks: [ 
         // Gif links for the embed
     ],
-    async execute( message, args, text, client){
+    async execute( message, args, text, client,connection){
             if(client.onlyPictureChannels.get(message.channel.id)){
-                client.emit('deleteOnlyPicturesChannelDB', message.channel.id)
+                // client.emit('deleteOnlyPicturesChannelDB', message.channel.id)
+                connection.query(`DELETE FROM guild_config.only_pictures
+                WHERE channelid = ${channelid};
+                 `)
                 client.onlyPictureChannels.delete(message.channel.id)
                 return  message.channel.send(basicEmbed(client, message, args, text, "OnlyPictures turned off!", "👍" ,"OnlyPictures for this channel has been turned off!"))
             }
@@ -38,7 +41,10 @@ module.exports = {
                 channelid: message.channel.id,
                 guildid: message.guild.id
             })
-            client.emit('setOnlyPicturesChannelDB', message.channel.id.toString(), message.guild.id.toString())
+            // client.emit('setOnlyPicturesChannelDB', message.channel.id.toString(), message.guild.id.toString())
+            connection.query(`INSERT INTO guild_config.only_pictures(channelid, guildid)
+            VALUES(${message.channel.id.toString()}, ${message.guild.id.toString()});
+`)
             return  message.channel.send(basicEmbed(client, message, args, text, "OnlyPictures turned on!", "👍" ,"OnlyPictures for this channel has been turned on!"))
     }
 }
