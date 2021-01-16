@@ -6,7 +6,9 @@
   "scripts": {
     "test": "nodemon run ./src/index.js",
     "start": "node ./src/index.js",
-    "repo": "git add . && git commit -m 'automated commit' && git push -u origin dev"
+    "commit": "git commit -m 'automated commit'",
+    "push": "git push -u origin dev",
+    "repo": "git add . && npm run commit && npm run push"
   },
   "author": "Pandaa-dev",
   "license": "ISC",
