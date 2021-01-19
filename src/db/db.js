@@ -58,4 +58,24 @@ connection.query(`CREATE TABLE IF NOT EXISTS no_links(
   guildid varchar(255));`, (err, res)=> {
 if(err) console.log(err)
 })
+
+connection.query(`CREATE TABLE IF NOT EXISTS banned_words(
+  id int NOT NULL AUTO_INCREMENT, 
+  guildid varchar(255),
+  word varchar(255),
+  PRIMARY KEY(id));`
+  , (err, res)=> {
+if(err) console.log(err)
+})
+
+
+
+
+  // connection.query(`DROP TABLE guild_config.banned_words;`, (err, res) => {
+  //                     if(err) console.log(err)
+  //                     console.log(res)
+  //                   })
+
 module.exports = connection
+
+// ALTER TABLE table_name DROP COLUMN column_name

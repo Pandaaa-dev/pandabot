@@ -7,7 +7,7 @@ const cmdErrorEmbed = (command, client, message, arr) => {
     const h = d.getUTCHours();
     const m = d.getUTCMinutes()
     const embed = new MessageEmbed()
-  .setTitle(">> Error"+" in using" + " !" + command.name)
+  .setTitle(">> Error"+" in using" +  ` ${client.guilds_config.get(message.guild.id).prefix}` + command.name)
   .setColor(0000000)
   .setDescription(text)
   .setFooter(`${message.guild.name} || ${client.user.username} || ${h}:${m} today(UTC) `, client.user.avatarURL());

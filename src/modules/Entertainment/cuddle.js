@@ -37,7 +37,7 @@ module.exports = {
         //Embed Message
         const embed = new MessageEmbed()
         .setTitle(">> " + this.name  + " \`💕\`")
-        .setColor(0000000)
+        .setColor(Math.floor(Math.random()*16777215).toString(16))
         .setThumbnail(gifLink)
         .setDescription(this.emoji+ " <@!" + message.author.id + "> " +  this.uniqueText + ' ' +  (text) + ' ' + this.emoji);
         //  client.user.avatarURL()

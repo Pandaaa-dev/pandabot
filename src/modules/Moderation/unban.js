@@ -24,10 +24,8 @@ module.exports = {
     highValue: false, 
     emoji: '😲',
     uniqueText: "was unbanned",
-    giflinks: [ "https://media1.tenor.com/images/721179aba345ee8c355a92a4cc6a6a80/tenor.gif?itemid=16754845",
-    "https://media1.tenor.com/images/ca7c3effa6f215014169409de9efa848/tenor.gif?itemid=18344417",
-    "https://i.gifer.com/RcBm.gif",
-    "https://i.imgur.com/104VR9D.gif"
+    giflinks: [ 
+        //Gif links if any  
     ],
     async execute( message, args, text, client,connection){
             message.delete()

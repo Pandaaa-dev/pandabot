@@ -19,10 +19,10 @@ client.muted_members = new Discord.Collection()
 client.noPictureChannels = new Discord.Collection()
 client.onlyPictureChannels = new Discord.Collection()
 client.noLinkChannels = new Discord.Collection()
+client.banned_words = new Discord.Collection()
 
 
 client.once('ready', async () => {
-
     connection.query(`SELECT * FROM guild_config.guild_details`, (err, res)=> {
         if(err) console.log(err)
         res.forEach(eachguild => {
@@ -41,6 +41,13 @@ client.once('ready', async () => {
         if(!res.length) return 
         res.forEach(member => {
             client.muted_members.set(member.userid, member)
+        })
+    })
+    connection.query(`SELECT * FROM guild_config.banned_words`, (err, res)=> {
+        if(err) console.log(err)
+        if(!res.length) return 
+        res.forEach(word => {
+            client.banned_words.set(word.id, word)
         })
     })
     connection.query(`SELECT * FROM guild_config.no_links`, (err, res)=> {
@@ -77,6 +84,9 @@ client.once('ready', async () => {
 
         const guildConfig = client.guilds_config.get(message.guild.id)
         const prefix = guildConfig.prefix
+
+        client.emit('automod', client, message)
+
         if (!message.content.startsWith(prefix) || message.author.bot) return;
 
         const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -95,6 +105,7 @@ client.once('ready', async () => {
     
         
     })
+
 
     client.on('guildMemberAdd', async member => {
         const guildConfig = client.guilds_config.get(member.guild.id)
@@ -140,6 +151,12 @@ client.once('ready', async () => {
 
         })
     })
+
+    client.on('automod', async (client, message) => {
+        client.banned_words.delete(wordToDelete.id)
+    })
+
+
 
     client.setInterval((() => {
         connection.query("SELECT * FROM GUILD_CONFIG.MUTED_MEMBERS WHERE expiresin < current_timestamp()", (rej, res) => {

@@ -6,13 +6,15 @@
   "scripts": {
     "test": "nodemon run ./src/index.js",
     "start": "node ./src/index.js",
-    "commit": "git commit -m 'automated commit'",
+    "commit": "git commit -m'utomated commit' ",
     "push": "git push -u origin dev",
     "repo": "git add . && npm run commit && npm run push"
   },
   "author": "Pandaa-dev",
   "license": "ISC",
   "dependencies": {
+    "@sujalgoel/reddit-image": "^1.1.1",
+    "axios": "^0.21.1",
     "discord.js": "^12.5.1",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.6"

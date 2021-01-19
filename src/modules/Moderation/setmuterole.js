@@ -51,12 +51,15 @@ module.exports = {
         console.log(client.guilds_config.get(message.guild.id).muterole)
         message.channel.send(basicEmbed(client, message, args, text, "Mute Role Changed!","👍", `${this.uniqueText} <@${newRole.id}>` ))
         message.guild.channels.cache.forEach(channel => {
-                if(channel.type == "text" || channel.type == "news" || channel.type == "category" || channel.type == "store"){
+                if(channel.type != 'dm' || channel.type != 'voice'){
+                    const prevOvr = []
+                    channel.permissionOverwrites.forEach(ovr => prevOvr.push(ovr))
                     channel.overwritePermissions([
                         {
                            id: newRole.id,
                            deny: ['SEND_MESSAGES', 'EMBED_LINKS', 'ATTACH_FILES', 'ADD_REACTIONS'],
                         },
+                        ...prevOvr
                       ], 'Set up the Mute Command');
                 }   
 

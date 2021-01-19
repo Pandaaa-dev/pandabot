@@ -3,8 +3,8 @@ const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
-    name: 'nonewaccounts',
-    description: 'Kicks all new accounts below selected time', 
+    name: 'setname',
+    description: 'Sets the name for the bot', 
     usage(prefix){
         const returnArray = []
 
@@ -21,25 +21,20 @@ module.exports = {
     ], 
     isNSFW: false,
     minArgs: 1,
-    maxArgs: 1,
+    maxArgs: 5,
     highValue: false, 
     emoji: null,
-    uniqueText: "set nonewaccounts",
+    uniqueText: "uniquetext",
     giflinks: [ 
         // Gif links for the embed
     ],
-    async execute( message, args, text, client,connection){
-        const guild = message.guild
-        const guildconfig = client.guilds_config.get(guild.id)
-        connection.query(`UPDATE ${"guild_config.guild_details"}
-        SET ${"nonewaccounts"} = ${+args[0]}
-        WHERE ${"guildid"} = "${message.guild.id}";
-        `,)
-        const newConfig = {
-            ...guildconfig,
-            nonewaccounts: +args[0]
-        }
-        client.guilds_config.set(guild.id, newConfig)
-        console.log( client.guilds_config.get(guild.id))
+    async execute( message, args, text, client){
+            message.delete()
+            const clientAsMember = message.guild.member(client.user.id)
+            clientAsMember.setNickname(text, 'Command').then(res => {
+                return  message.channel.send(basicEmbed(client,message,args,text,`Nickname Changed`, 'D:', `**Nickname changed to:** *${text}*`))
+            }).catch(e => {
+                console.log(e)
+            })
     }
 }

@@ -2,11 +2,29 @@ const cmdErrorEmbed = require("./utilities/errorInCommandUsage")
 const errorEmbed = require("./utilities/errorEmbed")
 const validPermissions = require("./utilities/validPerms")
 const deleteMsg = require("./utilities/deleteMsg")
-
+const {OWNER} = require('./config.json')
 const cmdHandler = async (command, message, args, text, client , connection) => {
 
     const prefix = client.guilds_config.get(message.guild.id).prefix
-  
+
+
+    if(command.owner){
+
+        let isOwner = false
+        OWNER.forEach(id => {
+          if(id == +message.author.id){
+            isOwner = true 
+          }
+        })
+        if(!isOwner){
+          console.log(OWNER, +message.author.id)
+          const desc = 'This is strictly an Owner command.'
+          deleteMsg(message);
+          return message.channel.send(errorEmbed(command, client, message, "Missing Permissions", desc ))
+        }
+   
+      }
+
       //Checking if ive given the correct permission in the command Dependency  
       if(command.requiredPermissions.length >= 1){
         command.requiredPermissions.forEach(perm => {

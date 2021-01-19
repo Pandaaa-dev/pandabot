@@ -29,26 +29,15 @@ module.exports = {
     ],
     async execute( message, args, text, client,connection){
         const prevConfig = client.guilds_config.get(message.guild.id)
-            if(client.guilds_config.get(message.guild.id).verificationchannelid){
-                // client.emit('updateVerificationChannelToNullDB', message.guild.id)
-                connection.query(`UPDATE guild_config.guild_details
-                SET verificationchannelid = NULL
-                WHERE guildid = "${message.guild.id}";`) 
-                const newConfig = {
-                    ...prevConfig,
-                    verificationchannelid: null
-                }
-                client.guilds_config.set(message.guild.id, newConfig)
-                return  message.channel.send(basicEmbed(client, message, args, text, "Verification turned off!", "👍" ,"Verification for this server has been turned off!"))
-            }
+
             client.guilds_config.set(message.guild.id, {
                 ...prevConfig, 
                 verificationchannelid: message.channel.id
             })
             connection.query(`UPDATE guild_config.guild_details
-            SET verificationchannelid = "${message.channel.id.tostring()}"
+            SET verificationchannelid = "${message.channel.id.toString()}"
             WHERE guildid = "${message.guild.id.toString()}";`) 
-            // client.emit('setNewVerificationChannelDB', message.channel.id.toString(), message.guild.id.toString())
-            return  message.channel.send(basicEmbed(client, message, args, text, "Verification turned on!", "👍" ,"Verification for this server has been turned on on this channel!"))
+
+            return  message.channel.send(basicEmbed(client, message, args, text, "Verification channel set!", "👍" ,"Verification has been set on this channel!"))
     }
 }
