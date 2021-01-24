@@ -1,17 +1,3 @@
-[DONE] ~~ 1. Fix SetMuteRole by adding the previous permission overwrites or else it will probably overwrite newly everytime.
 
-[DONE] ~~ (Also fix invite link options thingy)
 
-[DONE] Use the  @sujalgoel/reddit-image npm package to take reddit pictures. 
 
-3. Set the Auto mod features.
-
-4. Fix the Embeds(from Utilities)
-
-GIVEAWAY,REMIND, SAY
-
-5. See for a gaming Thing. 
-
-6. Set up splitters such as %rng1-10% etc 
-
-4. Make a dummy website for the CMDMaker [PORE]

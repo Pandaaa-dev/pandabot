@@ -1,10 +1,11 @@
 // check these routes!
 const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
+const {MessageEmbed} = require('discord.js')
 
 module.exports = {
-    name: 'setactivity',
-    description: 'Sets the activity for the bot', 
+    name: 'say',
+    description: 'Says the command in the embed', 
     usage(prefix){
         const returnArray = []
 
@@ -20,24 +21,25 @@ module.exports = {
             //All the required permissions the user and the bot both needs
     ], 
     isNSFW: false,
-    minArgs: 2,
-    maxArgs: 10,
+    minArgs: 1,
+    maxArgs: Infinity,
     highValue: false, 
     emoji: null,
-    owner: true,
     uniqueText: "uniquetext",
     giflinks: [ 
+        // Gif links for the embed
     ],
     async execute( message, args, text, client){
+           const clientAsMember = message.guild.member(client.user.id)
         message.delete()
-        args[0] = args[0].toLowerCase()
-        if(args[0]== 'playing' || args[0]== 'streaming' || args[0]== 'listening' || args[0]== 'watching' ){
-            const activityType = args.shift()
-            const restArgs = args.join(' ')
-            client.user.setActivity(restArgs, {type : activityType.toUpperCase()}).then(res => {
-                return  message.channel.send(basicEmbed(client,message,args,text,`Set Activity!`, ':D', `Set Activity to: \n${activityType} ${restArgs}`))
-
-            })
+        if(!message.channel.permissionsFor(clientAsMember).has(['SEND_MESSAGES', 'EMBED_LINKS'])){
+           return message.channel.send(basicEmbed(client, message, args, text, `Missing Permissions!`, `>:(`, `**Missing Permissions:**\n \`SEND__MESSAGES\`\N\`EMBED__LINKS\``))
         }
+        // message.channel.send(basicEmbed(client, message, args, text, ))
+        const embed = new MessageEmbed()
+            .setDescription(text)
+            .setTimestamp()
+            .setColor(Math.floor(Math.random()*16777215).toString(16));
+        message.channel.send(embed)
     }
 }

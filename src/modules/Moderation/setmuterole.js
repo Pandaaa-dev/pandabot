@@ -54,13 +54,12 @@ module.exports = {
                 if(channel.type != 'dm' || channel.type != 'voice'){
                     const prevOvr = []
                     channel.permissionOverwrites.forEach(ovr => prevOvr.push(ovr))
-                    channel.overwritePermissions([
-                        {
-                           id: newRole.id,
-                           deny: ['SEND_MESSAGES', 'EMBED_LINKS', 'ATTACH_FILES', 'ADD_REACTIONS'],
-                        },
-                        ...prevOvr
-                      ], 'Set up the Mute Command');
+                    channel.createOverwrite(newRole, {
+                        SEND_MESSAGES: false,
+                        EMBED_LINKS:false,
+                        ATTACH_FILES:false,
+                        ADD_REACTIONS:false
+                    })
                 }   
 
             })

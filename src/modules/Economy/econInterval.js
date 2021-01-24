@@ -3,8 +3,8 @@ const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
-    name: 'setactivity',
-    description: 'Sets the activity for the bot', 
+    name: 'econint',
+    description: 'Changes the economy interval', 
     usage(prefix){
         const returnArray = []
 
@@ -20,24 +20,23 @@ module.exports = {
             //All the required permissions the user and the bot both needs
     ], 
     isNSFW: false,
-    minArgs: 2,
-    maxArgs: 10,
+    minArgs: 1,
+    maxArgs: 1,
     highValue: false, 
     emoji: null,
-    owner: true,
     uniqueText: "uniquetext",
     giflinks: [ 
+        // Gif links for the embed
     ],
     async execute( message, args, text, client){
-        message.delete()
-        args[0] = args[0].toLowerCase()
-        if(args[0]== 'playing' || args[0]== 'streaming' || args[0]== 'listening' || args[0]== 'watching' ){
-            const activityType = args.shift()
-            const restArgs = args.join(' ')
-            client.user.setActivity(restArgs, {type : activityType.toUpperCase()}).then(res => {
-                return  message.channel.send(basicEmbed(client,message,args,text,`Set Activity!`, ':D', `Set Activity to: \n${activityType} ${restArgs}`))
-
-            })
-        }
+        
+            const prevConfig = client.bot_config.get('_1')
+            const newConfig = {
+                ...prevConfig,
+                econInterval: +args[0]
+            }
+            client.bot_config.set('_1', newConfig)
+            message.channel.send(basicEmbed(client, message, args, text, `Economy interval changed`, `${args[0]}`, `*Set the mew economy interval to:* ${args[0]} hours(s) `))
+ 
     }
 }

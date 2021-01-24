@@ -26,11 +26,12 @@ module.exports = {
     highValue: false, 
     emoji: null,
     uniqueText: "None",
+    cooldown: 10,
     giflinks: [ 
         // Gif links for the embed
     ],
     async execute( message, args, text, client){
-     
+                
         const clientAsMember = message.guild.member(client.user.id)
             if(!message.channel.permissionsFor(clientAsMember).has('ATTACH_FILES')){
                 return message.channel.send(basicEmbed(client,message, args, text, `Missing Permissions!`, `D:`, `I need permission to attach files in this channel!`))

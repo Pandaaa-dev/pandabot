@@ -65,16 +65,6 @@ module.exports = {
                 roleCount++
             })     
 
-
-        //     if(roleCount){
-        //     await mutedMember.roles.cache.forEach(role => {
-        //         if(role.name == "@everyone" || role.id == muteroleid) return
-        //             console.log(role)
-        //            removedRoles.push(role)
-        //            mutedMember.roles.remove(role) 
-        //     })
-        // }
-
         mutedMember.roles.add(muteroleid)
         
          const tableName = "guild_config.muted_members"

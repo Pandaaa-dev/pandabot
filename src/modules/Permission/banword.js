@@ -31,6 +31,18 @@ module.exports = {
     async execute( message, args, text, client, connection){
         let bannedWordsCounter = 0
     //    get(message.guild.id)
+        let newid = 0
+
+    const bannedArray = client.banned_words.array()
+    console.log(bannedArray)
+        if(bannedArray.length > 1){
+            newid = bannedArray.pop().id + 1 
+        } else {
+            newid = 1
+        }
+
+        console.log(newid)
+
         const wordArr = []
        client.banned_words.map(word => {
            if(+word.guildid == message.guild.id){
@@ -38,7 +50,7 @@ module.exports = {
                wordArr.push(word.word)
            }
        })
-
+       
         console.log(bannedWordsCounter)
         console.log(wordArr)
         // console.log(bannedWordsArr.length)
@@ -50,16 +62,16 @@ module.exports = {
         }
         
         connection.query(`INSERT INTO guild_config.banned_words(guildid, word)
-        values("${message.guild.id}", '${args[0]}');
+        values("${message.guild.id}", '${args[0].toLowerCase()}');
         `, (err, res) => {
             if(err) console.log(err);
             console.log(res)
-            client.banned_words.set(bannedWordsCounter+1, {
-                id: bannedWordsCounter++,
+            client.banned_words.set(newid, {
+                id: newid,
                 guildid: message.guild.id.toString(),
-                word: args[0]
+                word: args[0].toLowerCase()
             })
-        return message.channel.send(basicEmbed(client, message, args, text, `Banned Word!`, `:D`, `**Banned word:** \`${args[0]}\`` ))
+        return message.channel.send(basicEmbed(client, message, args, text, `Banned Word!`, `:D`, `**Banned word:** \`${args[0].toLowerCase()}\`` ))
         })
     }
 }

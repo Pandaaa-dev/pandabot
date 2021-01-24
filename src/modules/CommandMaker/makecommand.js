@@ -1,10 +1,10 @@
 // check these routes!
 const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
-
+const pareString = require('../../../utilities/parseCommandString')
 module.exports = {
-    name: 'setactivity',
-    description: 'Sets the activity for the bot', 
+    name: 'makecommand',
+    description: 'Makes a command and saves it to the database', 
     usage(prefix){
         const returnArray = []
 
@@ -20,24 +20,17 @@ module.exports = {
             //All the required permissions the user and the bot both needs
     ], 
     isNSFW: false,
-    minArgs: 2,
-    maxArgs: 10,
+    minArgs: 1,
+    maxArgs: Infinity,
     highValue: false, 
     emoji: null,
-    owner: true,
     uniqueText: "uniquetext",
     giflinks: [ 
+        // Gif links for the embed
     ],
     async execute( message, args, text, client){
-        message.delete()
-        args[0] = args[0].toLowerCase()
-        if(args[0]== 'playing' || args[0]== 'streaming' || args[0]== 'listening' || args[0]== 'watching' ){
-            const activityType = args.shift()
-            const restArgs = args.join(' ')
-            client.user.setActivity(restArgs, {type : activityType.toUpperCase()}).then(res => {
-                return  message.channel.send(basicEmbed(client,message,args,text,`Set Activity!`, ':D', `Set Activity to: \n${activityType} ${restArgs}`))
-
-            })
-        }
+        let mentions = message.mentions.users.first() || message.author
+            const realString =  pareString(text, message, message.author, message.guild, client, mentions)
+            console.log(realString)
     }
 }

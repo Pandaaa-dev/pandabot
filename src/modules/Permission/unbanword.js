@@ -29,22 +29,20 @@ module.exports = {
         // Gif links for the embed
     ],
     async execute( message, args, text, client, connection){
-           message.delete()
-           const wordToDeleteCol = client.banned_words.filter(word => {
-               if(+word.guildid == message.guild.id && word.word == args[0]){ return word}
-            })
-            const wordToDelete = wordToDeleteCol.first()            
+            const wordToDelete = client.banned_words.array().find(word => +word.guildid == message.guild.id && word.word == args[0] )
+            //  const wordToDelete = wordToDeleteCol.first()     
+
             if(!wordToDelete){
                 return message.channel.send(basicEmbed(client, message, args, text, `Cannot find word!`, `D:`, `Cannot find the specified word in the database` ))
-
             }
+            console.log(wordToDelete.id)       
             connection.query(`DELETE FROM ${"guild_config.banned_words"}
-                                          WHERE id = ${wordToDelete.id};
-            `,(rej,res) => { 
+                                     WHERE word = "${wordToDelete.word}"
+                                     AND guildid = "${message.guild.id.toString()}"; `,(rej,res) => { 
               console.log(client.banned_words.delete(wordToDelete.id), 'DELETED')  
                 if(rej) console.log(rej)
                 console.log(res)
-            return message.channel.send(basicEmbed(client, message, args, text, `Unbanned Word!`, `:D`, `**Unbanned word:** \`${args[0]}\`` ))
+            return message.channel.send(basicEmbed(client, message, args, text, `Unbanned Word!`, `:D`, `**Unbanned word:** \`${args[0].toLowerCase()}\`` ))
             })
           
     }

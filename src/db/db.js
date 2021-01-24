@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
 const {DB} = require("../../config.json")
- 
+
 // create the connection to database
 const connection = mysql.createConnection({...DB})
  
@@ -26,6 +26,8 @@ const connection = mysql.createConnection({...DB})
                     verificationmessage varchar(255),
                     verificationroleid varchar(255),
                     verification BOOL,
+                    ticketsystem BOOL,
+                    ticketcategoryid varchar(255),
                     muterole varchar(255),
                     primary key(guildid));`, (err, res)=> { 
   if(err) console.log(err)
@@ -34,8 +36,22 @@ const connection = mysql.createConnection({...DB})
 connection.query(`CREATE TABLE IF NOT EXISTS xp_level(
                   guildid varchar(255),
                   userid varchar(255),
-                  points varchar(255),
+                  points int,
+                  level int,
                   primary key(guildid));`, (err, res)=> {
+if(err) console.log(err)
+})
+connection.query(`CREATE TABLE IF NOT EXISTS economy(
+                  userid Varchar(255),
+                  points int,
+                  PRIMARY KEY(userid));`, (err, res)=> {
+if(err) console.log(err)
+})
+connection.query(`CREATE TABLE IF NOT EXISTS shop(
+                  id int NOT NULL AUTO_INCREMENT, 
+                  name Varchar(255),
+                  price int,
+                  PRIMARY KEY(id));`, (err, res)=> {
 if(err) console.log(err)
 })
 
@@ -67,14 +83,42 @@ connection.query(`CREATE TABLE IF NOT EXISTS banned_words(
   , (err, res)=> {
 if(err) console.log(err)
 })
+connection.query(`CREATE TABLE IF NOT EXISTS tickets(
+  id int , 
+  guildid varchar(255),
+  channelid varchar(255),
+  userid varchar(255),
+  PRIMARY KEY(id));`
+  , (err, res)=> {
+if(err) console.log(err)
+})
+
+connection.query(`CREATE TABLE IF NOT EXISTS level_rewards(
+  id int NOT NULL AUTO_INCREMENT, 
+  type varchar(255),
+  5award int, 
+  10award int,
+  20award int, 
+  25award int,
+  30award int,
+  35award int,
+  40award int,
+  45award int,
+  50award int,
+  primary key(id));`
+  , (err, res)=> {
+if(err) console.log(err)
+})
 
 
 
 
-  // connection.query(`DROP TABLE guild_config.banned_words;`, (err, res) => {
-  //                     if(err) console.log(err)
-  //                     console.log(res)
-  //                   })
+// connection.query(`ALTER TABLE guild_details 
+//                   ADD lastticket int DEFAULT 0;`
+//   , (err, res)=> {
+// if(err) console.log(err)
+// })
+ 
 
 module.exports = connection
 
