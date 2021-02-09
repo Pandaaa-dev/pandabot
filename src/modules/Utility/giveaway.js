@@ -23,6 +23,7 @@ module.exports = {
     isNSFW: false,
     minArgs: 4,
     maxArgs: 15,
+    module: 'Utility',
     highValue: false, 
     emoji: null,
     uniqueText: "uniquetext",

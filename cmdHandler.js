@@ -9,15 +9,15 @@ const cmdHandler = async (command, message, args, text, client , connection) => 
 
 
     if(command.owner){
-
         let isOwner = false
         OWNER.forEach(id => {
           if(id == +message.author.id){
             isOwner = true 
           }
         })
+
+        // Just spome protection for Owner-Only commands
         if(!isOwner){
-          console.log(OWNER, +message.author.id)
           const desc = 'This is strictly an Owner command.'
           deleteMsg(message);
           return message.channel.send(errorEmbed(command, client, message, "Missing Permissions", desc ))
@@ -55,11 +55,11 @@ const cmdHandler = async (command, message, args, text, client , connection) => 
        if(command.requiredPermissions.length >= 1){
           let hasPerms = true
           command.requiredPermissions.forEach(perm => {
-            if(!message.member.permissions.has(perm, {checkAdmin: true})){
+            if(!message.member.hasPermission(perm, {checkAdmin: true})){
                   hasPerms = false
             }
           })
-          if(hasPerms == false) {
+          if(hasPerms === false) {
             deleteMsg(message)
             const desc = `You do not have the required permissions to run this command! 
                           The permissions needed for this:
@@ -80,7 +80,7 @@ const cmdHandler = async (command, message, args, text, client , connection) => 
               `
               const arr = command.usage("!")
               // cmdErrorEmbed = (command, client,! message, arr)
-              const embed = cmdErrorEmbed(command, client, message, arr)
+              const embed = cmdErrorEmbed(command, client, errorMsg, arr)
               deleteMsg(message)
               message.channel.send(embed)
               return

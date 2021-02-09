@@ -19,6 +19,8 @@ module.exports = {
     isNSFW: false,
     minArgs: 1,
     maxArgs: 10,
+    module: 'Moderation',
+
     highValue: false, 
     emoji: null,
     uniqueText: "was banned by",
@@ -29,6 +31,7 @@ module.exports = {
                "https://image.myanimelist.net/ui/xUjg9eFRCjwANWb4t4P8QZZq5M6GQNuEuCZeTrYu9ZMMzi2iAraolpDIGftgi31iTFSccWZlkHBRC97UnEbrfdnM3U4Km9KT4h2DXGLVtF0"
     ],
     async execute( message, args, text, client,connection){
+        const guildConfig = client.guilds_config.get(message.guild.id)
         message.delete()
         message.mentions.users.map(user=> {
            const member = message.guild.member(user)
@@ -40,19 +43,13 @@ module.exports = {
             return }
 
            //Member is Bannable
-
-           //Checking if the message author gave a reason
-           let containsReason= false
-           args.forEach(arg => {
-               if(arg.startsWith("%")){
-                   containsReason = true
-               }
-           })
+           args.shift()
            let reason = ''
-           if(containsReason){
-                reason = args.join(" ").split("%").pop()
-           }
-           reason = reason + ` - by ${message.author.tag}`
+          if(args.length > 0){
+              reason = args.join(' ')
+          } 
+
+          
            // kicking the person with or without the reason
            member.ban({reason: reason}).then((res, err) => {
                if(err) {
@@ -63,6 +60,10 @@ module.exports = {
                //Sending the response to the appropriate channel 
                const embed = basicEmbed(client, message, args, text, this.name, "🚫" , `<@${member.id}> was *banned.* \n Reason: \`${reason}\``, this.giflinks)
                message.channel.send(embed)
+
+               if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
+
+               client.emit('customlog', message, `Ordered to *Ban*`, guildConfig.loggingchannelid,  `*Order by:* ${message.author}\n*Type:* **Ban**\n*Target:* ${member.id}\n${reason?`*Reason:*${reason}`: ''}` )
            })
         })
     }

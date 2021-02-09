@@ -14,13 +14,16 @@ module.exports = {
     isNSFW: false,
     minArgs: 1,
     maxArgs: 5,
-    highValue: false, 
+    highValue: false,
+    module: 'Entertainment',
+ 
     emoji: "\`😘\`",
     uniqueText: "pats",
-        giflinks: [ "https://media1.tenor.com/images/1c6d18b4c3ad62542bd1baf95449ead7/tenor.gif?itemid=12304753",
-                    "https://i.pinimg.com/originals/c2/34/cd/c234cdcb3af7bed21ccbba2293470b8c.gif",
-                    "https://media2.giphy.com/media/N0CIxcyPLputW/giphy.gif",
-                    "https://media1.tenor.com/images/291ea37382e1d6cd33349c50a398b6b9/tenor.gif?itemid=10204936"
+        giflinks: ['https://media.tenor.com/images/a671268253717ff877474fd019ef73e9/tenor.gif',
+                    'https://i.pinimg.com/originals/c2/34/cd/c234cdcb3af7bed21ccbba2293470b8c.gif',
+                'https://i.kym-cdn.com/photos/images/newsfeed/000/706/849/ff2.gif',
+                'https://media0.giphy.com/media/N0CIxcyPLputW/giphy.gif'
+                    
                     ],
     async execute( message, args, text, client,connection){
         //Deleting the message
@@ -40,7 +43,7 @@ module.exports = {
         .setTitle(">> " + this.name  + " \`💕\`")
         .setColor(Math.floor(Math.random()*16777215).toString(16))
         .setThumbnail(gifLink)
-        .setDescription(this.emoji+ " <@!" + message.author.id + "> " +  this.uniqueText + ' ' +  (text) + ' ' + this.emoji);
+        .setDescription(`${message.author} pats ${text}`);
         //Sending the response  
         try {
         return await message.channel.send(embed)

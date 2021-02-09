@@ -1,7 +1,6 @@
 const {MessageEmbed} = require('discord.js')
 
 const errorEmbed = (command, client, message, title, description) => {
-    // const text = arr.join( '    **OR** \n')
     const d = new Date(); 
     const h = d.getUTCHours();
     const m = d.getUTCMinutes()

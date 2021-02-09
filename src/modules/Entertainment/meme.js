@@ -25,6 +25,8 @@ module.exports = {
     maxArgs: 0,
     highValue: false, 
     emoji: null,
+    module: 'Entertainment',
+
     uniqueText: "None",
     cooldown: 10,
     giflinks: [ 

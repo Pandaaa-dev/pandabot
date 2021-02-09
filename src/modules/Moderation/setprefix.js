@@ -21,6 +21,8 @@ module.exports = {
     ], 
     isNSFW: false,
     minArgs: 1,
+    module: 'Moderation',
+
     maxArgs: 1,
     highValue: false, 
     emoji: null,

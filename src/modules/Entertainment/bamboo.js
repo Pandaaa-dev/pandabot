@@ -17,6 +17,8 @@ module.exports = {
     isNSFW: false,
     minArgs: 0,
     maxArgs: 0,
+    module: 'Entertainment',
+
     highValue: false, 
     emoji: "\`😲\`",
     uniqueText: "gave me a bamboo! I won't have to eat this zoo shit food anymore!",

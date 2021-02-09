@@ -15,6 +15,8 @@ module.exports = {
     minArgs: 1,
     maxArgs: 5,
     highValue: false, 
+    module: 'Entertainment',
+
     emoji: "\`🤗\`",
     uniqueText: "cuddles with",
     giflinks: ["https://media.giphy.com/media/lrPOpnwExOTZYTGyke/giphy.gif", 

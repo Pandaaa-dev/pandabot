@@ -15,6 +15,8 @@ module.exports = {
     minArgs: 1,
     maxArgs: 5,
     highValue: false, 
+    module: 'Entertainment',
+
     emoji: "\`😘\`",
     uniqueText: "blows a kiss to",
     giflinks: [ "https://media1.tenor.com/images/b6dbb9c1a1804380291e48992c10b88b/tenor.gif?itemid=5150642", 

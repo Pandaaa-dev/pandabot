@@ -23,6 +23,7 @@ module.exports = {
     minArgs: 1,
     maxArgs: Infinity,
     highValue: false, 
+    module: 'Entertainment',
     emoji: null,
     uniqueText: "uniquetext",
     giflinks: [ 

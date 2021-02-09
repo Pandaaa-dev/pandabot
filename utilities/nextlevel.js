@@ -1,5 +1,5 @@
 const nextLevel = (points, level) => {
-    const requiredPoints = 1250 * (Math.pow(2, level+1) - 1)
+    const requiredPoints = 500 * (Math.pow(2, level+1) - 1)
     if(requiredPoints > points){
         return false
     } else {

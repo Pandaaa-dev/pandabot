@@ -23,6 +23,8 @@ module.exports = {
     minArgs: 1,
     maxArgs: 5,
     highValue: false, 
+    module: 'Utility',
+
     emoji: null,
     uniqueText: "uniquetext",
     giflinks: [ 

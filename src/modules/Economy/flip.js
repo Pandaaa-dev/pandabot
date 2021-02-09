@@ -23,6 +23,7 @@ module.exports = {
     minArgs: 1,
     maxArgs: 1,
     highValue: false, 
+    module: 'Economy',
     emoji: null,
     uniqueText: "uniquetext",
     giflinks: [ 
@@ -50,7 +51,7 @@ module.exports = {
         const roll = Math.random()
         console.log(roll)
         let multiple = ''
-        if(roll <= 0.5){
+        if(roll <= 0.58){
             multiple = 0
         } else {
             multiple = 2

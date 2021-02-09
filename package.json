@@ -14,7 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "@sujalgoel/reddit-image": "^1.1.1",
+    "array-sort": "^1.0.0",
     "axios": "^0.21.1",
+    "canvas": "^2.6.1",
     "discord.js": "^12.5.1",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.6"

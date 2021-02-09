@@ -25,6 +25,7 @@ module.exports = {
     maxArgs: 2,
     highValue: false, 
     emoji: null,
+    module: 'Economy',
     uniqueText: "uniquetext",
     giflinks: [ 
         // Gif links for the embed

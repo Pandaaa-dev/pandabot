@@ -2,7 +2,7 @@ const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
-    name: 'Kick',
+    name: 'kick',
     description: 'A simple smooch to make your day better!', 
     usage(prefix){
         const returnArray = []
@@ -16,6 +16,8 @@ module.exports = {
     isNSFW: false,
     minArgs: 1,
     maxArgs: 10,
+    module: 'Moderation',
+
     highValue: true, 
     emoji: null,
     uniqueText: "was kicked by",
@@ -26,41 +28,42 @@ module.exports = {
                 ],
     async execute( message, args, text, client,connection){
         message.delete()
-        message.mentions.users.map(user=> {
-           const member = message.guild.member(user)
-
-           //Checking if the user is kickable by the bot or not
-           if(!member.kickable){
-              const embed = errorEmbed(null, client, message, "I dont have permissions!", "I do not have the required permissions for this command! Please give me the following permissions:\n " +  "\`" +this.requiredPermissions.join('\` and \n \`') + "\`")
-            message.channel.send(embed)
-            return  
-           }
+        const guildConfig = client.guilds_config.get(message.guild.id)
+        const member = message.mentions.users.first()
+        if(!member) return
+        const guildMember = message.guild.member(member)
+        console.log(guildMember.kickable)
+        if(!guildMember.kickable){
+            const embed = errorEmbed(null, client, message, "I dont have permissions!", "I do not have the required permissions for this command! Or, the member is not Kickable. Please give me the following permissions:\n " +  "\`" +this.requiredPermissions.join('\` and \n \`') + "\`")
+            return message.channel.send(embed)
+        }
 
            //Member is Kickable
+            args.shift()
+            let reason = ''
+           if(args.length > 0){
+               reason = args.join(' ')
+           } 
 
-           //Checking if the message author gave a reason
-           let containsReason= false
-           args.forEach(arg => {
-               if(arg.startsWith("%")){
-                   containsReason = true
-               }
-           })
-           let reason = ' '
+            reason = reason + `\` - by ${message.author.tag}\``
 
-           if(containsReason){
-                reason = args.join(" ").split("%").pop()
-           }
-            reason = reason + ` - by ${message.author.tag}`
-           // kicking the person with or without the reason
-           member.kick(reason).then((res, err) => {
+        //    kicking the person with or without the reason
+           
+        guildMember.kick(reason).then( async (res, err) => {
                if(err) {
                    //If something wrong happens which probably wont but who knows life is fucked
                    message.send('Something Wrong happened...')
                } 
                //Sending the response to the appropriate channel 
                const embed = basicEmbed(client, message, args, text, this.name, "👢" , `<@${member.id}> was *kicked.* \n Reason: \`${reason}\``, this.giflinks)
-               message.channel.send(embed)
+              await message.channel.send(embed)
+               
+               if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
+
+               client.emit('customlog', message, `Ordered to *Kick*`, guildConfig.loggingchannelid,  `*Order by:* ${message.author}\n*Type:* **Kick**\n*Target:* ${member}\n${reason?`*Reason:*${reason}`: ''}` )
            })
-        })
+    
     }
 }
+
+// (connection, client, message, title, channelid, string)

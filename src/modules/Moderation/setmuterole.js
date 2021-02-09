@@ -24,6 +24,9 @@ module.exports = {
     maxArgs: 1,
     highValue: false, 
     emoji: null,
+    cooldown: 120,
+    module: 'Moderation',
+
     uniqueText: "Set the mute role to ",
     giflinks: [ 
         // Gif links for the embed
@@ -51,17 +54,18 @@ module.exports = {
         console.log(client.guilds_config.get(message.guild.id).muterole)
         message.channel.send(basicEmbed(client, message, args, text, "Mute Role Changed!","👍", `${this.uniqueText} <@${newRole.id}>` ))
         message.guild.channels.cache.forEach(channel => {
-                if(channel.type != 'dm' || channel.type != 'voice'){
-                    const prevOvr = []
-                    channel.permissionOverwrites.forEach(ovr => prevOvr.push(ovr))
+                if(channel.type != 'voice'){
+                    // const prevOvr = []
+                    // channel.permissionOverwrites.forEach(ovr => prevOvr.push(ovr))
                     channel.createOverwrite(newRole, {
                         SEND_MESSAGES: false,
                         EMBED_LINKS:false,
                         ATTACH_FILES:false,
                         ADD_REACTIONS:false
-                    })
-                }   
+                    }, 'Set Mute Role'
+                )
+            }   
 
-            })
+       })
     }
 }

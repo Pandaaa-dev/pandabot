@@ -25,6 +25,8 @@ module.exports = {
     highValue: false, 
     emoji: null,
     uniqueText: "ugh",
+    module: 'Utility',
+
     giflinks: [ 
         // Gif links for the embed
     ],

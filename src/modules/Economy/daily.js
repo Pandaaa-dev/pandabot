@@ -23,6 +23,7 @@ module.exports = {
     isNSFW: false,
     minArgs: 0,
     maxArgs: 0,
+    module: 'Economy',
     highValue: false, 
     emoji: null,
     cooldown: 'econdaily',

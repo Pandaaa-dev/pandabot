@@ -23,6 +23,8 @@ module.exports = {
     maxArgs: 10,
     highValue: false, 
     emoji: '😲',
+    module: 'Moderation',
+
     uniqueText: "was unbanned",
     giflinks: [ 
         //Gif links if any  
@@ -30,18 +32,22 @@ module.exports = {
     async execute( message, args, text, client,connection){
             message.delete()
         const bannedMembersCollection = await message.guild.fetchBans()
+        const guildConfig = client.guilds_config.get(message.guild.id)
 
         //Going through All args
             args.forEach(arg => {
                 if(bannedMembersCollection.has(arg)){
-                    message.guild.members.unban(arg).then((res,rej) => {
+                    message.guild.members.unban(arg).then(async (res,rej) => {
                         if(rej){
                             console.log(rej)
                         }
                         const description = `User **unbanned**:  
                                             <@${arg}>`
                         const embed = basicEmbed(client, message, args, text, "Unban", this.emoji, description, this.giflinks)
-                        message.channel.send(embed)
+                        await message.channel.send(embed)
+                        if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
+                        client.emit('customlog', message, `Ordered to *Unban*`, guildConfig.loggingchannelid,  `*Order by:* ${message.author}\n*Type:* **Unban**\n*Target:* ${arg}` )
+
                         return
                     })
                 

@@ -25,6 +25,7 @@ module.exports = {
     maxArgs: 1,
     highValue: false, 
     emoji: null,
+    module: 'Economy',
     uniqueText: "uniquetext",
     giflinks: [ 
         // Gif links for the embed
@@ -51,15 +52,15 @@ module.exports = {
         const roll = Math.floor(Math.random()*1000)
         console.log(roll)
         let multiple = ''
-        if(roll >=0 && roll <300){
+        if(roll >=0 && roll <500){
             multiple = 0
         }
-        if(roll >=300 && roll <600){
+        if(roll >=500 && roll <800){
             multiple = 1
         } 
-        if(roll >= 600 && roll < 850){
+        if(roll >= 800 && roll < 900){
             multiple = 2 
-        } if(roll >= 850 && roll < 990){
+        } if(roll >= 900 && roll < 990){
             multiple = 4
         } if(roll >= 990 && roll <= 1000){
             multiple = 10

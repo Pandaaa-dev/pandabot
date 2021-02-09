@@ -22,6 +22,7 @@ module.exports = {
     isNSFW: false,
     minArgs: 1,
     maxArgs: 1,
+    module: 'Economy',
     highValue: false, 
     emoji: null,
     uniqueText: "uniquetext",

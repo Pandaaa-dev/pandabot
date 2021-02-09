@@ -23,6 +23,8 @@ module.exports = {
     minArgs: 2,
     maxArgs: 2,
     highValue: false, 
+    module: 'Moderation',
+
     emoji: null,
     uniqueText: "uniquetext",
     giflinks: [ 
@@ -30,6 +32,7 @@ module.exports = {
     ],
     async execute( message, args, text, client){
            const personToPunish = message.mentions.users.first()
+           const guildConfig = client.guilds_config.get(message.guild.id)
 
            if(!personToPunish){
                return message.channel.send(basicEmbed(client, message, args, text, `No users mentioned!`, `>:(`, `You did not mention any user!`))
@@ -99,6 +102,10 @@ module.exports = {
                         }
                     })
                 },(time * timeMupltiple), [guild, personToPunish]);
+                if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
+
+                client.emit('customlog', message, `Ordered to *Punish*`, guildConfig.loggingchannelid,  `*Order by:* ${message.author}\n*Type:* **Punish**\n*Target:* ${personToPunish}\n*Duration:* ${time + ` ${denoter}`}` )
+
         }
 
     }

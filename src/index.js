@@ -2,31 +2,33 @@ const Discord= require('discord.js')
 const {TOKEN} = require('../config.json')
 const fs = require('fs');
 const path = require('path');
-const client = new Discord.Client() ;
+const client = new Discord.Client({
+    messageCacheMaxSize: 200,
+    messageCacheLifetime:  1209600,
+    messageSweepInterval:  1209600,
+  });
 const cmdHandler = require('../cmdHandler')
 require('./db/db')
-
 const connection = require('./db/db');
-const { isRegExp } = require('util');
 const nextLevel = require('../utilities/nextlevel')
 const basicEmbed = require('../utilities/basicEmbed');
-
+const descEmbed = require('../utilities/onlyDescEmbed');
 
 client.commands = new Discord.Collection() 
-
-client.guilds_config = new Discord.Collection()
+client.guilds_config = new Discord.Collection() //guild delete change
 client.bot_config = new Discord.Collection();
-client.xp_level = new Discord.Collection()
-client.economy = new Discord.Collection()
-client.muted_members = new Discord.Collection()
-client.noPictureChannels = new Discord.Collection()
-client.onlyPictureChannels = new Discord.Collection()
-client.noLinkChannels = new Discord.Collection()
-client.banned_words = new Discord.Collection()
-client.cooldowns = new Discord.Collection();
+client.xp_level = new Discord.Collection();
+client.economy = new Discord.Collection();
+client.muted_members = new Discord.Collection();//guild delete change
+client.noPictureChannels = new Discord.Collection(); //guild delete change
+client.onlyPictureChannels = new Discord.Collection(); //guild delete change
+client.noLinkChannels = new Discord.Collection(); //guild delete change
+client.banned_words = new Discord.Collection(); //guild delete change
+client.cooldowns = new Discord.Collection(); //guild delete change
 client.shop = new Discord.Collection();
-client.tickets= new Discord.Collection();
+client.tickets= new Discord.Collection(); 
 client.xpTimestamps= new Discord.Collection();
+client.waifu= new Discord.Collection();
 
 
 client.once('ready', async () => {
@@ -34,21 +36,27 @@ client.once('ready', async () => {
     const _1 = {
         emoji: `⭐`,
         emojiName: `stars`,
-        perMessageXP: 8,
+        perMessageXP: 15,
         dailyEcon: 50,
         econInterval: 12,
-        award5: 150,
-        award15: 300,
-        award20: 500,
-        award30: 750,
-        award35: 1000,
-        award40: 1500,
-        award45: 2500,
-        award50: 3000,
+        award5: 500,
+        award10: 1000,
+        award15: 1500,
+        award20: 2000,
+        award25: 2500,
+        award30: 3000,
+        award35: 3500,
+        award40: 4000,
+        award45: 4500,
+        award50: 5000,
     }
 
     client.bot_config.set('_1', _1)
 
+    client.guilds.cache.forEach(guild => {
+        // client.xp_level.set(guild.id, new Discord.Collection())
+        client.xpTimestamps.set(guild.id, new Discord.Collection())
+    })
     
     connection.query(`SELECT * FROM guild_config.guild_details`, (err, res)=> {
         if(err) console.log(err)
@@ -74,7 +82,19 @@ client.once('ready', async () => {
             client.economy.set(eachuser.userid, eachuser)
         })
     })
+    connection.query(`SELECT * FROM guild_config.waifu`, (err, res)=> {
+        if(err) console.log(err)
+        res.forEach(eachWaifu => {
+            client.waifu.set(eachWaifu.waifu, eachWaifu)
+        })
+    })
     connection.query(`SELECT * FROM guild_config.only_pictures`, (err, res)=> {
+        if(err) console.log(err)
+        res.forEach(eachChannel => {
+            client.onlyPictureChannels.set(eachChannel.channelid, eachChannel)
+        })
+    })
+    connection.query(`SELECT * FROM guild_config.no_pictures`, (err, res)=> {
         if(err) console.log(err)
         res.forEach(eachChannel => {
             client.noPictureChannels.set(eachChannel.channelid, eachChannel)
@@ -93,7 +113,6 @@ client.once('ready', async () => {
         if(!res.length) return 
         res.forEach(word => {
             client.banned_words.set(word.id, word)
-
         })
         // console.log(client.banned_words.array().pop().id)
     })
@@ -103,10 +122,17 @@ client.once('ready', async () => {
             client.noLinkChannels.set(eachChannel.channelid, eachChannel)
         })
     })
-    console.log(client.user.username + ' has logged in!')
-    client.guilds.cache.forEach(guild => {
-        client.xp_level.set(guild.id, new Discord.Collection())
+    connection.query(`SELECT * FROM guild_config.xp_level`, (err, res)=> {
+        if(err) console.log(err)
+        res.forEach(eachXP => {
+            if(eachXP){ 
+                client.xp_level.set(eachXP.userid, eachXP)
+            }
+        })
     })
+
+    console.log(client.user.username + ' has logged in!')
+
     //Initiating the command Handler
     const moduleDir = './modules'
     const Fpath = path.join(__dirname,moduleDir)
@@ -115,7 +141,7 @@ client.once('ready', async () => {
     rootModuleFolder.forEach(singularModule => {
         const singularModuleFilePath = path.join(__dirname, moduleDir, singularModule);
         const files = fs.readdirSync(singularModuleFilePath)
-        console.log(files.length)
+        // console.log(files.length)
         files.forEach(file => {
             const filePath = path.join(__dirname, moduleDir, singularModule, file)
             const command = require(filePath)
@@ -162,10 +188,19 @@ client.once('ready', async () => {
             if (timestamps.has(message.author.id)) {
                 const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
                 if (now < expirationTime) {
-                    const timeLeft = (expirationTime - now) / 1000;
+                    let timeLeft = (expirationTime - now) / 1000;
+                    let denoter = 'second(s)'
+                    if(timeLeft >= 60 && timeLeft < 3600){
+                        timeLeft = (timeLeft/60).toFixed(1)
+                        denoter = 'minute(s)'
+                    } 
+                    if(timeLeft >= 3600){
+                        timeLeft = (timeLeft/3600).toFixed(1)
+                        denoter = 'hour(s)' 
+                    }
                     const text = args.join(' ')
                     message.delete()
-                    return message.channel.send(basicEmbed(client, message, args, text, `Too many Commands!`, '>:(', `You are using the ${command} command too many times! please wait **${timeLeft > 3600 ? (Math.floor(timeLeft/3600)) :timeLeft.toFixed(1)} more ${timeLeft > 3600 ? 'hour(s)' : 'second(s)'}** to use it again.`))
+                    return message.channel.send(descEmbed(`You are using the ${command} command too many times! please wait **${timeLeft} more ${denoter}** to use it again.`))
                 }
             }
             timestamps.set(message.author.id, now);
@@ -183,22 +218,7 @@ client.once('ready', async () => {
     })
 
 
-    client.on('guildMemberAdd', async member => {
-        const guildConfig = client.guilds_config.get(member.guild.id)
-        const guild = client.guilds_config.get(member.guild.id);
-        if(guild.nonewaccounts <0 || !guild.nonewaccounts) return
-        const memberAccountTimestamp =  member.user.createdTimestamp/(1000*60*60*24)
-        const presentTimestamp = Date.now()/(1000*60*60*24)
-        const accountAge = presentTimestamp - memberAccountTimestamp
-        if(accountAge <= guild.nonewaccounts){
-            member.kick("Account not older than the given age.")
-        }
-       if(client.muted_members.get(member.id)){
-           if(member.guild.roles.cache.find(role => role.id == guildConfig.muterole)){
-           member.roles.add(guildConfig.muterole)
-       }
-        }
-    })
+
 
     client.on('guildCreate', async guild => {
         const id = guild.id.toString()
@@ -213,7 +233,6 @@ client.once('ready', async () => {
         values("${id}", "${prefix}", ${premium}, ${privatelog}, ${publiclog}, ${nonewaccounts}, ${muterole});
         `, (err, res) => {
             if(err) console.log(err);
-            console.log(res)
             client.guilds_config.set(id, {
                 id,
                 prefix,
@@ -222,14 +241,26 @@ client.once('ready', async () => {
                 publiclog,
                 muterole
             })
-
-            console.log(client.guilds_config.get(id))
-
         })
     })
 
+
+
+
+
+
+
+
+    
     client.on('automod', async (client, message) => {
         // Handling Words to be deleted ***{
+            const guild = message.guild
+            if(!guild) return
+            const guildid = message.channel.guild.id
+            const guildConfig = client.guilds_config.get(guildid)
+            const prefix = guildConfig.prefix
+            if (message.content.startsWith(prefix) || message.author.bot) return;
+            if(client.user.id === message.author.id) return
             const bannedWords = []
             const args = message.content.split(' ')
             let messageDeleted = false
@@ -282,7 +313,8 @@ client.once('ready', async () => {
 
             //Cooldown because spamming shouldnt have xp rewarded.
         const now = Date.now();
-        const timestampsForUser = client.xpTimestamps.get(message.author.id);
+        const guildCollForCooldown = client.xpTimestamps.get(message.guild.id)
+        const timestampsForUser = guildCollForCooldown.get(message.author.id);
         let cooldownAmount = 60000    
         if (timestampsForUser) {
             const expirationTime = timestampsForUser + cooldownAmount;
@@ -290,17 +322,19 @@ client.once('ready', async () => {
                 return
             }
         }
-        client.xpTimestamps.set(message.author.id, now);
-        setTimeout(() => client.xpTimestamps.delete(message.author.id), cooldownAmount);   
+        guildCollForCooldown.set(message.author.id, now);
+        setTimeout(() => {
+            if(client.xpTimestamps.get(message.guild.id)) guildCollForCooldown.delete(message.author.id)
+        }, cooldownAmount);   
             //cooldown Code end 
 
             //XP addition code
-        const guildXpColl = client.xp_level.get(message.guild.id)
-        const userxp = guildXpColl.get(message.author.id)
-        let level = 1
+        const userxp = client.xp_level.get(message.author.id)
+        const botConfig = client.bot_config.get('_1')
+        let level = 0
         let points = 0
         if(!userxp){
-            level = 1
+            level = 0
             points = 0
         } else {
             level = userxp.level
@@ -309,10 +343,27 @@ client.once('ready', async () => {
         points = points + client.bot_config.get('_1').perMessageXP
         const levelUp = nextLevel(points, level)
         if(levelUp){
+            const userEcon = await client.economy.get(message.author.id)
+            if(!userEcon){
+                userPoints = 0
+            } else if(userEcon){
+                userPoints = userEcon.points
+            }
             level = level+1
+            
+            if(`${'award'+level.toString()}` in botConfig){
+                const award = botConfig['award' + level.toString()]
+                    let Econpoints = userPoints + award
+                    client.economy.set(message.author.id, {
+                        userid: message.author.id,
+                        points: Econpoints
+                    })
+
+                    message.channel.send(descEmbed(`You levelled up to level ${level}! As a result, you have earned ${award}${botConfig.emoji} as your prize!`)) 
+            }
         }
-        console.log(userxp)
-        guildXpColl.set(message.author.id, {
+        // console.log(userxp)
+        client.xp_level.set(message.author.id, {
             guildid: message.guild.id,
             userid: message.author.id,
             points: points,
@@ -320,54 +371,92 @@ client.once('ready', async () => {
         })
     })
 
-    // const guild_config = client.guilds_config.get(message.guild.id)
-
-    // if(!guild_config.privatelog || !guild_config.publiclog) return 
-
     setInterval((() => {
         connection.query("SELECT * FROM GUILD_CONFIG.MUTED_MEMBERS WHERE expiresin < current_timestamp()", (rej, res) => {
             if(rej) console.log(rej)
-            console.log('Hopefully its working?')
             let v = new Date()
-            console.log(res, v.toISOString(), res.length>0)
             if(res.length > 0){
                 res.forEach(member => {
                     const guild = client.guilds.cache.find(guild => guild.id == member.guildid)
                     if(!guild || guild == undefined ) return
                       const roleToDeletemember = guild.members.cache.find(member => member.id == +member.userid)
-                      console.log(member)
                       if(!member || member == undefined) return
                       const muteroleid = client.guilds_config.get(member.guildid).muterole
                       const guildMember = guild.member(member.userid)
                       guildMember.roles.remove(muteroleid)
                     connection.query("DELETE FROM GUILD_CONFIG.MUTED_MEMBERS WHERE userid = \"" + member.userid + "\"", (rej, res)=> {
                         if(rej) console.log(rej)
-                        console.log(res, "Done")
                     })
                 })
             }
         })
-    }), (60000*15))
+    }), (60000*5))
 
-client.login(TOKEN)
+    setInterval((() => {
+          connection.query(`DELETE FROM guild_config.xp_level;`, (res, rej) => {
+            // const allXP = []
+           const allXP = []
+           const allxpButObj = client.xp_level.array()
+           if(!allxpButObj) return
+           allxpButObj.forEach(obj => {
+               const array = Object.values(obj)
+               allXP.push(array)
+           })
+            if(!allXP) return
+            connection.query(`INSERT into guild_config.xp_level (guildid, userid, points, level) VALUES ?`, [allXP])
+            })
 
-    const comparisonArr = []
+    }), (60000*2.5))
+
+    setInterval((() => {
+          connection.query(`DELETE FROM guild_config.waifu;`, (res, rej) => {
+           const allWaifu = []
+           const allWaifuButObj = client.waifu.array()
+           if(!allWaifuButObj) return
+           allWaifuButObj.forEach(obj => {
+               const array = Object.values(obj)
+               allWaifu.push(array)
+           })
+            if(!allWaifu) return
+            if(allWaifu.length == 0) return
+            connection.query(`INSERT into guild_config.waifu (waifu, husbandu, amount, divorceCount) VALUES ?`, [allWaifu], (err,res) => {
+                if(err) console.log(err)
+            })
+            })
+    }), (60000*1))
+
+    
     setInterval(() => {
         connection.query(`DELETE FROM guild_config.economy;`, (res, rej) => {
             const array = client.economy.array(); 
             const arrayForDB = [];
-            console.log(array.length)
             if(array.length < 1) return
             array.forEach(obj => {
                 const newArr = Object.values(obj)
                 arrayForDB.push(newArr)
             })
-        connection.query(`INSERT into guild_config.economy (userid, points) VALUES ?`, [arrayForDB])
+            connection.query(`INSERT into guild_config.economy (userid, points) VALUES ?`, [arrayForDB])
         });
-
+        
     }, 60000 * 1.5);
+    
+    fs.readdir(path.join(__dirname, '../utilities/Logging'), (err, files) => { // We use the method readdir to read what is in the events folder
+        if (err) return console.error(err); // If there is an error during the process to read all contents of the ./events folder, throw an error in the console
+        files.forEach(file => {
+            const eventFunction = require(path.join(__dirname, `../utilities/Logging/${file}` )); // Here we require the event file of the events folder
+            if (eventFunction.disabled) return; // Check if the eventFunction is disabled. If yes return without any error
+    
+            const event = eventFunction.event || file.split('.')[0]; // Get the exact name of the event from the eventFunction variable. If it's not given, the code just uses the name of the file as name of the event
+            const emitter = (typeof eventFunction.emitter === 'string' ? client[eventFunction.emitter] : eventFunction.emitter) || client; // Here we define our emitter. This is in our case the client (the bot)
+            const once = eventFunction.once; // A simple variable which returns if the event should run once
+    
+            // Try catch block to throw an error if the code in try{} doesn't work
+            try {
+                emitter[once ? 'once' : 'on'](event, async (...args) => await eventFunction.run(connection, client, ...args)); // Run the event using the above defined emitter (client)
+            } catch (error) {
+                // console.error(error.stack); // If there is an error, console log the error stack message
+            }
+        });
+    });
 
-
-module.exports = {
-    client
-}
+client.login(TOKEN)

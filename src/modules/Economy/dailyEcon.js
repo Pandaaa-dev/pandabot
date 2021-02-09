@@ -24,6 +24,7 @@ module.exports = {
     maxArgs: 1,
     highValue: false, 
     emoji: null,
+    module: 'Economy',
     owner: true,
     uniqueText: "uniquetext",
     giflinks: [ 

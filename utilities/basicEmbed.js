@@ -8,8 +8,8 @@ const basicEmbed = (client, message, args, text, title, titleEmoji,  desc,  thum
     .setColor(newColor)
     .setDescription(desc)
     .setThumbnail(thumbnailArr != null? thumbnailArr[Math.floor(Math.random() * thumbnailArr.length)] : null)
-    .setTimestamp()
-    .setFooter(`${message.guild.name} || ${client.user.username}`, iconURL );
+     .setTimestamp()
+    .setFooter(`${message.guild.name} ||`, iconURL );
     return embed
 }
 

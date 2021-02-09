@@ -37,8 +37,7 @@ connection.query(`CREATE TABLE IF NOT EXISTS xp_level(
                   guildid varchar(255),
                   userid varchar(255),
                   points int,
-                  level int,
-                  primary key(guildid));`, (err, res)=> {
+                  level int);`, (err, res)=> {
 if(err) console.log(err)
 })
 connection.query(`CREATE TABLE IF NOT EXISTS economy(
@@ -69,6 +68,12 @@ connection.query(`CREATE TABLE IF NOT EXISTS only_pictures(
 if(err) console.log(err)
 })
 
+connection.query(`CREATE TABLE IF NOT EXISTS no_pictures(
+  channelid varchar(255),
+  guildid varchar(255));`, (err, res)=> {
+if(err) console.log(err)
+})
+
 connection.query(`CREATE TABLE IF NOT EXISTS no_links(
   channelid varchar(255),
   guildid varchar(255));`, (err, res)=> {
@@ -93,6 +98,16 @@ connection.query(`CREATE TABLE IF NOT EXISTS tickets(
 if(err) console.log(err)
 })
 
+connection.query(`CREATE TABLE IF NOT EXISTS waifu(
+  waifu varchar(255),
+  husbandu varchar(255),
+  amount int,
+  divorceCount int DEFAULT 0,
+  primary key(waifu));`
+  , (err, res)=> {
+if(err) console.log(err)
+})
+
 connection.query(`CREATE TABLE IF NOT EXISTS level_rewards(
   id int NOT NULL AUTO_INCREMENT, 
   type varchar(255),
@@ -113,8 +128,7 @@ if(err) console.log(err)
 
 
 
-// connection.query(`ALTER TABLE guild_details 
-//                   ADD lastticket int DEFAULT 0;`
+// connection.query(`DROP TABLE  guild_config.waifu;`
 //   , (err, res)=> {
 // if(err) console.log(err)
 // })

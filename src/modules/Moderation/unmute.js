@@ -25,11 +25,14 @@ module.exports = {
     highValue: false, 
     emoji: null,
     uniqueText: "was unmuted",
+    module: 'Moderation',
+
     giflinks: [ 
         
     ],
     async execute( message, args, text, client,connection){
           const guild_config = client.guilds_config.get(message.guild.id);
+
             console.log(guild_config);
             if(!guild_config.muterole){
                 return message.channel.send(basicEmbed(client, message, args, text, "No Mute Role!", "😲", 
@@ -53,5 +56,15 @@ module.exports = {
 
           client.muted_members.delete(mentionedMemberToUnmute.id)
           mentionedMemberToUnmute.roles.remove(hasMuteRole)
+
+          connection.query("DELETE FROM GUILD_CONFIG.MUTED_MEMBERS WHERE userid = \"" + personToUnmute.id + "\"", (rej, res)=> {
+            if(rej) console.log(rej)
+            console.log(res, "Done")
+        })
+
+
+          if(guild_config.logging === 0 || !guild_config.loggingchannelid) return
+          client.emit('customlog', message, `Ordered to *Unmute*`, guildConfig.loggingchannelid,  `*Order by:* ${message.author}\n*Type:* **Unmute**\n*Target:* ${personToUnmute}` )
+
     }
 }

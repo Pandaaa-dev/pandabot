@@ -24,6 +24,8 @@ module.exports = {
     maxArgs: 0,
     highValue: false, 
     emoji: null,
+    module: 'Ticket',
+
     // cooldown: 600,
     uniqueText: "uniquetext",
     giflinks: [ 
@@ -34,7 +36,6 @@ module.exports = {
 
          const actualChannel = await message.guild.channels.cache.find(channel => channel.id == channeltoDelete.channelid)
 
-         console.log(channeltoDelete.id)
          if(!actualChannel) return
          if(!channeltoDelete){
              return message.channel.send(basicEmbed(client, message,args, text, `Incorrect Config`, '-.-', `You are either not the person that made this ticket or youre trying to close the wrong channel.`))
@@ -48,7 +49,7 @@ module.exports = {
                         AND channelid = "${message.channel.id}" 
                         AND userid = "${message.author.id}");`)
 
-         console.log( await client.tickets.delete(channeltoDelete.id))
+         await client.tickets.delete(channeltoDelete.id)
          await message.channel.delete()
     }
 }

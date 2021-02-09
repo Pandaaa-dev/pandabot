@@ -25,6 +25,8 @@ module.exports = {
     highValue: false, 
     emoji: null,
     uniqueText: "uniquetext",
+    module: 'Ticket',
+
     giflinks: [ 
         // Gif links for the embed
     ],

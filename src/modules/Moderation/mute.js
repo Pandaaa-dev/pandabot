@@ -22,6 +22,8 @@ module.exports = {
     minArgs: 2,
     maxArgs: 10,
     highValue: false, 
+    module: 'Moderation',
+
     emoji: null,
     uniqueText: "was muted by",
     giflinks: [ 
@@ -40,9 +42,10 @@ module.exports = {
         }
     
         let  mutedMember = message.mentions.users.first()
-        console.log(args.splice(0, 1))
+        console.log(args.splice(1, 1))
          const argsWithoutMention = args
-
+        console.log(argsWithoutMention, 'args')
+        console.log(argsWithoutMention[0], 'args')
          if(!argsWithoutMention[0].endsWith('m') || argsWithoutMention[0].split('').length > 5 || argsWithoutMention[0].split('').length < 1 ){
            return message.channel.send(basicEmbed(client, message, args, text, "Wrong Usage!", "😲", 
             `The appropriate usage: \n \`${this.usage(prefix).join('\n')}\n`))
@@ -91,9 +94,11 @@ module.exports = {
                      currtime: currtime,
                     expirydate: dbdate
                  } )
-
-             return  message.channel.send(basicEmbed(client, message, args, text,
+              message.channel.send(basicEmbed(client, message, args, text,
              "Muted!", "😲", `<@${mutedMember.id}> was muted for ${+argsWithoutMention[0].split('')[0]} minutes! \n\n \` - By ${message.author.username}\``))
+             if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
+             client.emit('customlog', message, `Ordered to *Mute*`, guildConfig.loggingchannelid,  `*Order by:* ${message.author}\n*Type:* **Mute**\n*Target:* ${mutedMember}\n*For:*${+argsWithoutMention[0].split('')[0]} minutes` )
+             return
                  
          }
           if(argsWithoutMention[0].split('').length == 3 ){
@@ -115,8 +120,11 @@ module.exports = {
                         currtime: currtime,
                        expirydate: dbdate
                       } )
-                      return  message.channel.send(basicEmbed(client, message, args, text,
-                        "Muted!", "😲", `<@${mutedMember.id}> was muted for ${number} minutes! \n\n \` - By ${message.author.username}\``));
+                      message.channel.send(basicEmbed(client, message, args, text,
+                       "Muted!", "😲", `<@${mutedMember.id}> was muted for ${number} minutes! \n\n \` - By ${message.author.username}\``));
+                       if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
+                  client.emit('customlog', message, `Ordered to *Mute*`, guildConfig.loggingchannelid,  `*Order by:* ${message.author}\n*Type:* **Mute**\n*Target:* ${mutedMember}\n*For:*${number} minutes` )
+                return
 
             } 
 
@@ -139,8 +147,11 @@ module.exports = {
                           currtime: currtime,
                          expirydate: dbdate
                         } )
-                    return  message.channel.send(basicEmbed(client, message, args, text,
+                    message.channel.send(basicEmbed(client, message, args, text,
                       "Muted!", "😲", `<@${mutedMember.id}> was muted for ${number} minutes! \n\n \` - By ${message.author.username}\``))
+                      if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
+                      client.emit('customlog', message, `Ordered to *Mute*`, guildConfig.loggingchannelid,  `*Order by:* ${message.author}\n*Type:* **Mute**\n*Target:* ${mutedMember}\n*For:*${number} minutes` )
+                    return
               } 
        
          

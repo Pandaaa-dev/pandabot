@@ -21,6 +21,8 @@ module.exports = {
     isNSFW: false,
     minArgs: 0,
     maxArgs: 0,
+    module: 'Entertainment',
+
     highValue: false, 
     emoji: null,
     uniqueText: "uniquetext",
