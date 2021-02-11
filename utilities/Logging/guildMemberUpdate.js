@@ -5,6 +5,7 @@ module.exports= {
     async run(connection, client, oldMember, newMember){
         const actualGuild = newMember.guild
         const guildConfig = client.guilds_config.get(actualGuild.id)
+        if(!guildConfig || guildConfig.sightseeing === 1) return
         if(!guildConfig) return
         if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
          const isGuild = client.guilds.cache.get(actualGuild.id)

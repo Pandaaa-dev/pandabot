@@ -5,15 +5,15 @@ const descEmbed = require('../../../utilities/onlyDescEmbed')
 
 module.exports = {
     name: 'divorce',
-    description: 'desc', 
+    description: 'Divorce a waifu', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`prefix${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`prefix${this.name.toLowerCase()} @person\``
         // const multiple = `\`prefix${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
@@ -70,7 +70,7 @@ module.exports = {
             })
             
             client.waifu.delete(requiredWaifu.id);
-            return message.channel.send(basicEmbed(client, message, args, text, `Waifu Divorced!`, ':D', `${message.author} divorced ${requiredWaifu}!\nYou are a free person now ${message.author.username}! Maybe dont go too overboard with the freedom :wink:. Also, you and your ***ex-waifu*** were gifted ${amountToBeAdded}${botConfig.emoji} for the money you spent on your waifu after working hard to earn it!.`))
+            return message.channel.send(basicEmbed(client, message, args, text, `Waifu Divorced!`, '😃', `${message.author} divorced ${requiredWaifu}!\nYou are a free person now ${message.author.username}! Maybe dont go too overboard with the freedom :wink:. Also, you and your ***ex-waifu*** were gifted ${amountToBeAdded}${botConfig.emoji} for the money you spent on your waifu after working hard to earn it!.`))
 
     }
 }

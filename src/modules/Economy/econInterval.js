@@ -4,15 +4,15 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
     name: 'econint',
-    description: 'Changes the economy interval', 
+    description: 'Changes the economy daily interval', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()} <number of hours>\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
@@ -38,7 +38,7 @@ module.exports = {
                 econInterval: +args[0]
             }
             client.bot_config.set('_1', newConfig)
-            message.channel.send(basicEmbed(client, message, args, text, `Economy interval changed`, `${args[0]}`, `*Set the mew economy interval to:* ${args[0]} hours(s) `))
+            message.channel.send(basicEmbed(client, message, args, text, `Economy interval changed`, `${args[0]}`, `*Set the mew economy daily interval to:* ${args[0]} hours(s) `))
  
     }
 }

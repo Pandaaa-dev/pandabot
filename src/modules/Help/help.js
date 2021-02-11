@@ -16,10 +16,12 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
-        // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
-        // returnArray.push(multiple)
+        const basic= `\`${prefix}${this.name.toLowerCase()}\``
+        const module = `\`${prefix}${this.name.toLowerCase()} <module>\``
+        const commandName = `\`${prefix}${this.name.toLowerCase()} <module> <command>\``
+        returnArray.push(basic)
+        returnArray.push(module)
+        returnArray.push(commandName)
         return returnArray
     },
     requiredPermissions: [
@@ -45,7 +47,6 @@ module.exports = {
 
 
         if(args.length == 0){
-             console.log(modules)
              const embed = new MessageEmbed()
              .setColor(Math.floor(Math.random()*16777215).toString(16))
              .setTimestamp()
@@ -61,6 +62,7 @@ module.exports = {
             const isModule = modules.find(module => module.toLowerCase() == args[0].toLowerCase())
             if(!isModule) return
             const allCommands = client.commands.filter(command => {
+
                return command.module.toLowerCase() === isModule.toLowerCase() && !command.owner
             })
 
@@ -76,6 +78,18 @@ module.exports = {
                 embed.addField(`\`${guildConfig.prefix}${command.name}\` `, `\*${command.description}\*`, true)
             }) 
             message.channel.send(embed)
+            if(allCommands.array().length > 25){
+                const restCommands = allCommands.array().slice(24, Infinity)
+                const newEmbed = new MessageEmbed()
+                .setColor(Math.floor(Math.random()*16777215).toString(16))
+                .setFooter('Stay Safe!')
+                .setTimestamp()
+                restCommands.forEach(command => {
+                    newEmbed.addField(`\`${guildConfig.prefix}${command.name}\` `, `\*${command.description}\*`, true)
+
+                })    
+                message.channel.send(newEmbed)
+            }
         }
         if(args.length == 2){
             const isModule = modules.find(module => module.toLowerCase() == args[0].toLowerCase())

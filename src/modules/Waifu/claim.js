@@ -7,15 +7,15 @@ const connection = require('../../db/db')
     
     module.exports = {
         name: 'claim',
-        description: 'Proposes to a user', 
+        description: 'Claim a user for x amount of economy points', 
         usage(prefix){
             const returnArray = []
     
             //Basic usage shown in an array 
     
-            // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+            const single = `\`${prefix}${this.name.toLowerCase()}  @person <amount>\``
             // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-            // returnArray.push(single)
+            returnArray.push(single)
             // returnArray.push(multiple)
             return returnArray
         },
@@ -66,12 +66,12 @@ const connection = require('../../db/db')
 // If the waifu is claimed and the required amount is NOT met
             // console.log((+amount >= (isAlreadyWaifu2.amount + (isAlreadyWaifu2.amount*0.15))))
             if(isAlreadyWaifu2 && (+amount < (isAlreadyWaifu2.amount + (isAlreadyWaifu2.amount*0.15))) ){
-                return message.channel.send(basicEmbed(client, message, args, text, `Already Claimed!`, 'D:', `The person youre trying to claim already has been claimed!\n*(A wise man once said cheating on a person should be punishable by death. Wait no, we like that.)*\n\n**By**: <@${isAlreadyWaifu2.husbandu}>\n**For**: ${isAlreadyWaifu2.amount}\n\n*If you still wanna claim this waifu, you will need to pay more than ${isAlreadyWaifu2.amount} and 15% more :wink:*\n*(A wise man also said everything is buyable. We like that too.)*`))
+                return message.channel.send(basicEmbed(client, message, args, text, `Already Claimed!`, '😲', `The person youre trying to claim already has been claimed!\n*(A wise man once said cheating on a person should be punishable by death. Wait no, we like that.)*\n\n**By**: <@${isAlreadyWaifu2.husbandu}>\n**For**: ${isAlreadyWaifu2.amount}\n\n*If you still wanna claim this waifu, you will need to pay more than ${isAlreadyWaifu2.amount} and 15% more :wink:*\n*(A wise man also said everything is buyable. We like that too.)*`))
             }
 
 
             let decision = false 
-            const question = await message.channel.send(basicEmbed(client, message, args, text, `Claim Request!`, `:D`, `Hey ${personToClaim}, ${message.author} wants to claim you for ***${+args[1]}${botConfig.emoji}***\n\n**Do you accept?**\n
+            const question = await message.channel.send(basicEmbed(client, message, args, text, `Claim Request!`, `😲`, `Hey ${personToClaim}, ${message.author} wants to claim you for ***${+args[1]}${botConfig.emoji}***\n\n**Do you accept?**\n
                                                                                                                         *(The results will be shown in a minute. If the mentioned possibly waifu-to-be doesnt respond within **one minute**, this message will be deleted)*`))
             question.react('✔️');
             question.react('❌');
@@ -95,7 +95,7 @@ const connection = require('../../db/db')
             if(isAlreadyWaifu && isAlreadyWaifu.husbandu === message.author.id) return message.channel.send(descEmbed('You already have this waifu'))
             // If the waifu is claimed and the required amount is NOT met
                         if(isAlreadyWaifu && (+amount < (isAlreadyWaifu.amount + (isAlreadyWaifu.amount*0.15))) ){
-                            return message.channel.send(basicEmbed(client, message, args, text, `Already Claimed!`, 'D:', `The person youre trying to claim already has been claimed!\n*A wise man once said cheating on a person should be punishable by death. Wait no, we say that too.*\n\n**By**: <@${isAlreadyWaifu.husbandu}>\n**For*: ${isAlreadyWaifu.amount}\n*If you still wanna claim this waifu, you will need to pay more than ${isAlreadyWaifu.amount} and 15% more ;)\n*A wise man also said everything is buyable. We say that too.`))
+                            return message.channel.send(basicEmbed(client, message, args, text, `Already Claimed!`, '😲', `The person youre trying to claim already has been claimed!\n*A wise man once said cheating on a person should be punishable by death. Wait no, we say that too.*\n\n**By**: <@${isAlreadyWaifu.husbandu}>\n**For*: ${isAlreadyWaifu.amount}\n*If you still wanna claim this waifu, you will need to pay more than ${isAlreadyWaifu.amount} and 15% more ;)\n*A wise man also said everything is buyable. We say that too.`))
                         }
 
            // If the waifu is claimed and the required amount is met
@@ -150,7 +150,7 @@ const connection = require('../../db/db')
                     divorceCount: 0
                 })
 
-               return message.channel.send(basicEmbed(client, message, args, text, `Waifu **Claimed**`, ':D', `Your new waifu has been claimed! ${personToClaim} is yours now! May your love go all the way!\nYou also got ${amountToBeAdded} ${botConfig.emoji} as a blessing from the previous husbandu *(the waifu and the husbandu also got that amount).* Protect your waifu at all costs!`))
+               return message.channel.send(basicEmbed(client, message, args, text, `Waifu **Claimed**`, '😃', `Your new waifu has been claimed! ${personToClaim} is yours now! May your love go all the way!\nYou also got ${amountToBeAdded} ${botConfig.emoji} as a blessing from the previous husbandu *(the waifu and the husbandu also got that amount).* Protect your waifu at all costs!`))
             }
 
         //If waifu is not claimed
@@ -173,7 +173,7 @@ const connection = require('../../db/db')
                     amount: +args[1],
                     divorceCount: 0
                 })
-            message.channel.send(basicEmbed(client, message, args, text, `Waifu **Claimed**`, ':D', `Your new waifu has been claimed! ${personToClaim} is yours now! May your love go all the way! Protect your waifu at all costs!`))
+            message.channel.send(basicEmbed(client, message, args, text, `Waifu **Claimed**`, '😃', `Your new waifu has been claimed! ${personToClaim} is yours now! May your love go all the way! Protect your waifu at all costs!`))
             }
         }
     }

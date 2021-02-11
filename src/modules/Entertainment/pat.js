@@ -4,16 +4,14 @@ module.exports = {
     description: 'A simple pat to make your day better!', 
     usage(prefix){
         const returnArray = []
-        const single = `\`${prefix}${this.name.toLowerCase()} <person>\``
-        const multiple = `\`${prefix}${this.name.toLowerCase()} <person1> <person2>\``
+        const single = `\`${prefix}${this.name.toLowerCase()} <...text>\`\n*(... means multiple words can be used here)*`
         returnArray.push(single)
-        returnArray.push(multiple)
         return returnArray
     },
     requiredPermissions: [], 
     isNSFW: false,
-    minArgs: 1,
-    maxArgs: 5,
+    minArgs: 0,
+    maxArgs: Infinity,
     highValue: false,
     module: 'Entertainment',
  

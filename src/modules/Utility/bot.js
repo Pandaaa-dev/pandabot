@@ -11,9 +11,9 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
@@ -26,7 +26,6 @@ module.exports = {
     highValue: false, 
     emoji: null,
     module: 'Utility',
-
     uniqueText: "uniquetext",
     giflinks: [ 
 

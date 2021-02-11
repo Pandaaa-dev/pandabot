@@ -10,9 +10,9 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()} <name>\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
@@ -24,7 +24,7 @@ module.exports = {
     maxArgs: 5,
     highValue: false, 
     module: 'Utility',
-
+    owner: true,
     emoji: null,
     uniqueText: "uniquetext",
     giflinks: [ 
@@ -34,7 +34,7 @@ module.exports = {
             message.delete()
             const clientAsMember = message.guild.member(client.user.id)
             clientAsMember.setNickname(text, 'Command').then(res => {
-                return  message.channel.send(basicEmbed(client,message,args,text,`Nickname Changed`, 'D:', `**Nickname changed to:** *${text}*`))
+                return  message.channel.send(basicEmbed(client,message,args,text,`Nickname Changed`, '😲', `**Nickname changed to:** *${text}*`))
             }).catch(e => {
                 console.log(e)
             })

@@ -5,15 +5,15 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
     name: 'give',
-    description: 'Gives a user', 
+    description: 'Gives economy points to a user', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}  @person <amount>\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
@@ -43,7 +43,7 @@ module.exports = {
             points = user.points
         }
 
-        let number = args[0]
+        let number = args[1]
         if(isNaN(number) && number.toLowerCase() !='all' ) return
         if(number =='all'){
             number = points

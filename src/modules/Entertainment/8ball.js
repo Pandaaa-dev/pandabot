@@ -10,9 +10,9 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}  <...question>\`\n*(...question means it doesnt necessarily need to be one word. You can add as many words to ask your desired question here>)*`
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },

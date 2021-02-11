@@ -4,15 +4,15 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
     name: 'prune',
-    description: 'Deletes all messages', 
+    description: 'Deletes x number of messages', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()} <amount>\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },

@@ -12,9 +12,9 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
@@ -63,10 +63,10 @@ module.exports = {
         })
 
         ticketChannel.send(basicEmbed(client, message, args, text, `Ticket ${lastTicketIdx + 1} created`, ``, `**By:** ${message.author}\nPlease wait till the correspoinding officials tend to you. Thank you for your patience`))
-        connection.query(`INSERT INTO guild_config.tickets (guildid, channelid, userid)
+        connection.query(`INSERT INTO s581_GUILD_CONFIG.tickets (guildid, channelid, userid)
                           VALUES(${message.guild.id.toString()}, ${ticketChannel.id.toString()}, ${message.author.id.toString()})`)
 
-        connection.query(`UPDATE guild_config.guild_details
+        connection.query(`UPDATE s581_GUILD_CONFIG.guild_details
                         SET lastticket = ${lastTicketIdx + 1}
                         WHERE guildid = ${message.guild.id}`)
 
@@ -83,7 +83,6 @@ module.exports = {
             ...guildConfig,
             lastticket: lastTicketIdx + 1 
         })
-     
-        // console.log(client.ticke, 'HERE')
+    await  message.channel.send(basicEmbed(client, message, args, text, `Ticket Created!`, '😃', `Hey ${message.author}, we made your ticket! Please visit ${ticketChannel}`))
     }
 }

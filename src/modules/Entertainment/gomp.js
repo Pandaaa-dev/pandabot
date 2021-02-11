@@ -10,7 +10,7 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}  <...text>\`\n*(... means multiple words can be used here)*`
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
         // returnArray.push(single)
         // returnArray.push(multiple)

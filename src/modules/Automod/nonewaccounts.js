@@ -4,20 +4,20 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
     name: 'nonewaccounts',
-    description: 'Kicks all new accounts below selected time', 
+    description: 'On every member joins, it will kick the users that have an account age below the specified date.', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}  <number of days>\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
     requiredPermissions: [
-            //All the required permissions the user and the bot both needs
+        'MANAGE_GUILD',
     ], 
     isNSFW: false,
     minArgs: 1,
@@ -34,7 +34,7 @@ module.exports = {
     async execute( message, args, text, client,connection){
         const guild = message.guild
         const guildconfig = client.guilds_config.get(guild.id)
-        connection.query(`UPDATE ${"guild_config.guild_details"}
+        connection.query(`UPDATE ${"s581_GUILD_CONFIG.guild_details"}
         SET ${"nonewaccounts"} = ${+args[0]}
         WHERE ${"guildid"} = "${message.guild.id}";
         `,)
@@ -42,7 +42,8 @@ module.exports = {
             ...guildconfig,
             nonewaccounts: +args[0]
         }
+        
         client.guilds_config.set(guild.id, newConfig)
-        console.log( client.guilds_config.get(guild.id))
+        await message.channel.send(basicEmbed(client, message, args, text, `Acount Age Validation Set`, '👍', `I will be kicking every user whose account age is below than ${args[0]} from now!`))
     }
 }

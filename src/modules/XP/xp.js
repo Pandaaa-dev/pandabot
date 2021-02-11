@@ -5,6 +5,7 @@ const Canvas = require('canvas')
 const path = require('path')
 const { MessageAttachment } = require('discord.js')
 const arraySort = require('array-sort')
+const descEmbed = require('../../../utilities/onlyDescEmbed')
 
 module.exports = {
     name: 'xp',
@@ -14,9 +15,9 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
@@ -34,6 +35,9 @@ module.exports = {
         // Gif links for the embed
     ],
     async execute( message, args, text, client){
+        const guildConfig = client.guilds_config.get(message.guild.id)
+        if(!guildConfig) return
+        if(guildConfig.sightseeing === 1) return descEmbed('This server is in sightseeing mode! The owner must turn it off first')
         let user = ''
         const mentionedUser = message.mentions.users.first()
         if(mentionedUser){
@@ -71,8 +75,6 @@ module.exports = {
         const guildSortedArray = arraySort(guildArray, 'points', {reverse: true})
         const guildRank = guildSortedArray.findIndex(obj => obj.userid == user.id) +1
         
-        console.log(sortedArray, guildArray)
-        console.log(userxp)
 
         const canvas = Canvas.createCanvas(700, 400)
         let ctx = canvas.getContext('2d');
@@ -87,7 +89,7 @@ module.exports = {
         const avatarURL = await user.displayAvatarURL({format: 'jpg',
                                                                 size: 512})
         const avatarImage = await Canvas.loadImage(avatarURL)
-        console.log(points, level)
+
         ctx.save()
         
         ctx.beginPath()

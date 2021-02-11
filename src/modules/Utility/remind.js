@@ -34,7 +34,7 @@ module.exports = {
         const clientAsMember = message.guild.member(client.user.id)
         message.delete()
         if(!message.channel.permissionsFor(clientAsMember).has(['SEND_MESSAGES', 'EMBED_LINKS'])){
-           return message.channel.send(basicEmbed(client, message, args, text, `Missing Permissions!`, `>:(`, `**Missing Permissions:**\n \`SEND__MESSAGES\`\N\`EMBED__LINKS\``))
+           return message.channel.send(basicEmbed(client, message, args, text, `Missing Permissions!`, `😠`, `**Missing Permissions:**\n \`SEND__MESSAGES\`\N\`EMBED__LINKS\``))
         }
 
        if(args[1].endsWith('m') ||
@@ -47,7 +47,7 @@ module.exports = {
                 array.splice(-1,1)
                 let time = array.join('')
                 if(isNaN(time)){
-                    return message.channel.send(basicEmbed(client, message, args, text, `Not the correct way!`, `>:(`, `Please check the usage: \n ${this.usage(client.guilds_config.get(message.guild.id).prefix).join(' \n')}
+                    return message.channel.send(basicEmbed(client, message, args, text, `Not the correct way!`, `😠`, `Please check the usage: \n ${this.usage(client.guilds_config.get(message.guild.id).prefix).join(' \n')}
                 \n **Acceptable times:** \n *<number>m* (minute), *<number>h* (hour), *<number>d (days)\n *Max day = **7** *`))            }
                 const extraText = args.splice(2, Infinity).join(' ')
                 if(args[1].endsWith('m')){
@@ -86,7 +86,7 @@ module.exports = {
                     }, time * timeMupltiple, [message]);
                     return
                 }
-                    return message.channel.send(basicEmbed(client, message, args, text, `Not the correct way!`, `>:(`, `Please check the usage: \n ${this.usage(client.guilds_config.get(message.guild.id).prefix).join(' \n')}
+                    return message.channel.send(basicEmbed(client, message, args, text, `Not the correct way!`, `😠`, `Please check the usage: \n ${this.usage(client.guilds_config.get(message.guild.id).prefix).join(' \n')}
                     \n **Acceptable times:** \n *<number>m* (minute), *<number>h* (hour), *<number>d (days)\n *Max day = **7** *`));            
         
             }

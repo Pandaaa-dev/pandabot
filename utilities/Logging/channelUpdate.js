@@ -8,6 +8,7 @@ module.exports= {
       const guildid = oldChannel.guild.id 
       const guildConfig = client.guilds_config.get(guildid)  
       if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
+      if(guildConfig.sightseeing === 1) return
       const guild = client.guilds.cache.get(guildid)
       if(!guild) return
       // const newChannel = guild.channels.cache.get(channel.id)

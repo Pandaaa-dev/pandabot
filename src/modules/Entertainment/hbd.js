@@ -4,13 +4,13 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 const entertainmentEmbed = require('../../../utilities/entertainmentEmbed')
 module.exports = {
     name: 'hbd',
-    description: 'Wish someone a happy birthday', 
+    description: 'Wish someone/something a happy birthday', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()} <..text>\`\n*(... means multiple words can be used here)*`
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
         // returnArray.push(single)
         // returnArray.push(multiple)

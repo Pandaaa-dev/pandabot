@@ -9,6 +9,7 @@ module.exports= {
         const isGuild = client.guilds.cache.get(guild.id)
         if(!isGuild) return 
         const guildConfig = client.guilds_config.get(guild.id)
+        if(!guildConfig || guildConfig.sightseeing === 1) return
         if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
         const loggingChannel = guild.channels.cache.get(guildConfig.loggingchannelid)
         if(!loggingChannel) return

@@ -6,6 +6,7 @@ module.exports= {
     once: false,
     async run(connection, client, member){
             const guildConfig = client.guilds_config.get(member.guild.id);
+            if(!guildConfig || guildConfig.sightseeing === 1) return
             if(guildConfig.nonewaccounts > 0 || guildConfig.nonewaccounts) {
                 const memberAccountTimestamp =  member.user.createdTimestamp/(1000*60*60*24)
                 const presentTimestamp = Date.now()/(1000*60*60*24)

@@ -4,20 +4,20 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
     name: 'unbanword',
-    description: 'Unbans a word', 
+    description: 'Unbans a word from the banned database', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}  <word>\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
     requiredPermissions: [
-            //All the required permissions the user and the bot both needs
+        'MANAGE_CHANNELS',
     ], 
     isNSFW: false,
     minArgs: 1,
@@ -34,16 +34,13 @@ module.exports = {
             //  const wordToDelete = wordToDeleteCol.first()     
 
             if(!wordToDelete){
-                return message.channel.send(basicEmbed(client, message, args, text, `Cannot find word!`, `D:`, `Cannot find the specified word in the database` ))
+                return message.channel.send(basicEmbed(client, message, args, text, `Cannot find word!`, `❌`, `Cannot find the specified word in the database` ))
             }
-            console.log(wordToDelete.id)       
-            connection.query(`DELETE FROM ${"guild_config.banned_words"}
+            connection.query(`DELETE FROM ${"s581_GUILD_CONFIG.banned_words"}
                                      WHERE word = "${wordToDelete.word}"
                                      AND guildid = "${message.guild.id.toString()}"; `,(rej,res) => { 
-              console.log(client.banned_words.delete(wordToDelete.id), 'DELETED')  
                 if(rej) console.log(rej)
-                console.log(res)
-            return message.channel.send(basicEmbed(client, message, args, text, `Unbanned Word!`, `:D`, `**Unbanned word:** \`${args[0].toLowerCase()}\`` ))
+            return message.channel.send(basicEmbed(client, message, args, text, `Unbanned Word!`, `✔️`, `**Unbanned word:** \`${args[0].toLowerCase()}\`` ))
             })
           
     }

@@ -4,15 +4,15 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 const entertainmentEmbed = require('../../../utilities/entertainmentEmbed')
 module.exports = {
     name: 'dancewith',
-    description: 'Dance with someone', 
+    description: 'Dance with someone/something', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}  <...text>\`\n*(... means multiple words can be used here)*`
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },

@@ -4,20 +4,20 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
     name: 'setprefix',
-    description: 'Sets the prefix', 
+    description: 'Sets the prefix for the guild', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()} <prefix>\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
     requiredPermissions: [
-            //All the required permissions the user and the bot both needs
+        'MANAGE_GUILD',
     ], 
     isNSFW: false,
     minArgs: 1,
@@ -38,12 +38,12 @@ module.exports = {
              prefix: newPrefix
          }
          client.guilds_config.set(message.guild.id, newConfig)
-         connection.query(`UPDATE ${"guild_config.guild_details"}
+         connection.query(`UPDATE ${"s581_GUILD_CONFIG.guild_details"}
          SET ${"prefix"} = "${newPrefix}"
          WHERE ${"guildid"} = "${message.guild.id}";
          `, (rej, res) => {
              if(rej) console.log(rej)    
-             console.log(res)
+
          })
          console.log(client.guilds_config.get(message.guild.id))
         

@@ -7,6 +7,18 @@ module.exports= {
         if(!channel.guild) return 
        const guildid = channel.guild.id 
        const guildConfig = client.guilds_config.get(guildid)  
+       if(!guildConfig) return
+       if(guildConfig.sightseeing === 1) return
+       if(guildConfig.muterole){
+        const role =  channel.guild.roles.cache.find(role => role.id === guildConfig.muterole)
+        if(!role) return 
+       await  channel.createOverwrite(role,  {
+           SEND_MESSAGES: false,
+           EMBED_LINKS:false,
+           ATTACH_FILES:false,
+           ADD_REACTIONS:false
+       }, 'Set Mute Role')
+      }
        if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
        const guild = client.guilds.cache.get(guildid)
        if(!guild) return

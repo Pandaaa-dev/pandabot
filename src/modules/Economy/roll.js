@@ -5,13 +5,13 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
     name: 'roll',
-    description: 'Kindof like a lottery idk shutup', 
+    description: 'A lottery where you can win big by betting your currency', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()} <amount>\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
         // returnArray.push(single)
         // returnArray.push(multiple)

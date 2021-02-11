@@ -6,7 +6,7 @@ const arraySort = require('array-sort')
 const {MessageEmbed} = require('discord.js')
 module.exports = {
     name: 'xplb',
-    description: 'Shows you the xp Leaderboard', 
+    description: 'Shows you the xp global leaderboard', 
     usage(prefix){
         const returnArray = []
 

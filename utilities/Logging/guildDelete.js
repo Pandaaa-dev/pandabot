@@ -13,7 +13,7 @@ module.exports= {
         if(client.banned_words.array().length > 0){
             const banWordsToDelete = client.banned_words.filter(chan => chan.guildid == guild.id)
             console.log(banWordsToDelete, 'BANNED WORDS')
-            banned_words.array().forEach(word => {
+            banWordsToDelete.array().forEach(word => {
                 client.banned_words.delete(word.id)
             })
         }
@@ -80,22 +80,22 @@ module.exports= {
     }
 
     connection.query(`DELETE FROM banned_words
-                     WHERE guildid = ${message.guild.id}`)
+                     WHERE guildid = ${guild.id}`)
   
     connection.query(`DELETE FROM guild_details
-                     WHERE guildid = ${message.guild.id}`)
+                     WHERE guildid = ${guild.id}`)
   
-    connection.query(`DELETE FROM muted_members
-                     WHERE guildid = ${message.guild.id}`)
+    // connection.query(`DELETE FROM muted_members
+    //                  WHERE guildid = ${guild.id}`)
   
     connection.query(`DELETE FROM no_links
-                     WHERE guildid = ${message.guild.id}`)
+                     WHERE guildid = ${guild.id}`)
 
     connection.query(`DELETE FROM no_pictures
-                     WHERE guildid = ${message.guild.id}`)
+                     WHERE guildid = ${guild.id}`)
                      
     connection.query(`DELETE FROM tickets
-                     WHERE guildid = ${message.guild.id}`)
+                     WHERE guildid = ${guild.id}`)
 
     }
 

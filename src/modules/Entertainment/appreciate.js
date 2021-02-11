@@ -5,15 +5,15 @@ const entertainmentEmbed = require('../../../utilities/entertainmentEmbed')
 
 module.exports = {
     name: 'appreciate',
-    description: 'Appreciate a person', 
+    description: 'Appreciate a person/something', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}  <...text>\`\n*(<...text> means it can be anything and any number of words)*`
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
@@ -36,6 +36,6 @@ module.exports = {
     async execute( message, args, text, client){
         message.delete()
         if(!message.channel.permissionsFor(message.channel.guild.member(client.user)).has('SEND_MESSAGES')) return
-           message.channel.send(entertainmentEmbed(client, message, args, text, `Appreciate`, ':D', `${message.author} appreciates ${text}`, this.giflinks))
+           message.channel.send(entertainmentEmbed(client, message, args, text, `Appreciate`, '😊', `${message.author} appreciates ${text}`, this.giflinks))
     }
 }

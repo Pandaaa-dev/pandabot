@@ -3,14 +3,12 @@ const fs = require('fs');
 const path = require('path');
 // const gif = require('../../assets/commandgifs')
 module.exports = {
-    name: 'Bamboo',
-    description: 'A simple smooch to make your day better!', 
+    name: 'bamboo',
+    description: 'Feed the bot some bamboos!', 
     usage(prefix){
         const returnArray = []
         const single = `\`${prefix}${this.name.toLowerCase()}\``
-        const multiple = `\`${prefix}${this.name.toLowerCase()}\``
         returnArray.push(single)
-        returnArray.push(multiple)
         return returnArray
     },
     requiredPermissions: [], 
@@ -41,7 +39,7 @@ module.exports = {
         .setTitle(">> " + this.name  + " \`🎋\`")
         .setColor(Math.floor(Math.random()*16777215).toString(16))
         .setThumbnail(gifLink)
-        .setDescription(this.emoji+ " <@!" + message.author.id + "> " +  this.uniqueText + ' ' +  (text) + ' ' + this.emoji);
+        .setDescription(" <@!" + message.author.id + "> " +  this.uniqueText + ' ' +  (text) + ' ');
         //Sending the response  
         try {
         return await message.channel.send(embed)

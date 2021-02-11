@@ -10,14 +10,14 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()} @person\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
     requiredPermissions: [
-            //All the required permissions the user and the bot both needs
+      'MUTE_MEMBERS',
     ], 
     isNSFW: false,
     minArgs: 1,
@@ -32,8 +32,8 @@ module.exports = {
     ],
     async execute( message, args, text, client,connection){
           const guild_config = client.guilds_config.get(message.guild.id);
-
-            console.log(guild_config);
+          if(!client.muted_members || client.muted_members.array().length < 1) return
+             console.log(guild_config);
             if(!guild_config.muterole){
                 return message.channel.send(basicEmbed(client, message, args, text, "No Mute Role!", "😲", 
                 `You haven't set a mute role for this guild. Please look at the mute command for further information!`))
@@ -51,13 +51,13 @@ module.exports = {
                 "Member doesn't have muted role!", "😲", `The member you are trying to unmute doesnt have a mute role!` ))
           }
 
-          const searchToUnmute = client.muted_members.get(mentionedMemberToUnmute.id)
+          const searchToUnmute = client.muted_members.find(member => member.userid == personToUnmute.id && member.guildid == message.guild.id)
           if(!searchToUnmute) return 
 
-          client.muted_members.delete(mentionedMemberToUnmute.id)
+          client.muted_members.delete(searchToUnmute.id)
           mentionedMemberToUnmute.roles.remove(hasMuteRole)
 
-          connection.query("DELETE FROM GUILD_CONFIG.MUTED_MEMBERS WHERE userid = \"" + personToUnmute.id + "\"", (rej, res)=> {
+          connection.query(`DELETE FROM s581_GUILD_CONFIG.MUTED_MEMBERS WHERE userid = ${personToUnmute.id} AND guildid = ${message.guild.id}`, (rej, res)=> {
             if(rej) console.log(rej)
             console.log(res, "Done")
         })

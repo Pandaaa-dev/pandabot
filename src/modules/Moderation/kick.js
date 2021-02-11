@@ -1,5 +1,6 @@
 const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
+const descEmbed = require('../../../utilities/onlyDescEmbed')
 
 module.exports = {
     name: 'kick',
@@ -30,8 +31,9 @@ module.exports = {
         message.delete()
         const guildConfig = client.guilds_config.get(message.guild.id)
         const member = message.mentions.users.first()
-        if(!member) return
+        if(!member) return descEmbed('You did not mention anybody...')
         const guildMember = message.guild.member(member)
+        if(!guildMember) return descEmbed('Could not find guild member...')
         console.log(guildMember.kickable)
         if(!guildMember.kickable){
             const embed = errorEmbed(null, client, message, "I dont have permissions!", "I do not have the required permissions for this command! Or, the member is not Kickable. Please give me the following permissions:\n " +  "\`" +this.requiredPermissions.join('\` and \n \`') + "\`")

@@ -4,20 +4,18 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
     name: 'banword',
-    description: 'Bans different words', 
+    description: 'Ban different words', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
-        // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
-        // returnArray.push(multiple)
+        const single = `\`${prefix}${this.name.toLowerCase()}  <word>\``
+        returnArray.push(single)
         return returnArray
     },
     requiredPermissions: [
-            //All the required permissions the user and the bot both needs
+        'MANAGE_CHANNELS',
     ], 
     isNSFW: false,
     minArgs: 1,
@@ -43,7 +41,6 @@ module.exports = {
             newid = 1
         }
 
-        console.log(newid)
 
         const wordArr = []
        client.banned_words.map(word => {
@@ -52,28 +49,24 @@ module.exports = {
                wordArr.push(word.word)
            }
        })
-       
-        console.log(bannedWordsCounter)
-        console.log(wordArr)
         // console.log(bannedWordsArr.length)
         if(wordArr.includes(args[0].toLowerCase())){
-            return message.channel.send(basicEmbed(client, message, args, text, `Already Banned!`, `D:`, `You already banned this word!` ))
+            return message.channel.send(basicEmbed(client, message, args, text, `Already Banned!`, `😲`, `You already banned this word!` ))
         }
         if(bannedWordsCounter >=20){
-            return message.channel.send(basicEmbed(client, message, args, text, `Max Limit Reached!`, `D:`, `You already have \`20\` banned words for this server! \n buy a [premium membership](https://google.com) or delete some of your existing commands!` ))
+            return message.channel.send(basicEmbed(client, message, args, text, `Max Limit Reached!`, `😲`, `You already have \`20\` banned words for this server! \n buy a [premium membership](https://google.com) or delete some of your existing commands!` ))
         }
         
-        connection.query(`INSERT INTO guild_config.banned_words(guildid, word)
+        connection.query(`INSERT INTO  s581_GUILD_CONFIG.banned_words(guildid, word)
         values("${message.guild.id}", '${args[0].toLowerCase()}');
         `, (err, res) => {
             if(err) console.log(err);
-            console.log(res)
             client.banned_words.set(newid, {
                 id: newid,
                 guildid: message.guild.id.toString(),
                 word: args[0].toLowerCase()
             })
-        return message.channel.send(basicEmbed(client, message, args, text, `Banned Word!`, `:D`, `**Banned word:** \`${args[0].toLowerCase()}\`` ))
+        return message.channel.send(basicEmbed(client, message, args, text, `Banned Word!`, `✔️`, `**Banned word:** \`${args[0].toLowerCase()}\`` ))
         })
     }
 }

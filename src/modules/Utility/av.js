@@ -10,9 +10,9 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}  @person\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
@@ -35,7 +35,7 @@ module.exports = {
         if(!mentionedUser) return
         const clientAsMember = message.guild.member(client.user.id)
         if(!message.channel.permissionsFor(clientAsMember).has('ATTACH_FILES')){
-            return message.channel.send(basicEmbed(client,message, args, text, `Missing Permissions!`, `D:`, `I need permission to attach files in this channel!`))
+            return message.channel.send(basicEmbed(client,message, args, text, `Missing Permissions!`, `😠`, `I need permission to attach files in this channel!`))
         } 
         const url = mentionedUser.displayAvatarURL({format: 'png',
                                                     dynamic: true,

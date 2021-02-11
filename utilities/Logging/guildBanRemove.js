@@ -3,7 +3,7 @@ module.exports= {
     once: false,
     async run(connection, client, guild, user){
         const guildConfig = client.guilds_config.get(guild.id)
-
+        if(!guildConfig || guildConfig.sightseeing === 1) return
         if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
          const isGuild = client.guilds.cache.get(guild.id)
          if(!isGuild) return

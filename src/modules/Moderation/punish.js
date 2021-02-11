@@ -4,20 +4,20 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
     name: 'punish',
-    description: 'Punishes a person', 
+    description: 'Punishes a person by taking away view-channel permission for all channels', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}  @person 5m\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
     requiredPermissions: [
-        'ADMINISTRATOR'
+        'BAN_MEMBERS', 'KICK_MEMBERS',
     ], 
     isNSFW: false,
     minArgs: 2,
@@ -35,7 +35,7 @@ module.exports = {
            const guildConfig = client.guilds_config.get(message.guild.id)
 
            if(!personToPunish){
-               return message.channel.send(basicEmbed(client, message, args, text, `No users mentioned!`, `>:(`, `You did not mention any user!`))
+               return message.channel.send(basicEmbed(client, message, args, text, `No users mentioned!`, `😠`, `You did not mention any user!`))
            }
            const guild = message.guild
 
@@ -48,16 +48,16 @@ module.exports = {
                const newArgs = [...args]
                const fulltime = newArgs.splice(-1,1)[0].split('')
                fulltime.splice(-1, 1)
-           console.log(fulltime)
+
               let time =  fulltime.join('')
-              console.log(time)
+
             const extraText = newArgs.splice(3, Infinity).join(' ')
             
              console.log(args[1])
              if(args[1].endsWith('m')){
                  
                  timeMupltiple = 60000
-                 console.log(time)
+
                  denoter = ' minute(s)'
              } else if(args[1].endsWith('h')){
                  if(time > 168){
@@ -72,9 +72,9 @@ module.exports = {
                  timeMupltiple = 86400000 
                  denoter = ' day(s)'
              }
-             console.log(time, denoter, timeMupltiple)
+
              if(isNaN(time)){
-                return message.channel.send(basicEmbed(client, message, args, text, `Not the correct way!`, `>:(`, `Please check the usage: ${this.usage(client.guilds_config.get(guild.id).prefix).join(' \n')}
+                return message.channel.send(basicEmbed(client, message, args, text, `Not the correct way!`, `😠`, `Please check the usage: ${this.usage(client.guilds_config.get(guild.id).prefix).join(' \n')}
                 Acceptable times: *<number>m* (minute), *<number>h* (hour), *<number>d (days)\n *Max day = **7** *`))
                
              }
@@ -87,7 +87,7 @@ module.exports = {
                         }).catch(e => console.log(e))
                     }
                 })
-                message.channel.send(basicEmbed(client, message, args, text, `Punishment`, `D:`, `${personToPunish} has been ***punished***\nFor:${time}${denoter}\nBy:${message.author}`))
+                message.channel.send(basicEmbed(client, message, args, text, `Punishment`, `😲`, `${personToPunish} has been ***punished***\nFor:${time}${denoter}\nBy:${message.author}`))
                 const dmChannel = await personToPunish.createDM()
                             await dmChannel.send(basicEmbed(client, message, args, text, `You have been punished!`, `D:`, `You have been punished on ${guild.name}!\nFor: ${time}${denoter}\nBy:${message.author.tag}`))
                             dmChannel.delete()

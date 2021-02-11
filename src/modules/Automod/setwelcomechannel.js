@@ -10,14 +10,14 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
     requiredPermissions: [
-            //All the required permissions the user and the bot both needs
+        'MANAGE_CHANNELS',
     ], 
     isNSFW: false,
     minArgs: 0,
@@ -40,10 +40,10 @@ module.exports = {
             }
             client.guilds_config.set(message.guild.id, newConfig)
 
-            connection.query(`UPDATE guild_details
+            connection.query(`UPDATE  s581_GUILD_CONFIG.guild_details
                               SET welcomechannelid = NULL
                                 WHERE guildid = "${message.guild.id}";`)
-            return message.channel.send(basicEmbed(client, message, args, text, `Welcome channel unset`, 'D:', `Your previous welcome channel has been **unset.**\nIf you want to set a new one, use this command on the new welcome channel again.`))
+            return message.channel.send(basicEmbed(client, message, args, text, `Welcome channel unset`, '😲', `Your previous welcome channel has been **unset.**\nIf you want to set a new one, use this command on the new welcome channel again.`))
            }
            if(!guildConfig.welcomechannelid){
             const newConfig = {
@@ -52,10 +52,10 @@ module.exports = {
             }
             client.guilds_config.set(message.guild.id, newConfig)
 
-            connection.query(`UPDATE guild_details
+            connection.query(`UPDATE  s581_GUILD_CONFIG.guild_details
                               SET welcomechannelid = "${message.channel.id}"
                               WHERE guildid = "${message.guild.id}";`)
-            return message.channel.send(basicEmbed(client, message, args, text, `Welcome channel set`, 'D:', `This channel has been **set** as the new welcome channel. I will send my welcome messages for all the new members here!`))
+            return message.channel.send(basicEmbed(client, message, args, text, `Welcome channel set`, '😄', `This channel has been **set** as the new welcome channel. I will send my welcome messages for all the new members here!`))
            }
 
     }

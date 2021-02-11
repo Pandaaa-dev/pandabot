@@ -1,5 +1,6 @@
 const Discord= require('discord.js')
 const {TOKEN} = require('../config.json')
+const chalk = require('chalk')
 const fs = require('fs');
 const path = require('path');
 const client = new Discord.Client({
@@ -58,72 +59,91 @@ client.once('ready', async () => {
         client.xpTimestamps.set(guild.id, new Discord.Collection())
     })
     
-    connection.query(`SELECT * FROM guild_config.guild_details`, (err, res)=> {
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.guild_details`, (err, res)=> {
         if(err) console.log(err)
+        if(!res) return
+        if(res.length ==0) return
         res.forEach(eachguild => {
             client.guilds_config.set(eachguild.guildid, eachguild)
         })
     })
-    connection.query(`SELECT * FROM guild_config.shop`, (err, res)=> {
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.shop`, (err, res)=> {
         if(err) console.log(err)
+        if(!res) return
+        if(res.length ==0) return
         res.forEach(eachthing => {
             client.shop.set(eachthing.name, eachthing)
         })
     })
-    connection.query(`SELECT * FROM guild_config.tickets`, (err, res)=> {
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.tickets`, (err, res)=> {
         if(err) console.log(err)
+        if(!res) return
+        if(res.length ==0) return
         res.forEach(eachthing => {
             client.tickets.set(eachthing.id, eachthing)
         })
     })
-    connection.query(`SELECT * FROM guild_config.economy`, (err, res)=> {
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.economy`, (err, res)=> {
         if(err) console.log(err)
+        if(!res) return
+        if(res.length ==0) return
         res.forEach(eachuser => {
             client.economy.set(eachuser.userid, eachuser)
         })
     })
-    connection.query(`SELECT * FROM guild_config.waifu`, (err, res)=> {
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.waifu`, (err, res)=> {
         if(err) console.log(err)
+        if(!res) return
+        if(res.length ==0) return
         res.forEach(eachWaifu => {
             client.waifu.set(eachWaifu.waifu, eachWaifu)
         })
     })
-    connection.query(`SELECT * FROM guild_config.only_pictures`, (err, res)=> {
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.only_pictures`, (err, res)=> {
         if(err) console.log(err)
+        if(!res) return
+        if(res.length ==0) return
         res.forEach(eachChannel => {
             client.onlyPictureChannels.set(eachChannel.channelid, eachChannel)
         })
     })
-    connection.query(`SELECT * FROM guild_config.no_pictures`, (err, res)=> {
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.no_pictures`, (err, res)=> {
         if(err) console.log(err)
+        if(!res) return
+        if(res.length ==0) return
         res.forEach(eachChannel => {
             client.noPictureChannels.set(eachChannel.channelid, eachChannel)
         })
     })
     
-    connection.query(`SELECT * FROM guild_config.muted_members`, (err, res)=> {
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.muted_members`, (err, res)=> {
         if(err) console.log(err)
-        if(!res.length) return 
+        if(!res) return
+        if(res.length ==0) return
         res.forEach(member => {
-            client.muted_members.set(member.userid, member)
+            client.muted_members.set(member.id, member)
         })
     })
-    connection.query(`SELECT * FROM guild_config.banned_words`, (err, res)=> {
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.banned_words`, (err, res)=> {
         if(err) console.log(err)
-        if(!res.length) return 
+        if(!res) return
+        if(res.length ==0) return
         res.forEach(word => {
             client.banned_words.set(word.id, word)
         })
-        // console.log(client.banned_words.array().pop().id)
     })
-    connection.query(`SELECT * FROM guild_config.no_links`, (err, res)=> {
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.no_links`, (err, res)=> {
         if(err) console.log(err)
+        if(!res) return
+        if(res.length ==0) return
         res.forEach(eachChannel => {
             client.noLinkChannels.set(eachChannel.channelid, eachChannel)
         })
     })
-    connection.query(`SELECT * FROM guild_config.xp_level`, (err, res)=> {
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.xp_level`, (err, res)=> {
         if(err) console.log(err)
+        if(!res) return
+        if(res.length ==0) return
         res.forEach(eachXP => {
             if(eachXP){ 
                 client.xp_level.set(eachXP.userid, eachXP)
@@ -141,7 +161,7 @@ client.once('ready', async () => {
     rootModuleFolder.forEach(singularModule => {
         const singularModuleFilePath = path.join(__dirname, moduleDir, singularModule);
         const files = fs.readdirSync(singularModuleFilePath)
-        // console.log(files.length)
+
         files.forEach(file => {
             const filePath = path.join(__dirname, moduleDir, singularModule, file)
             const command = require(filePath)
@@ -221,25 +241,32 @@ client.once('ready', async () => {
 
 
     client.on('guildCreate', async guild => {
+        client.xpTimestamps.set(guild.id, new Discord.Collection())
         const id = guild.id.toString()
         const prefix = "!"
         const premium = 0
-        const privatelog = null 
+        const noNewAccounts = null 
         const publiclog = null
         const muterole = null
         const nonewaccounts = null
         connection.query(`
-        INSERT INTO guild_config.guild_details(guildid, prefix, premium, privatelog, publiclog, nonewaccounts, muterole)
-        values("${id}", "${prefix}", ${premium}, ${privatelog}, ${publiclog}, ${nonewaccounts}, ${muterole});
+        INSERT INTO  s581_GUILD_CONFIG.guild_details(guildid, prefix, premium,  nonewaccounts, muterole, ticketsystem, ticketcategoryid, lastticket, welcomechannelid, loggingchannelid, logging, sightseeing)
+        values("${id}", "${prefix}", ${premium}, ${noNewAccounts}, ${muterole}, ${0}, ${null}, ${0}, ${null}, ${null}, ${0}, ${0});
         `, (err, res) => {
             if(err) console.log(err);
             client.guilds_config.set(id, {
                 id,
                 prefix,
                 premium,
-                privatelog, 
-                publiclog,
-                muterole
+                nonewaccounts: null,
+                muterole: null,
+                ticketsystem: 0,
+                ticketcategoryid: null,
+                lastticket:0,
+                welcomechannelid:null,
+                loggingchannelid:null,
+                logging:0,
+                sightseeing:0
             })
         })
     })
@@ -254,10 +281,16 @@ client.once('ready', async () => {
     
     client.on('automod', async (client, message) => {
         // Handling Words to be deleted ***{
+        console.log(`${chalk.blue(message.author.tag)} from ${chalk.yellow(message.guild.name)} at ${chalk.blueBright(message.channel.name)}: ${message.content}`) 
+
             const guild = message.guild
             if(!guild) return
             const guildid = message.channel.guild.id
             const guildConfig = client.guilds_config.get(guildid)
+
+            if(!guildConfig) return
+            if(guildConfig.sightseeing === 1) return
+
             const prefix = guildConfig.prefix
             if (message.content.startsWith(prefix) || message.author.bot) return;
             if(client.user.id === message.author.id) return
@@ -362,7 +395,7 @@ client.once('ready', async () => {
                     message.channel.send(descEmbed(`You levelled up to level ${level}! As a result, you have earned ${award}${botConfig.emoji} as your prize!`)) 
             }
         }
-        // console.log(userxp)
+
         client.xp_level.set(message.author.id, {
             guildid: message.guild.id,
             userid: message.author.id,
@@ -372,28 +405,40 @@ client.once('ready', async () => {
     })
 
     setInterval((() => {
-        connection.query("SELECT * FROM GUILD_CONFIG.MUTED_MEMBERS WHERE expiresin < current_timestamp()", (rej, res) => {
-            if(rej) console.log(rej)
-            let v = new Date()
-            if(res.length > 0){
-                res.forEach(member => {
+        if(client.muted_members){
+            if(client.muted_members.array().length > 0){
+                const memberstoUnmute = []
+                const mutedMembers = client.muted_members.array()
+                const present = Date.now();
+                mutedMembers.forEach(member => {
+                    if(present >= +member.expiresin){
+                        memberstoUnmute.push(member)
+                    }
+                })
+                if(memberstoUnmute.length < 1) return
+                memberstoUnmute.forEach(member => {
                     const guild = client.guilds.cache.find(guild => guild.id == member.guildid)
                     if(!guild || guild == undefined ) return
-                      const roleToDeletemember = guild.members.cache.find(member => member.id == +member.userid)
-                      if(!member || member == undefined) return
-                      const muteroleid = client.guilds_config.get(member.guildid).muterole
-                      const guildMember = guild.member(member.userid)
-                      guildMember.roles.remove(muteroleid)
-                    connection.query("DELETE FROM GUILD_CONFIG.MUTED_MEMBERS WHERE userid = \"" + member.userid + "\"", (rej, res)=> {
-                        if(rej) console.log(rej)
-                    })
+                    const muteroleid = client.guilds_config.get(member.guildid).muterole
+
+                    const actualRole = guild.roles.cache.get(muteroleid)
+                    if(!actualRole) return
+                    const guildMember = guild.member(member.userid)
+                    if(!guildMember || guildMember == undefined) return
+                   
+              
+                    
+                    connection.query(`DELETE FROM s581_GUILD_CONFIG.muted_members 
+                                    WHERE guildid = ${member.guildid} AND userid = ${member.userid}`)
+                    guildMember.roles.remove(actualRole)
                 })
             }
-        })
+        }
     }), (60000*5))
 
-    setInterval((() => {
-          connection.query(`DELETE FROM guild_config.xp_level;`, (res, rej) => {
+     setInterval((() => {
+        if(!client.xp_level || client.xp_level.array().length < 1) return
+          connection.query(`DELETE FROM  s581_GUILD_CONFIG.xp_level;`, (res, rej) => {
             // const allXP = []
            const allXP = []
            const allxpButObj = client.xp_level.array()
@@ -403,13 +448,14 @@ client.once('ready', async () => {
                allXP.push(array)
            })
             if(!allXP) return
-            connection.query(`INSERT into guild_config.xp_level (guildid, userid, points, level) VALUES ?`, [allXP])
+            connection.query(`INSERT into  s581_GUILD_CONFIG.xp_level (guildid, userid, points, level) VALUES ?`, [allXP])
             })
 
     }), (60000*2.5))
 
     setInterval((() => {
-          connection.query(`DELETE FROM guild_config.waifu;`, (res, rej) => {
+        if(!client.waifu || client.waifu.array().length < 1) return
+          connection.query(`DELETE FROM  s581_GUILD_CONFIG.waifu;`, (res, rej) => {
            const allWaifu = []
            const allWaifuButObj = client.waifu.array()
            if(!allWaifuButObj) return
@@ -419,15 +465,17 @@ client.once('ready', async () => {
            })
             if(!allWaifu) return
             if(allWaifu.length == 0) return
-            connection.query(`INSERT into guild_config.waifu (waifu, husbandu, amount, divorceCount) VALUES ?`, [allWaifu], (err,res) => {
+            console.log('WAIFU INTERVAL')
+            connection.query(`INSERT into  s581_GUILD_CONFIG.waifu (waifu, husbandu, amount, divorceCount) VALUES ?`, [allWaifu], (err,res) => {
                 if(err) console.log(err)
             })
             })
-    }), (60000*1))
+    }), (60000*10))
 
     
     setInterval(() => {
-        connection.query(`DELETE FROM guild_config.economy;`, (res, rej) => {
+        if(!client.economy || client.economy.array().length < 1) return
+        connection.query(`DELETE FROM  s581_GUILD_CONFIG.economy;`, (res, rej) => {
             const array = client.economy.array(); 
             const arrayForDB = [];
             if(array.length < 1) return
@@ -435,10 +483,10 @@ client.once('ready', async () => {
                 const newArr = Object.values(obj)
                 arrayForDB.push(newArr)
             })
-            connection.query(`INSERT into guild_config.economy (userid, points) VALUES ?`, [arrayForDB])
+            connection.query(`INSERT into  s581_GUILD_CONFIG.economy (userid, points) VALUES ?`, [arrayForDB])
         });
         
-    }, 60000 * 1.5);
+    }, 60000 * 3.5);
     
     fs.readdir(path.join(__dirname, '../utilities/Logging'), (err, files) => { // We use the method readdir to read what is in the events folder
         if (err) return console.error(err); // If there is an error during the process to read all contents of the ./events folder, throw an error in the console

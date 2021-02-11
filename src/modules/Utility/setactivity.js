@@ -36,7 +36,7 @@ module.exports = {
             const activityType = args.shift()
             const restArgs = args.join(' ')
             client.user.setActivity(restArgs, {type : activityType.toUpperCase()}).then(res => {
-                return  message.channel.send(basicEmbed(client,message,args,text,`Set Activity!`, ':D', `Set Activity to: \n${activityType} ${restArgs}`))
+                return  message.channel.send(basicEmbed(client,message,args,text,`Set Activity!`, '😊', `**Set Activity to:**\n${activityType} ${restArgs}`))
 
             })
         }

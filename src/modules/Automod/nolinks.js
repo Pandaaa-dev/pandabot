@@ -4,20 +4,20 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
     name: 'nolinks',
-    description: 'Sets a channel to have absolutely no links', 
+    description: 'Sets a channel setting to delete every message that has links. Use this command on the channel where you want to set nolinks', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefixx}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
     requiredPermissions: [
-            //All the required permissions the user and the bot both needs
+        'MANAGE_CHANNELS',
     ], 
     isNSFW: false,
     minArgs: 0,
@@ -25,8 +25,6 @@ module.exports = {
     highValue: false, 
     emoji: null,
     module: 'Automod',
-
-
     uniqueText: "uniquetext",
     giflinks: [ 
         // Gif links for the embed
@@ -43,7 +41,7 @@ module.exports = {
             channelid: message.channel.id,
             guildid: message.guild.id
         })
-        connection.query(`INSERT INTO guild_config.no_links(channelid, guildid)
+        connection.query(`INSERT INTO  s581_GUILD_CONFIG.no_links(channelid, guildid)
         VALUES(${message.channel.id.toString()}, ${message.guild.id.toString()});
 `)
         return  message.channel.send(basicEmbed(client, message, args, text, "NoLinks turned on!", "👍" ,"NoLinks for this channel has been turned on!"))

@@ -10,9 +10,9 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}  @person <amount>\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
@@ -34,10 +34,10 @@ module.exports = {
         message.delete()
         const userToTakeFrom = message.mentions.users.first()
         const emoji = client.bot_config.get('_1').emoji
-        if(!userToTakeFrom) return message.channel.send(basicEmbed(client, message, args, text, `You didnt mention anybody!`, `-.-\"`, 'You need to mention somebody for this command to work!'))
+        if(!userToTakeFrom) return message.channel.send(basicEmbed(client, message, args, text, `You didnt mention anybody!`, `😡`, 'You need to mention somebody for this command to work!'))
         const amount = args[1]
         if(isNaN(amount)){
-            return message.channel.send(basicEmbed(client, message, args, text, `Amount is not a number`, `-.-"`, 'Mention a proper amount you fucking degenrate of an owner.'))
+            return message.channel.send(basicEmbed(client, message, args, text, `Amount is not a number`, `😡`, 'Mention a proper amount you fucking degenrate of an owner.'))
         }
         const user  =client.economy.get(userToTakeFrom.id)
         let points = 0

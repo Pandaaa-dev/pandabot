@@ -19,14 +19,14 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
-        // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
-        // returnArray.push(multiple)
+        const single = `\`${prefix}${this.name.toLowerCase()} <...text>\`\n*(... means multiple words can be used here)*`
+        const multiple = `\`${prefix}${this.name.toLowerCase()} <embedJson>\`\n*(You can find embed visualizers on the internet anywhere)*`
+        returnArray.push(single)
+        returnArray.push(multiple)
         return returnArray
     },
     requiredPermissions: [
-            //All the required permissions the user and the bot both needs
+        'MANAGE_MESSAGES',
     ], 
     isNSFW: false,
     minArgs: 1,
@@ -42,7 +42,7 @@ module.exports = {
            const clientAsMember = message.guild.member(client.user.id)
         message.delete()
         if(!message.channel.permissionsFor(clientAsMember).has(['SEND_MESSAGES', 'EMBED_LINKS'])){
-           return message.channel.send(basicEmbed(client, message, args, text, `Missing Permissions!`, `>:(`, `**Missing Permissions:**\n \`SEND__MESSAGES\`\N\`EMBED__LINKS\``))
+           return message.channel.send(basicEmbed(client, message, args, text, `Missing Permissions!`, `😠`, `**Missing Permissions:**\n \`SEND__MESSAGES\`\N\`EMBED__LINKS\``))
         }
         const isjson = await isJson(text);
         if(isjson){

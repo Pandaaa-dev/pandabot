@@ -1,6 +1,7 @@
 // check these routes!
 const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
+const descEmbed = require('../../../utilities/onlyDescEmbed')
 
 module.exports = {
     name: 'Ban',
@@ -8,17 +9,16 @@ module.exports = {
     usage(prefix){
         const returnArray = []
 
-        const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
-        const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
+        const single = `\`${prefix}${this.name.toLowerCase()}  @person <...reason>\``
+        const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  <...reason>\`\n*(... means multiple words can be used here)*`
         returnArray.push(single)
         returnArray.push(multiple)
         return returnArray
     },
-    requiredPermissions: [ "BAN_MEMBERS"
-    ], 
+    requiredPermissions: [ "BAN_MEMBERS"], 
     isNSFW: false,
     minArgs: 1,
-    maxArgs: 10,
+    maxArgs: Infinity,
     module: 'Moderation',
 
     highValue: false, 
@@ -32,13 +32,14 @@ module.exports = {
     ],
     async execute( message, args, text, client,connection){
         const guildConfig = client.guilds_config.get(message.guild.id)
+        if(!message.mentions.users.first()) return descEmbed('No users were mentioned...')
         message.delete()
         message.mentions.users.map(user=> {
            const member = message.guild.member(user)
-
+            if(!member) return descEmbed('Member not found...')
            //Checking if the user is kickable by the bot or not
            if(!member.bannable){
-              const embed = errorEmbed(null, client, message, "I dont have permissions!", "I do not have the required permissions for this command! Please give me the following permissions:\n " +  "\`" +this.requiredPermissions.join('\` and \n \`') + "\`")
+              const embed = errorEmbed(null, client, message, "I dont have permissions!", "I do not have the required permissions for this command! Or, the members highest role is above mine! Please give me the following permissions:\n " +  "\`" +this.requiredPermissions.join('\` and \n \`') + "\`")
             message.channel.send(embed)
             return }
 
@@ -51,7 +52,7 @@ module.exports = {
 
           
            // kicking the person with or without the reason
-           member.ban({reason: reason}).then((res, err) => {
+           member.ban({reason: reason}).then(async (res, err) => {
                if(err) {
                    //If something wrong happens which probably wont but who knows life is fucked
                    message.channel.send('Something Wrong happened...')
@@ -59,7 +60,7 @@ module.exports = {
                
                //Sending the response to the appropriate channel 
                const embed = basicEmbed(client, message, args, text, this.name, "🚫" , `<@${member.id}> was *banned.* \n Reason: \`${reason}\``, this.giflinks)
-               message.channel.send(embed)
+               await message.channel.send(embed)
 
                if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
 

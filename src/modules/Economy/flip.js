@@ -4,15 +4,15 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 const {MessageEmbed} = require('discord.js')
 module.exports = {
     name: 'flip',
-    description: 'Makes a coinflip', 
+    description: 'Makes a coinflip where you have a 50-50 chance of doubling your money.', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${flip}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${flip}${this.name.toLowerCase()} <ammount>\``
         // const multiple = `\`${flip}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },

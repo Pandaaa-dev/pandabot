@@ -5,13 +5,13 @@ const {MessageEmbed} = require('discord.js')
 const array = []
 module.exports = {
     name: 'daily',
-    description: 'Gives people something every x hours', 
+    description: 'Gives people some economy points every few hours', 
     usage(prefix){
         const returnArray = []
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
         // returnArray.push(single)
         // returnArray.push(multiple)
@@ -36,7 +36,6 @@ module.exports = {
         const userObj = array.find(ar => ar.userid == message.author.id)
 
         //cooldown
-
             if(userObj){
                 let index = array.findIndex(arr => arr.userid == userObj.userid && arr.timestamp == userObj.timestamp)
                 array.splice(array.indexOf(index), 1)

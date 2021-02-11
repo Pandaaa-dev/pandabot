@@ -2,6 +2,7 @@
 const { GuildMember } = require('discord.js')
 const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
+const descEmbed = require('../../../utilities/onlyDescEmbed')
 
 module.exports = {
     name: 'mute',
@@ -11,12 +12,13 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        const single = `\`${prefix}${this.name.toLowerCase()} 5m @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()} 5m @person\``
         returnArray.push(single)
         return returnArray
     },
     requiredPermissions: [
-            //All the required permissions the user and the bot both needs
+        'MUTE_MEMBERS',
+        'DEAFEN_MEMBERS',
     ], 
     isNSFW: false,
     minArgs: 2,
@@ -42,118 +44,79 @@ module.exports = {
         }
     
         let  mutedMember = message.mentions.users.first()
-        console.log(args.splice(1, 1))
-         const argsWithoutMention = args
-        console.log(argsWithoutMention, 'args')
-        console.log(argsWithoutMention[0], 'args')
-         if(!argsWithoutMention[0].endsWith('m') || argsWithoutMention[0].split('').length > 5 || argsWithoutMention[0].split('').length < 1 ){
-           return message.channel.send(basicEmbed(client, message, args, text, "Wrong Usage!", "😲", 
-            `The appropriate usage: \n \`${this.usage(prefix).join('\n')}\n`))
-         }
-         
-         mutedMember = message.guild.member(mutedMember)
+        if(!mutedMember) return descEmbed('You did not mention a member...')
+        const clientAsMember = message.guild.member(client.user.id)
+        message.delete()
+        if(!message.channel.permissionsFor(clientAsMember).has(['SEND_MESSAGES', 'EMBED_LINKS'])){
+           return message.channel.send(basicEmbed(client, message, args, text, `Missing Permissions!`, `😠`, `**Missing Permissions:**\n \`SEND__MESSAGES\`\N\`EMBED__LINKS\``))
+        }
 
-            const isAlreadyMuted = mutedMember.roles.cache.find(role => role.id == muteroleid );
-         
-         if(isAlreadyMuted){
-            return message.channel.send(basicEmbed(client, message, args, text, "Already Muted", "😲", 
-            `The user is already muted `))
-         }
+       if(args[1].endsWith('m') ||
+          args[1].endsWith('h') ||
+          args[1].endsWith('d')) {
 
-         let roleCount = 0
-         const removedRoles = []
-         
-            mutedMember.roles.cache.forEach(role =>{ 
-                if(role.name == "@everyone" || role.id == muteroleid) return
-                roleCount++
-            })     
+                let denoter = ''
+                let timeMupltiple = 0
+                const array = args[1].split('')
+                array.splice(-1,1)
+                let time = array.join('')
+                if(isNaN(time)){
+                    return message.channel.send(basicEmbed(client, message, args, text, `Not the correct way!`, `😠`, `Please check the usage: \n ${this.usage(client.guilds_config.get(message.guild.id).prefix).join(' \n')}
+                \n **Acceptable times:** \n *<number>m* (minute), *<number>h* (hour), *<number>d (days)\n *Max day = **7** *`)) }
+                const extraText = args.splice(2, Infinity).join(' ')
+                if(args[1].endsWith('m')){
+                    timeMupltiple = 60000
+                    console.log(time)
+                    denoter = ' minute(s)'
+                } else if(args[1].endsWith('h')){
+                    if(time > 168){
+                        time = 168
+                    }
+                    timeMupltiple = 3600000 
+                    denoter = ' hour(s)'
+                } else if(args[1].endsWith('d')) {
+                    if(time > 7){
+                        time = 7
+                    }
+                    timeMupltiple = 86400000 
+                    denoter = ' day(s)'
+                }
+                const present = Date.now().toString()
+                const expiresin = (Date.now() + (time*timeMupltiple)).toString()
 
-        mutedMember.roles.add(muteroleid)
-        
-         const tableName = "guild_config.muted_members"
+                const muterole = message.guild.roles.cache.get(muteroleid)
 
-        //  client.on('databaseInsert', async (tableName, valuekey1, valuekey2, valuekey3, value1, value2, value3) => {
-         let date = new Date()
+                if(!muterole) return descEmbed('Couldnt find a mute role!')
 
-        const currtime = date.toISOString().slice(0, 19).replace('T', ' '); 
-         
-        console.log(currtime)
-         if(argsWithoutMention[0].split('').length == 2 ){
-            var expirydate = new Date();
-            expirydate.setMinutes( expirydate.getMinutes() + +argsWithoutMention[0].split('')[0] );
-           const dbdate = expirydate.toISOString().slice(0, 19).replace('T', ' ');
-            connection.query(`INSERT INTO ${tableName}(${"guildid"}, ${"userid"}, ${"currtime"}, ${"expiresin"})
-                 VALUES("${message.guild.id}", "${mutedMember.id}", ${"CURRENT_TIMESTAMP()"}, ${`DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL ${+argsWithoutMention[0].split('')[0]} MINUTE)`});
-             `, (rej, res) => {
-                 if(rej) console.log(rej)
-                 console.log(res)
-             })
-                 client.muted_members.set(mutedMember.id, {
-                     guildid: mutedMember.guild.id,
-                     userid: mutedMember.id,
-                     currtime: currtime,
-                    expirydate: dbdate
-                 } )
-              message.channel.send(basicEmbed(client, message, args, text,
-             "Muted!", "😲", `<@${mutedMember.id}> was muted for ${+argsWithoutMention[0].split('')[0]} minutes! \n\n \` - By ${message.author.username}\``))
-             if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
-             client.emit('customlog', message, `Ordered to *Mute*`, guildConfig.loggingchannelid,  `*Order by:* ${message.author}\n*Type:* **Mute**\n*Target:* ${mutedMember}\n*For:*${+argsWithoutMention[0].split('')[0]} minutes` )
-             return
-                 
-         }
-          if(argsWithoutMention[0].split('').length == 3 ){
-              const number = +(argsWithoutMention[0].split('')[0] + +argsWithoutMention[0].split('')[1])
-              console.log(number)
-                  connection.query(`INSERT INTO ${tableName}(${"guildid"}, ${"userid"}, ${"currtime"}, ${"expiresin"})
-                  VALUES("${message.guild.id}", "${mutedMember.id}", ${"CURRENT_TIMESTAMP()"}, ${`DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL ${number} MINUTE)`});
-              `, (rej, res) => {
-                  if(rej) console.log(rej)
-                  console.log(res)
-              })
+                mutedMember = message.guild.member(mutedMember)
+                if(!mutedMember) return descEmbed('Coudln\'t find member...')
+                const isAlreadyMuted = mutedMember.roles.cache.find(role => role.id == muteroleid );
 
-                  var expirydate = new Date();
-                  expirydate.setMinutes( expirydate.getMinutes() + number );
-                 const dbdate = expirydate.toISOString().slice(0, 19).replace('T', ' ');
-                    client.muted_members.set(mutedMember.id, {
-                        guildid: mutedMember.guild.id,
-                        userid: mutedMember.id,
-                        currtime: currtime,
-                       expirydate: dbdate
-                      } )
-                      message.channel.send(basicEmbed(client, message, args, text,
-                       "Muted!", "😲", `<@${mutedMember.id}> was muted for ${number} minutes! \n\n \` - By ${message.author.username}\``));
-                       if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
-                  client.emit('customlog', message, `Ordered to *Mute*`, guildConfig.loggingchannelid,  `*Order by:* ${message.author}\n*Type:* **Mute**\n*Target:* ${mutedMember}\n*For:*${number} minutes` )
-                return
+                if(isAlreadyMuted) return descEmbed('User already muted!')
 
-            } 
 
-            if(argsWithoutMention[0].split('').length == 4 ){
-                const number = +(argsWithoutMention[0].split('')[0] + argsWithoutMention[0].split('')[1] + argsWithoutMention[0].split('')[2])
-                console.log(number)
-                    connection.query(`INSERT INTO ${tableName}(${"guildid"}, ${"userid"}, ${"currtime"}, ${"expiresin"})
-                    VALUES("${message.guild.id}", "${mutedMember.id}", ${"CURRENT_TIMESTAMP()"}, ${`DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL ${number} MINUTE)`});
-                `, (rej, res) => {
-                    if(rej) console.log(rej)
-                    console.log(res)
-                })
-                    
-                    var expirydate = new Date();
-                    expirydate.setMinutes( expirydate.getMinutes() + number );
-                   const dbdate = expirydate.toISOString().slice(0, 19).replace('T', ' ');
-                      client.muted_members.set(mutedMember.id, {
-                          guildid: mutedMember.guild.id,
-                          userid: mutedMember.id,
-                          currtime: currtime,
-                         expirydate: dbdate
-                        } )
-                    message.channel.send(basicEmbed(client, message, args, text,
-                      "Muted!", "😲", `<@${mutedMember.id}> was muted for ${number} minutes! \n\n \` - By ${message.author.username}\``))
-                      if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
-                      client.emit('customlog', message, `Ordered to *Mute*`, guildConfig.loggingchannelid,  `*Order by:* ${message.author}\n*Type:* **Mute**\n*Target:* ${mutedMember}\n*For:*${number} minutes` )
-                    return
-              } 
-       
-         
+            client.muted_members.set(Date.now().toString(), {
+                guildid: message.guild.id,
+                userid: mutedMember.id,
+                currtime: present,
+                expiresin: expiresin
+            })
+
+            mutedMember.roles.add(muterole)
+
+            connection.query(`INSERT INTO s581_GUILD_CONFIG.muted_members(guildid, userid, currtime, expiresin)
+                VALUES(${message.guild.id}, ${mutedMember.id}, ${present}, ${expiresin});`)
+           
+                message.channel.send(basicEmbed(client, message, args, text, `Muted!`, `🤫`, `${mutedMember} was muted by ${message.author}\n**Duration:** ${time}${denoter}`))
+            
+            if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
+
+            client.emit('customlog', message, `Ordered to *Mute*`, guildConfig.loggingchannelid,  `*Order by:* ${message.author}\n*Type:* **Mute**\n*Target:* ${mutedMember}\n*Duration*: ${time}${denoter}` )
+            
+            } else {
+                return message.channel.send(basicEmbed(client, message, args, text, `Not the correct way!`, `😠`, `Please check the usage: \n ${this.usage(client.guilds_config.get(message.guild.id).prefix).join(' \n')}
+                \n **Acceptable times:** \n *<number>m* (minute), *<number>h* (hour), *<number>d (days)\n *Max day = **7** *`))
+            }
+            
     }
 }

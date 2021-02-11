@@ -10,9 +10,9 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        // const single = `\`${prefix}${this.name.toLowerCase()}  @person %reason\``
+        const single = `\`${prefix}${this.name.toLowerCase()}\``
         // const multiple = `\`${prefix}${this.name.toLowerCase()} @person1 @person2  %reason\` `
-        // returnArray.push(single)
+        returnArray.push(single)
         // returnArray.push(multiple)
         return returnArray
     },
@@ -25,7 +25,6 @@ module.exports = {
     highValue: false, 
     emoji: null,
     module: 'Ticket',
-
     // cooldown: 600,
     uniqueText: "uniquetext",
     giflinks: [ 
@@ -38,10 +37,10 @@ module.exports = {
 
          if(!actualChannel) return
          if(!channeltoDelete){
-             return message.channel.send(basicEmbed(client, message,args, text, `Incorrect Config`, '-.-', `You are either not the person that made this ticket or youre trying to close the wrong channel.`))
+             return message.channel.send(basicEmbed(client, message,args, text, `Incorrect Config`, '😠', `You are either not the person that made this ticket or youre trying to close the wrong channel.`))
          }
          if(!actualChannel.deletable){
-            return message.channel.send(basicEmbed(client, message,args, text, `Missing Permissions!`, '-.-', `I **dont** have the permission:\n\`MANAGE_CHANNELS\` `))
+            return message.channel.send(basicEmbed(client, message,args, text, `Missing Permissions!`, '😠', `I **dont** have the permission:\n\`MANAGE_CHANNELS\` `))
          }
          
          connection.query(`DELETE FROM guild_config.tickets 

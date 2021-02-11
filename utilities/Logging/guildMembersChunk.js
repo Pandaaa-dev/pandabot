@@ -6,6 +6,7 @@ module.exports= {
         const actualGuild = members.first().guild
         if(!actualGuild.member(client.user).hasPermission('VIEW_AUDIT_LOG', {checkAdmin: true})) return
         const guildConfig = client.guilds_config.get(actualGuild.id)
+        if(!guildConfig || guildConfig.sightseeing === 1) return
         if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
          const isGuild = client.guilds.cache.get(actualGuild.id)
          if(!isGuild) return

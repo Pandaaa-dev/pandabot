@@ -1,19 +1,17 @@
 const {MessageEmbed} = require('discord.js')
 module.exports = {
     name: 'Cuddle',
-    description: 'A simple smooch to make your day better!', 
+    description: 'Cuddle someone/something', 
     usage(prefix){
         const returnArray = []
-        const single = `\`${prefix}${this.name.toLowerCase()} <person>\``
-        const multiple = `\`${prefix}${this.name.toLowerCase()} <person1> <person2>\``
+        const single = `\`${prefix}${this.name.toLowerCase()} <...text>\`\n*(... means multiple words can be used here)*`
         returnArray.push(single)
-        returnArray.push(multiple)
         return returnArray
     },
     requiredPermissions: [], 
     isNSFW: false,
     minArgs: 1,
-    maxArgs: 5,
+    maxArgs: Infinity,
     highValue: false, 
     module: 'Entertainment',
 
@@ -41,7 +39,7 @@ module.exports = {
         .setTitle(">> " + this.name  + " \`💕\`")
         .setColor(Math.floor(Math.random()*16777215).toString(16))
         .setThumbnail(gifLink)
-        .setDescription(this.emoji+ " <@!" + message.author.id + "> " +  this.uniqueText + ' ' +  (text) + ' ' + this.emoji);
+        .setDescription(" <@!" + message.author.id + "> " +  this.uniqueText + ' ' +  (text) + ' ');
         //  client.user.avatarURL()
         
   

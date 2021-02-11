@@ -7,6 +7,7 @@ module.exports= {
         
         const guildid = emoji.guild.id 
         const guildConfig = client.guilds_config.get(guildid)  
+        if(!guildConfig || guildConfig.sightseeing === 1) return
         if(guildConfig.logging === 0 || !guildConfig.loggingchannelid) return
         const guild = client.guilds.cache.get(guildid)
         if(!guild) return
