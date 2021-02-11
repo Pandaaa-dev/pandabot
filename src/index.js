@@ -453,7 +453,7 @@ client.once('ready', async () => {
 
     }), (60000*2.5))
 
-    setInterval((() => {
+     setInterval((() => {
         if(!client.waifu || client.waifu.array().length < 1) return
           connection.query(`DELETE FROM  s581_GUILD_CONFIG.waifu;`, (res, rej) => {
            const allWaifu = []
