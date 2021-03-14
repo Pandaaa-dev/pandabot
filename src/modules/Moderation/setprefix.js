@@ -3,7 +3,7 @@ const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
 
 module.exports = {
-    name: 'setprefix',
+    name: 'setnewprefix',
     description: 'Sets the prefix for the guild', 
     usage(prefix){
         const returnArray = []

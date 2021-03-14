@@ -24,7 +24,7 @@ module.exports = {
     maxArgs: 0,
     highValue: false, 
     emoji: null,
-    cooldown: 60*60,
+    cooldown: 60*10,
     module: 'Moderation',
 
     uniqueText: "",

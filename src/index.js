@@ -30,26 +30,27 @@ client.shop = new Discord.Collection();
 client.tickets= new Discord.Collection(); 
 client.xpTimestamps= new Discord.Collection();
 client.waifu= new Discord.Collection();
-
+client.gift_inv = new Discord.Collection()
+client.hunting_inv = new Discord.Collection()
 
 client.once('ready', async () => {
 
     const _1 = {
-        emoji: `⭐`,
+        emoji: `✨`,
         emojiName: `stars`,
         perMessageXP: 15,
         dailyEcon: 50,
         econInterval: 12,
-        award5: 500,
-        award10: 1000,
-        award15: 1500,
-        award20: 2000,
-        award25: 2500,
-        award30: 3000,
-        award35: 3500,
-        award40: 4000,
-        award45: 4500,
-        award50: 5000,
+        award1: 500,
+        award2: 1250,
+        award3: 3000,
+        award4: 4500,
+        award5: 6000,
+        award6: 7500,
+        award7: 9000,
+        award8: 10500,
+        award9: 12000,
+        award10: 15000,
     }
 
     client.bot_config.set('_1', _1)
@@ -81,6 +82,22 @@ client.once('ready', async () => {
         if(res.length ==0) return
         res.forEach(eachthing => {
             client.tickets.set(eachthing.id, eachthing)
+        })
+    })
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.huntshop_inventory`, (err, res)=> {
+        if(err) console.log(err)
+        if(!res) return
+        if(res.length ==0) return
+        res.forEach(eachthing => {
+            client.hunting_inv.set(eachthing.userid, eachthing)
+        })
+    })
+    connection.query(`SELECT * FROM s581_GUILD_CONFIG.gift_inventory`, (err, res)=> {
+        if(err) console.log(err)
+        if(!res) return
+        if(res.length == 0) return
+        res.forEach(eachthing => {
+            client.gift_inv.set(eachthing.userid, eachthing)
         })
     })
     connection.query(`SELECT * FROM s581_GUILD_CONFIG.economy`, (err, res)=> {
@@ -162,7 +179,12 @@ client.once('ready', async () => {
         const singularModuleFilePath = path.join(__dirname, moduleDir, singularModule);
         const files = fs.readdirSync(singularModuleFilePath)
 
+
+     
+
+
         files.forEach(file => {
+
             const filePath = path.join(__dirname, moduleDir, singularModule, file)
             const command = require(filePath)
             if(command.name == undefined) return
@@ -250,8 +272,8 @@ client.once('ready', async () => {
         const muterole = null
         const nonewaccounts = null
         connection.query(`
-        INSERT INTO  s581_GUILD_CONFIG.guild_details(guildid, prefix, premium,  nonewaccounts, muterole, ticketsystem, ticketcategoryid, lastticket, welcomechannelid, loggingchannelid, logging, sightseeing)
-        values("${id}", "${prefix}", ${premium}, ${noNewAccounts}, ${muterole}, ${0}, ${null}, ${0}, ${null}, ${null}, ${0}, ${0});
+        INSERT INTO  s581_GUILD_CONFIG.guild_details(guildid, prefix, premium,  nonewaccounts, muterole, ticketsystem, ticketcategoryid, lastticket, welcomechannelid, loggingchannelid, logging, sightseeing, generalrole)
+        values("${id}", "${prefix}", ${premium}, ${noNewAccounts}, ${muterole}, ${0}, ${null}, ${0}, ${null}, ${null}, ${0}, ${0}, ${null});
         `, (err, res) => {
             if(err) console.log(err);
             client.guilds_config.set(id, {
@@ -383,16 +405,16 @@ client.once('ready', async () => {
                 userPoints = userEcon.points
             }
             level = level+1
-            
-            if(`${'award'+level.toString()}` in botConfig){
-                const award = botConfig['award' + level.toString()]
-                    let Econpoints = userPoints + award
-                    client.economy.set(message.author.id, {
-                        userid: message.author.id,
-                        points: Econpoints
-                    })
-
-                    message.channel.send(descEmbed(`You levelled up to level ${level}! As a result, you have earned ${award}${botConfig.emoji} as your prize!`)) 
+            const propertyString = 'award' + level.toString()
+            console.log(propertyString)
+            if(botConfig.hasOwnProperty(propertyString)){
+                const award = botConfig[propertyString]
+                let Econpoints = userPoints + award
+                client.economy.set(message.author.id, {
+                    userid: message.author.id,
+                    points: Econpoints
+                })
+                message.channel.send(descEmbed(`You levelled up to level ${level}! As a result, you have earned ${award}${botConfig.emoji} as your prize!`)) 
             }
         }
 
@@ -453,7 +475,7 @@ client.once('ready', async () => {
 
     }), (60000*2.5))
 
-     setInterval((() => {
+    setInterval((() => {
         if(!client.waifu || client.waifu.array().length < 1) return
           connection.query(`DELETE FROM  s581_GUILD_CONFIG.waifu;`, (res, rej) => {
            const allWaifu = []
@@ -488,6 +510,37 @@ client.once('ready', async () => {
         
     }, 60000 * 3.5);
     
+    setInterval(() => {
+        if(!client.economy || client.economy.array().length < 1) return
+        connection.query(`DELETE FROM  s581_GUILD_CONFIG.gift_inventory;`, (res, rej) => {
+            const array = client.gift_inv.array(); 
+            const arrayForDB = [];
+            if(array.length < 1) return
+            array.forEach(obj => {
+                const newArr = Object.values(obj)
+                arrayForDB.push(newArr)
+            })
+            connection.query(`INSERT into  s581_GUILD_CONFIG.gift_inventory (userid, Apple, Rose, Chocolate, Dog, Cat, tiger, PS5, Laptop, Car, House, Airplane, Dragon, World, Moon, Comet, Love) VALUES ?`, [arrayForDB])
+        });
+        
+    }, 60000 * 6.5);
+
+
+    setInterval(() => {
+        if(!client.hunting_inv || client.hunting_inv.array().length < 1) return
+        connection.query(`DELETE FROM  s581_GUILD_CONFIG.huntshop_inventory;`, (res, rej) => {
+            const array = client.hunting_inv.array(); 
+            const arrayForDB = [];
+            if(array.length < 1) return
+            array.forEach(obj => {
+                const newArr = Object.values(obj)
+                arrayForDB.push(newArr)
+            })
+            connection.query(`INSERT INTO s581_GUILD_CONFIG.huntshop_inventory (userid, presentSword, swordQuestNo, presentPotion, potionQuestNo, ch1a, ch2b, ch3c, ch4d, ch5e, ch6f, ch7g, ra1a, ra2b, ra3c, ra4d, ra5e, ra6f, ra7g, su1a, su2b, su3c, su4d, su5e, su6f, su7g) VALUES ?`, [arrayForDB])
+        });
+        
+    }, 60000 * 5);
+   
     fs.readdir(path.join(__dirname, '../utilities/Logging'), (err, files) => { // We use the method readdir to read what is in the events folder
         if (err) return console.error(err); // If there is an error during the process to read all contents of the ./events folder, throw an error in the console
         files.forEach(file => {

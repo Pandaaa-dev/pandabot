@@ -20,6 +20,14 @@ module.exports= {
                }
                 }
             }
+            
+            if(guildConfig.generalrole){
+                const role = member.guild.roles.cache.get(guildConfig.generalrole)
+                if(!role) return
+                member.roles.add(role)
+            }
+
+            
             const newPath = path.join(__dirname, '../../src/assets/2.png')
             if(guildConfig.welcomechannelid){
                 const welcomeChannel = member.guild.channels.cache.find(c => c.id == guildConfig.welcomechannelid);

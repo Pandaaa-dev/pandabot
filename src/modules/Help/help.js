@@ -7,7 +7,7 @@ const path = require('path')
 const { MessageEmbed } = require('discord.js')
 const descEmbed = require('../../../utilities/onlyDescEmbed')
 
-const moduleEmojis = require('../../../utilities/ModuleEmojis.json')
+const moduleEmojis = require('../../../utilities/JSON/ModuleEmojis.json')
 module.exports = {
     name: 'help',
     description: 'Helps users understand more about the bot', 

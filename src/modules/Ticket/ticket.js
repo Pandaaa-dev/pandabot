@@ -84,5 +84,6 @@ module.exports = {
             lastticket: lastTicketIdx + 1 
         })
     await  message.channel.send(basicEmbed(client, message, args, text, `Ticket Created!`, '😃', `Hey ${message.author}, we made your ticket! Please visit ${ticketChannel}`))
+        // console.log(client.ticke, 'HERE')
     }
 }

@@ -52,17 +52,17 @@ module.exports = {
         const roll = Math.floor(Math.random()*1000)
         console.log(roll)
         let multiple = ''
-        if(roll >=0 && roll <500){
+        if(roll >=0 && roll <450){
             multiple = 0
         }
-        if(roll >=500 && roll <800){
+        if(roll >=450 && roll <650){
             multiple = 1
         } 
-        if(roll >= 800 && roll < 900){
+        if(roll >= 650 && roll < 800){
             multiple = 2 
-        } if(roll >= 900 && roll < 990){
+        } if(roll >= 800 && roll < 950){
             multiple = 4
-        } if(roll >= 990 && roll <= 1000){
+        } if(roll >= 950 && roll <= 1000){
             multiple = 10
         }
         gainedPoints = number * multiple

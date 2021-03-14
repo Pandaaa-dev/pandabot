@@ -1,0 +1,66 @@
+{
+    "Apple": {
+        "price": 25,
+        "emoji": "🍏"
+    },
+    "Rose": {
+        "price": 50,
+        "emoji": "🌹"
+    },
+    "Chocolate": {
+        "price": 80,
+        "emoji": "🍫"
+    },
+    "Dog": {
+        "price": 200,
+        "emoji": "🐶"
+    },
+    "Cat": {
+        "price": 300,
+        "emoji": "🐱"
+    },
+    "Tiger": {
+        "price": 600,
+        "emoji": "🐯"
+    },
+    "PS5": {
+        "price": 1250,
+        "emoji": "🎮"
+    },
+    "Laptop": {
+        "price": 1500,
+        "emoji": "💻"
+    },
+    "Car": {
+        "price": 2250,
+        "emoji": "🚗"
+    },
+    "House": {
+        "price": 3000,
+        "emoji": "🏠"
+    },
+    "Airplane": {
+        "price": 4000,
+        "emoji": "✈️"
+    },
+    "Dragon": {
+        "price": 6000,
+        "emoji": "🐲"
+    },
+    "World": {
+        "price": 10000,
+        "emoji": "🌎"
+    },
+    "Moon": {
+        "price": 12500,
+        "emoji": "🌙"
+    },
+    "Comet": {
+        "price": 15000,
+        "emoji": "☄️"
+    },
+    "Love": {
+        "price": 20000,
+        "emoji": "💕"
+    }
+}

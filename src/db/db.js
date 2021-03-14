@@ -10,6 +10,8 @@ const connection = mysql.createConnection({...DB})
    }
    console.log("Connected to the Database!")
  })
+console.log('hmm')
+ connection.query('CREATE DATABASE IF NOT EXISTS s581_GUILD_CONFIG')
 
 
  connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.guild_details(
@@ -25,6 +27,7 @@ const connection = mysql.createConnection({...DB})
                     loggingchannelid varchar(255),
                     logging BOOL,
                     sightseeing BOOL,
+                    generalrole varchar(255) DEFAULT NULL,
                     primary key(guildid));`, (err, res)=> { 
   if(err) console.log(err)
 })
@@ -42,6 +45,7 @@ connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.economy(
                   PRIMARY KEY(userid));`, (err, res)=> {
 if(err) console.log(err)
 })
+
 connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.shop(
                   id int NOT NULL AUTO_INCREMENT, 
                   name Varchar(255),
@@ -122,16 +126,77 @@ connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.level_rewards(
   , (err, res)=> {
 if(err) console.log(err)
 })
+connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.gift_inventory(
+  userid varchar(255),
+  Apple int, 
+  Rose int,
+  Chocolate int, 
+  Dog int,
+  Cat int,
+  Tiger int,
+  PS5 int,
+  Laptop int,
+  Car int,
+  House int,
+  Airplane int,
+  Dragon int,
+  World int,
+  Moon int,
+  Comet int,
+  Love int,
+  primary key(userid));`
+  , (err, res)=> {
+if(err) console.log(err)
+})
+
+connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.huntshop_inventory(
+  userid varchar(255),
+  presentSword varchar(255), 
+  swordQuestNo int,
+  presentPotion varchar(255),
+  potionQuestNo int, 
+  ch1a int,
+  ch2b int,
+  ch3c int,
+  ch4d int,
+  ch5e int, 
+  ch6f int, 
+  ch7g int,
+  ra1a int,
+  ra2b int, 
+  ra3c int,
+  ra4d int, 
+  ra5e int,
+  ra6f int,
+  ra7g int,
+  su1a int,
+  su2b int,
+  su3c int, 
+  su4d int,
+  su5e int, 
+  su6f int,
+  su7g int,
+  primary key(userid));`
+  , (err, res)=> {
+if(err) console.log(err)
+})
+
+// Userid
+// presentSword
+// swordquestNo
+// presentPotion
+// potionQuestNo
+// …inventory 5yItems
 
 
 
 
-// connection.query(`ALTER TABLE guild_details
-//                   ADD column sightseeing BOOL DEFAULT 0;`
+
+// connection.query(`ALTER TABLE s581_GUILD_CONFIG.guild_details
+//                   ADD generalrole varchar(255) DEFAULT NULL;`
 //   , (err, res)=> {
 // if(err) console.log(err)
 // })
- 
 
 module.exports = connection
 

@@ -31,8 +31,8 @@ module.exports = {
         // Gif links for the embed
     ],
     async execute( message, args, text, client, connection){
-         const channeltoDelete =  client.tickets.find(ticket => ticket.guildid == message.guild.id.toString() && ticket.channelid == message.channel.id.toString() && ticket.userid == message.author.id)
-
+         const channeltoDelete =  client.tickets.find(ticket => ticket.guildid == message.guild.id && ticket.channelid == message.channel.id && ticket.userid == message.author.id)
+        if(!channeltoDelete) return
          const actualChannel = await message.guild.channels.cache.find(channel => channel.id == channeltoDelete.channelid)
 
          if(!actualChannel) return
@@ -43,12 +43,6 @@ module.exports = {
             return message.channel.send(basicEmbed(client, message,args, text, `Missing Permissions!`, '😠', `I **dont** have the permission:\n\`MANAGE_CHANNELS\` `))
          }
          
-         connection.query(`DELETE FROM guild_config.tickets 
-                        WHERE (guildid = "${message.guild.id}" 
-                        AND channelid = "${message.channel.id}" 
-                        AND userid = "${message.author.id}");`)
-
-         await client.tickets.delete(channeltoDelete.id)
          await message.channel.delete()
     }
 }

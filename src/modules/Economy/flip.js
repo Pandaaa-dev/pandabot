@@ -10,7 +10,7 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        const single = `\`${flip}${this.name.toLowerCase()} <ammount>\``
+        const single = `\`${prefix}${this.name.toLowerCase()} <ammount>\``
         // const multiple = `\`${flip}${this.name.toLowerCase()} @person1 @person2  %reason\` `
         returnArray.push(single)
         // returnArray.push(multiple)
@@ -51,7 +51,7 @@ module.exports = {
         const roll = Math.random()
         console.log(roll)
         let multiple = ''
-        if(roll <= 0.58){
+        if(roll <= 0.50){
             multiple = 0
         } else {
             multiple = 2

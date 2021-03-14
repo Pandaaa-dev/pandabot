@@ -36,6 +36,8 @@ module.exports = {
             if(!wordToDelete){
                 return message.channel.send(basicEmbed(client, message, args, text, `Cannot find word!`, `❌`, `Cannot find the specified word in the database` ))
             }
+             client.banned_words.delete(wordToDelete.id)
+             
             connection.query(`DELETE FROM ${"s581_GUILD_CONFIG.banned_words"}
                                      WHERE word = "${wordToDelete.word}"
                                      AND guildid = "${message.guild.id.toString()}"; `,(rej,res) => { 

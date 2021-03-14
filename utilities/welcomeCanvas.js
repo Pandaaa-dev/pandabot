@@ -15,7 +15,7 @@ Canvas.registerFont(fontPath, {
 const newPath = path.join(__dirname, '../src/assets/2.png')
 const img = await Canvas.loadImage(newPath)
 ctx.drawImage(img, 0, 0, 700, 400)
-ctx.font = `25px Roboto`
+ctx.font = `20px Roboto`
 ctx.textBaseline = 'middle'
 const messageText = `${newMember.user.tag} has joined!`
 const memberCount = `Member #${newMember.guild.memberCount+1}`
@@ -49,7 +49,7 @@ ctx.shadowColor = 'red'
 ctx.shadowOffsetX = 0;
 ctx.shadowOffsetY = 0;
 ctx.shadowBlur = 10; 
-ctx.fillRect(150-103, 265, ctx.measureText(messageText).width + ctx.measureText(messageText).width/8 , 70 )
+ctx.fillRect(150-103, 265, ctx.measureText(messageText).width + ctx.measureText(messageText).width/6 , 70 )
 ctx.fill()
 ctx.closePath()
 
@@ -58,7 +58,7 @@ ctx.beginPath()
 ctx.fillStyle = 'maroon'
 ctx.fillText(messageText, (150-103)+ (150-103)/2 , 265+(265/8))
 ctx.closePath()
-console.log(ctx.measureText(messageText))
+
 
 ctx.save()
 ctx.beginPath()
@@ -69,7 +69,7 @@ ctx.closePath()
 
 
 ctx.beginPath()
-ctx.font = '20px Roboto';
+ctx.font = '17px Roboto';
 ctx.fillStyle = 'white'
 ctx.textBaseline = 'hanging'
 ctx.fillText(memberCount, 0 + ctx.measureText(memberCount).width/8 , canvas.height-20-8)

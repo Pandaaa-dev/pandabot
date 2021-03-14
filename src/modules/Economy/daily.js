@@ -35,13 +35,6 @@ module.exports = {
         const botConfig = client.bot_config.get('_1')
         const userObj = array.find(ar => ar.userid == message.author.id)
 
-        //cooldown
-            if(userObj){
-                let index = array.findIndex(arr => arr.userid == userObj.userid && arr.timestamp == userObj.timestamp)
-                array.splice(array.indexOf(index), 1)
-            }
-
-            console.log(Date.now()/360000)
             const {emoji, dailyEcon} = client.bot_config.get('_1')
             let userPoints = ''
             const xpObject = client.economy.get(message.author.id)
@@ -58,10 +51,7 @@ module.exports = {
                 userid: message.author.id,
                 points: userPoints
             })
-            array.push({
-                userid: message.author.id,
-                timestamp: Date.now()
-            })
+
             message.channel.send(embed)
         
 

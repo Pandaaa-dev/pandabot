@@ -1,4 +1,4 @@
-    // check these routes!
+// check these routes!
     const basicEmbed = require('../../../utilities/basicEmbed')
     const descEmbed = require('../../../utilities/onlyDescEmbed')
     const errorEmbed = require('../../../utilities/errorEmbed')
@@ -29,7 +29,7 @@ const connection = require('../../db/db')
         emoji: null,
         module: 'Waifu',
 
-        cooldown: 60*10,
+        cooldown: 60,
         uniqueText: "",
         giflinks: [ 
             // Gif links for the embed

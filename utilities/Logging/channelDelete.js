@@ -8,10 +8,10 @@ module.exports= {
             const channeltoDeleteTICKET =  await client.tickets.get(channel.id)
     
             if(channeltoDeleteTICKET){
-             connection.query(`DELETE FROM guild_config.tickets 
+             connection.query(`DELETE FROM s581_GUILD_CONFIG.tickets  
                             WHERE (guildid = "${channel.guild.id}" 
                            AND channelid = "${channel.id}");`)
-            client.tickets.delete(chennel.id)
+            client.tickets.delete(channel.id)
                 }
         }
     

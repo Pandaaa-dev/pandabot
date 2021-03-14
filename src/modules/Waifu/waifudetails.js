@@ -2,6 +2,8 @@
 const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
 const descEmbed = require('../../../utilities/onlyDescEmbed')
+const gifts = require('../../../utilities/JSON/gifts.json')
+
 const {MessageEmbed} = require('discord.js') 
 module.exports = {
     name: 'waifuinfo',
@@ -32,10 +34,12 @@ module.exports = {
         // Gif links for the embed
     ],
     async execute( message, args, text, client){
+        
         let user = message.author
+        const {emoji} = client.bot_config.get('_1')
 
         if(message.mentions.users.first()) {
-            user = message.mentions.first()
+            user = message.mentions.users.first()
         }
 
         const isAlreadyWaifu = client.waifu.get(user.id)
@@ -70,9 +74,24 @@ module.exports = {
                 {name: 'Name', value: `${user.username || 'Someone'}`},
                 {name: 'Waifus', value: `**${waifuLength}/5**`}, 
                 {name: 'Husbandu', value: `${husbandu}`, inline: true}, 
-                {name: 'Worth', value: `${isAlreadyWaifu? `At least ${isAlreadyWaifu.amount + (isAlreadyWaifu.amount * 0.20)}` : '500'}`, inline: true}, 
+                {name: 'Worth', value: `${isAlreadyWaifu? `At least ${isAlreadyWaifu.amount + (isAlreadyWaifu.amount * 0.20)} ${emoji}` : '500 ' + emoji}`, inline: true}, 
                 {name: 'Waifu List', value: `${waifuList}`}, 
             ]);
+          const gift_inv =   client.gift_inv.get(user.id)
+          console.lo
+          if(gift_inv) {
+              let stringarr = []
+              const arr = Object.keys(gift_inv)
+              arr.forEach(key => {
+                  if(key == 'userid') return
+                  if(gift_inv[key] !== 0){
+                      // embed.addField(`${key} ${gifts[key].emoji}`, gift_inv[key], true)
+                      stringarr.push(`${key} ${gifts[key].emoji} x ${gift_inv[key]}`)
+                    }
+                })
+            embed.addField('Gifts', stringarr.join('\n'), false)
+                
+          }
         await message.channel.send(embed)
 
     }

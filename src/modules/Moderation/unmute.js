@@ -57,7 +57,7 @@ module.exports = {
           client.muted_members.delete(searchToUnmute.id)
           mentionedMemberToUnmute.roles.remove(hasMuteRole)
 
-          connection.query(`DELETE FROM s581_GUILD_CONFIG.MUTED_MEMBERS WHERE userid = ${personToUnmute.id} AND guildid = ${message.guild.id}`, (rej, res)=> {
+          connection.query(`DELETE FROM s581_GUILD_CONFIG.muted_members WHERE userid = ${personToUnmute.id} AND guildid = ${message.guild.id}`, (rej, res)=> {
             if(rej) console.log(rej)
             console.log(res, "Done")
         })

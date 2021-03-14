@@ -12,7 +12,7 @@ module.exports = {
 
         //Basic usage shown in an array 
 
-        const single = `\`${prefix}${this.name.toLowerCase()} 5m @person\``
+        const single = `\`${prefix}${this.name.toLowerCase()} @person 5m\``
         returnArray.push(single)
         return returnArray
     },
