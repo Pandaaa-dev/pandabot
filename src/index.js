@@ -10,6 +10,7 @@ const client = new Discord.Client({
   });
 const cmdHandler = require('../cmdHandler')
 require('./db/db')
+const codeCanvas = require('../utilities/codeCanvas')
 const connection = require('./db/db');
 const nextLevel = require('../utilities/nextlevel')
 const basicEmbed = require('../utilities/basicEmbed');
@@ -418,6 +419,52 @@ client.once('ready', async () => {
             }
         }
 
+        // Random Code generation 
+
+// Create a message collector
+const roll = Math.floor(Math.random() * 100) + 1 
+if(roll > 95) {
+    const {attachment, code, numberOfCurr} = await codeCanvas()
+    const messageText = `Type .pick and the code in the picture to get ${numberOfCurr} ${client.bot_config.get('_1').emoji}`
+    // messageattachments.setFile(attachment, 'userfile.png')
+  const sentMessage = await message.channel.send(messageText, {
+        files: [{
+            ...attachment
+        }]
+    })
+    const filter = m => m.content.startsWith(guildConfig.prefix + 'pick');
+    const collector = message.channel.createMessageCollector(filter);
+    collector.on('collect', m => {
+        if(m.content.trim().startsWith(guildConfig.prefix + 'pick')){
+            
+            const args = m.content.split(' ');
+            console.log(args)
+            if(args[1].toLowerCase() === code.toLowerCase()){
+                collector.stop()
+                const user  = client.economy.get(m.author.id)
+                let points = 0
+                if(!user){
+                        points = 0
+                } else if(user){
+                        points= user.points
+                }
+                sentMessage.delete()
+                points = points + numberOfCurr
+                client.economy.set(m.author.id, {
+                    userid: m.author.id,
+                    points: points
+                })
+                m.channel.send(descEmbed(`${m.author} guessed it right! They get ${numberOfCurr} ${client.bot_config.get('_1').emoji}`))
+            }
+        }
+    });
+    collector.on('end', collected => {
+        
+    });
+}
+
+    // Random Code generation end        
+
         client.xp_level.set(message.author.id, {
             guildid: message.guild.id,
             userid: message.author.id,
@@ -536,10 +583,10 @@ client.once('ready', async () => {
                 const newArr = Object.values(obj)
                 arrayForDB.push(newArr)
             })
-            connection.query(`INSERT INTO s581_GUILD_CONFIG.huntshop_inventory (userid, presentSword, swordQuestNo, presentPotion, potionQuestNo, ch1a, ch2b, ch3c, ch4d, ch5e, ch6f, ch7g, ra1a, ra2b, ra3c, ra4d, ra5e, ra6f, ra7g, su1a, su2b, su3c, su4d, su5e, su6f, su7g) VALUES ?`, [arrayForDB])
+            connection.query(`INSERT INTO s581_GUILD_CONFIG.huntshop_inventory (userid, presentSword, swordQuestNo, presentPotion, potionQuestNo, ch1a, ch2b, ch3c, ch4d, ch5e, ch6f, ch7g, ra1a, ra2b, ra3c, ra4d, ra5e, ra6f, ra7g, su1a, su2b, su3c, su4d, su5e, su6f) VALUES ?`, [arrayForDB])
         });
         
-    }, 60000 * 5);
+    }, 60000 * 0.15);
    
     fs.readdir(path.join(__dirname, '../utilities/Logging'), (err, files) => { // We use the method readdir to read what is in the events folder
         if (err) return console.error(err); // If there is an error during the process to read all contents of the ./events folder, throw an error in the console

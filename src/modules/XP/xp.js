@@ -37,7 +37,7 @@ module.exports = {
     async execute( message, args, text, client){
         const guildConfig = client.guilds_config.get(message.guild.id)
         if(!guildConfig) return
-        if(guildConfig.sightseeing === 1) return descEmbed('This server is in sightseeing mode! The owner must turn it off first')
+        if(guildConfig.sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
         let user = ''
         const mentionedUser = message.mentions.users.first()
         if(mentionedUser){

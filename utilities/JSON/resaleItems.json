@@ -2,7 +2,7 @@
     "Cheap": [
         {
             "name": "Beans",
-            "price": 5,
+            "price": 3,
             "code": "ch1a"
         },
         {
@@ -12,96 +12,92 @@
         },
         {
             "name": "Frozen Vegetables",
-            "price": 8,
+            "price": 6,
             "code":"ch3c"
         },
         {
             "name": "Spinach",
-            "price": 6,
+            "price": 5,
             "code": "ch4d"
         },
         {
             "name": "Rice Ball",
-            "price": 8,
+            "price": 4,
             "code": "ch5e"
         },
         {
             "name": "Eggs",
-            "price": 7, 
+            "price": 5, 
             "code": "ch6f"
         },
         {
             "name": "Canned Tuna",
-            "price": 8,
+            "price": 2,
             "code": "ch7g"
         }
     ],
     "Rare": [
         {
             "name": "Wagyu Beef",
-            "price": 1000,
+            "price": 350,
             "code": "ra1a"
         },
         {
             "name": "Caviar",
-            "price": 1250,
+            "price": 500,
             "code": "ra2b"
         },
         {
             "name": "Truffle",
-            "price": 1200,
+            "price": 400,
             "code": "ra3c"
         },
         {
             "name": "Kopi Luwak Coffee",
-            "price": 1000,
+            "price": 500,
             "code": "ra4d"
         },
         {
             "name": "Foie Gras",
-            "price": 1200,
+            "price": 450,
             "code": "ra5e"
         },
         {
             "name": "Saffron",
-            "price": 1500,
+            "price": 500,
             "code": "ra6f"
         },
         {
             "name": "Moose Cheese",
-            "price": 900,
+            "price": 300,
             "code": "ra7g"
         }
     ], 
     "superRare": [
         {
             "name": "Kobe Beef",
-            "price": 5000,
+            "price": 1250,
             "code": "su1a"
         },{
             "name": "Fugu",
-            "price": 4000,
+            "price": 1400,
             "code": "su2b"
         },{
             "name": "24K Pizza",
-            "price": 4500,
+            "price": 1000,
             "code": "su3c"
         },{
             "name": "Casu Marzu",
-            "price": 5000,
+            "price": 1500,
             "code": "su4d"
         },{
             "name": "Black Chicken",
-            "price": 3500,
+            "price": 1300,
             "code": "su5e"
         },{
             "name": "Da Hong Pao",
-            "price": 6500,
+            "price": 1600,
             "code": "su6f"
-        },{
-            "name": "White Truffle",
-            "price": 5000,
-            "code": "su7g"
         }
     ]
 }

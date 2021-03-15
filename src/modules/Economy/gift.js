@@ -3,6 +3,7 @@ const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
 const gifts = require('../../../utilities/JSON/gifts.json')
 const descEmbed = require('../../../utilities/onlyDescEmbed')
+
 module.exports = {
     name: 'gift',
     description: 'Gift a person something', 
@@ -30,7 +31,7 @@ module.exports = {
     ],
     async execute( message, args, text, client){
         const giftableItems = Object.keys(gifts)
-        // console.log(giftableItems
+        if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
         message.delete()
         if(!message.mentions.users.first()) return message.channel.send(descEmbed("You didn't mention a user!"))
         if(message.mentions.users.first().id === message.author.id) return message.channel.send(descEmbed('Stop giving yourself gifts. You need friends to survive you know...'))

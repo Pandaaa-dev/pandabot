@@ -2,6 +2,7 @@
 const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
 const {MessageEmbed} = require('discord.js')
+const descEmbed = require('../../../utilities/onlyDescEmbed')
 
 module.exports = {
 name: 'bal',
@@ -32,6 +33,7 @@ giflinks: [
 ],
 async execute( message, args, text, client){
     message.delete()
+    if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
     const emoji = client.bot_config.get('_1').emoji
     if(message.mentions.users.first()){
         const user  =client.economy.get(message.mentions.users.first().id)

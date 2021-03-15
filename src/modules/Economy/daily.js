@@ -2,6 +2,8 @@
 const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
 const {MessageEmbed} = require('discord.js')
+const descEmbed = require('../../../utilities/onlyDescEmbed')
+
 const array = []
 module.exports = {
     name: 'daily',
@@ -33,6 +35,7 @@ module.exports = {
     ],
     async execute( message, args, text, client){
         const botConfig = client.bot_config.get('_1')
+        if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
         const userObj = array.find(ar => ar.userid == message.author.id)
 
             const {emoji, dailyEcon} = client.bot_config.get('_1')

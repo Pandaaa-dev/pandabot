@@ -32,8 +32,10 @@ module.exports = {
         // Gif links for the embed
     ],
     async execute( message, args, text, client){
+        if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
        const item = args.join(' ').trim();
        const user  = client.economy.get(message.author.id)
+
        let huntingDetailsForUser = client.hunting_inv.get(message.author.id);
         if(!huntingDetailsForUser){
             huntingDetailsForUser = {
@@ -44,7 +46,7 @@ module.exports = {
                 potionQuestNo:null,
                 ch1a:null,ch2b:null,ch3c:null,ch4d:null, ch5e:null,ch6f:null,ch7g:null,
                 ra1a:null,ra2b:null,ra3c:null,ra4d:null,ra5e:null,ra6f:null,ra7g:null,
-                su1a:null, su2b:null,su3c:null,su4d:null,su5e:null,su6f:null,su7g:null
+                su1a:null, su2b:null,su3c:null,su4d:null,su5e:null,su6f:null
             }
         }
        let points = 0
@@ -66,6 +68,9 @@ module.exports = {
            const isPotion = huntShop.Potions.find(potion => potion.name.toLowerCase() === item.toLowerCase())
            if(huntingDetailsForUser.presentPotion) return message.channel.send(descEmbed('You cannot own more than one potions at a time!'))
            if(!isPotion) return message.channel.send(descEmbed('Could not find item...'))
+           if(huntingDetailsForUser.presentSword.toLowerCase() === 'one shot'){
+              return message.channel.send(descEmbed('Presently, you have **One shot** equipped. We do not allow potions to be used while you have One shot. Nice try *:wink:*'))
+           }
            if(points < isPotion.price) return message.channel.send(descEmbed(`You do not have enough!`))
         points = points - isPotion.price
         huntingDetailsForUser.presentPotion = isPotion.name

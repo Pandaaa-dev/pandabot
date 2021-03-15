@@ -175,12 +175,15 @@ connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.huntshop_inventor
   su4d int,
   su5e int, 
   su6f int,
-  su7g int,
   primary key(userid));`
   , (err, res)=> {
 if(err) console.log(err)
 })
-
+// {
+//   "name": "White Truffle",
+//   "price": 5000,
+//   "code": "su7g"
+// }
 // Userid
 // presentSword
 // swordquestNo
@@ -192,8 +195,8 @@ if(err) console.log(err)
 
 
 
-// connection.query(`ALTER TABLE s581_GUILD_CONFIG.guild_details
-//                   ADD generalrole varchar(255) DEFAULT NULL;`
+// connection.query(`ALTER TABLE s581_GUILD_CONFIG.huntshop_inventory
+//                   drop su7g;`
 //   , (err, res)=> {
 // if(err) console.log(err)
 // })

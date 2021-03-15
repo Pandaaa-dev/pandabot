@@ -31,6 +31,7 @@ module.exports = {
     ],
     async execute( message, args, text, client){
         message.delete()
+        if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
         const giftableItems = Object.keys(gifts)
         const emoji = client.bot_config.get('_1').emoji 
         const embed = new MessageEmbed()

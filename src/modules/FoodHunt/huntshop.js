@@ -32,6 +32,8 @@ module.exports = {
     ],
     async execute( message, args, text, client){
         const emoji = client.bot_config.get('_1').emoji
+        if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
+
         const embed = new MessageEmbed()
         .setTimestamp()
         .setColor(Math.floor(Math.random()*16777215).toString(16))

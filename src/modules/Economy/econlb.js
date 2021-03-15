@@ -4,6 +4,7 @@ const errorEmbed = require('../../../utilities/errorEmbed')
 const arraySort = require('array-sort')
 const {MessageEmbed} = require('discord.js')
 const descEmbed = require('../../../utilities/onlyDescEmbed')
+
 module.exports = {
     name: 'econlb',
     description: 'Shows the economy leaderboard', 
@@ -35,6 +36,7 @@ module.exports = {
         message.delete()
         const botConfig = client.bot_config.get('_1')
          if(!client.economy) return descEmbed(`Couldn't find any economy data...`)
+         if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
          const econArray = arraySort(client.economy.array(), 'points', {reverse: true}) ;
          if(econArray.length == 0) return message.channel.send(descEmbed('Couldnt find any economy data...')) 
          const embed = new MessageEmbed()

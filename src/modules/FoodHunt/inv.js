@@ -31,6 +31,7 @@ module.exports = {
         // Gif links for the embed
     ],
     async execute( message, args, text, client){
+        if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
         let huntingDetailsForUser = client.hunting_inv.get(message.author.id);
         const guild = client.guilds_config.get(message.guild.id)
         if(!huntingDetailsForUser || !huntingDetailsForUser.presentSword) return message.channel.send(descEmbed(`You dont have a sword! Buy a sword to begin your quest journey! Type ${guild.prefix}huntshop to know about the available swords.`))

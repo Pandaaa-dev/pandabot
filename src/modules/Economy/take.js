@@ -2,6 +2,8 @@
 const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
 const {MessageEmbed} = require('discord.js')
+const descEmbed = require('../../../utilities/onlyDescEmbed')
+
 module.exports = {
     name: 'take',
     description: 'Awards a user some xp', 

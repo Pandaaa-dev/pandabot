@@ -2,6 +2,7 @@
 const { MessageEmbed } = require('discord.js')
 const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
+const descEmbed = require('../../../utilities/onlyDescEmbed')
 
 module.exports = {
     name: 'give',
@@ -33,7 +34,7 @@ module.exports = {
     async execute( message, args, text, client){
 
         if(!message.mentions.users.first()) return
-   
+        if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
         const {emoji, dailyEcon} = client.bot_config.get('_1')
         const user  = client.economy.get(message.author.id)
         let points = 0

@@ -29,11 +29,13 @@ module.exports = {
     emoji: null,
     module: 'FoodHunt',
     uniqueText: "uniquetext",
-    cooldown: 6*3600000 ,
+    cooldown: 21600,
     giflinks: [ 
         // Gif links for the embed
     ],
     async execute( message, args, text, client){
+        if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
+
         let huntingDetailsForUser = client.hunting_inv.get(message.author.id);
         const guild = client.guilds_config.get(message.guild.id)
 
@@ -44,21 +46,31 @@ module.exports = {
         const itemsPerQuest = sword.itemsPerQuest
         let arrayOfItems 
         let type
-        for(i = 0; i< itemsPerQuest; i++){
-            const roll = Math.floor(Math.random() * 100) + 1 
-            if(roll < 3){
-                type = 'Super Rare'
-                 arrayOfItems = resaleItems.superRare
-            }  else if(roll >= 3 && roll <=85) {
-                type= 'Cheap'
-                 arrayOfItems = resaleItems.Cheap
-            } else {
-                type= 'Rare'
-                 arrayOfItems = resaleItems.Rare
+        let invincible = false
+        let multiple = 1
+        if(huntingDetailsForUser.presentPotion){
+            if(huntingDetailsForUser.presentPotion.toLowerCase().trim().startsWith('invicta')){
+                invincible = true
+            } else if(huntingDetailsForUser.presentPotion.toLowerCase() === 'item duplex potion'){
+                multiple = 2
             }
-
-            const item = arrayOfItems[Math.floor(Math.random()*resaleItems.superRare.length)]
             
+        }
+        for(i = 0; i< itemsPerQuest * multiple; i++){
+            const roll = Math.floor(Math.random() * 100) + 1 
+            if(roll === 100){
+                type = 'Super Rare'
+                arrayOfItems = resaleItems.superRare
+            }  else if(roll > 20 && roll <=99) {
+                type= 'Cheap'
+                arrayOfItems = resaleItems.Cheap
+            } else if( roll <= 20) {
+                type= 'Rare'
+                arrayOfItems = resaleItems.Rare
+            }
+            
+            const item = arrayOfItems[Math.floor(Math.random() * arrayOfItems.length)]
+            // const item = arrayOfItems[Math.floor(Math.random()*resaleItems[.superRare].length)]
              const alreadyExists = arr.findIndex(thing => thing.name.toLowerCase() === item.name.toLowerCase())
              if(alreadyExists && alreadyExists !== -1){
                 arr[alreadyExists].qty = arr[alreadyExists].qty + 1 
@@ -90,21 +102,30 @@ module.exports = {
             huntingDetailsForUser[item.code] === null? 0 : huntingDetailsForUser[item.code]
             huntingDetailsForUser[item.code] = huntingDetailsForUser[item.code] + item.qty 
         })
+
+
         console.log(huntingDetailsForUser.swordQuestNo )
-        if(huntingDetailsForUser.swordQuestNo - 1 <= 0) {
+        if(huntingDetailsForUser.swordQuestNo - 1 <= 0 && !invincible) {
             huntingDetailsForUser.presentSword = null
             huntingDetailsForUser.swordQuestNo = null
             message.channel.send(basicEmbed(client, message, args, text, `R.I.P. Sword!`, '⚔️', `Your sword is no more! Unfortunately, it reached its limit and **broke**. We cannot let you go into the wild without a sword. Please buy a new one before you go for more quests!` ))
-        } else {
-            huntingDetailsForUser.swordQuestNo = huntingDetailsForUser.swordQuestNo - 1
+        } else {    
+            huntingDetailsForUser.swordQuestNo = invincible? huntingDetailsForUser.swordQuestNo : huntingDetailsForUser.swordQuestNo - 1
         }
+
         if(huntingDetailsForUser.potionQuestNo - 1 <= 0 && huntingDetailsForUser.potionQuestNo !== null) {
             huntingDetailsForUser.presentPotion = null
             huntingDetailsForUser.potionQuestNo = null
             message.channel.send(basicEmbed(client, message, args, text, `Potion fully depleted!`, '🧪', `Your potion has been fully depleted! But another one to reap its benefits again!` ))
-        } else {
+        } else if(huntingDetailsForUser.potionQuestNo !== 0 && huntingDetailsForUser.presentPotion) { 
             huntingDetailsForUser.potionQuestNo = huntingDetailsForUser.potionQuestNo - 1
         }
+
+
+
+
+
+
         client.hunting_inv.set(message.author.id, huntingDetailsForUser)
         message.channel.send(embed)
     }

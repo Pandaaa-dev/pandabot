@@ -79,7 +79,7 @@
         },
         {
             "name": "One Shot",
-            "Price": 15000,
+            "Price": 25000,
             "questNumber": 1,
             "itemsPerQuest": 100,
             "emoji": "🎯"

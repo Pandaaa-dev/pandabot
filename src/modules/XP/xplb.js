@@ -32,6 +32,7 @@ module.exports = {
     ],
     async execute( message, args, text, client){
         message.delete()
+        if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
         if(!client.xp_level) return message.channel.send(descEmbed('Couldnt find any xp data...')) 
         const xpArray = arraySort(client.xp_level.array(), 'points', {reverse: true}) ;
         if(xpArray.length == 0) return message.channel.send(descEmbed('Couldnt find any xp data...')) 

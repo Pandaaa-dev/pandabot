@@ -33,6 +33,8 @@ module.exports = {
     ],
     async execute( message, args, text, client){
         const personAsWaifu = await client.waifu.get(message.author.id)
+        if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
+
         if(!personAsWaifu) return message.channel.send(descEmbed(`You are not a waifu.`))
         const emoji = client.bot_config.get('_1').emoji
         if(personAsWaifu.divorceCount === 3 ){

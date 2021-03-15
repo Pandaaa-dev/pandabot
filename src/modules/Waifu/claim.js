@@ -35,6 +35,7 @@ const connection = require('../../db/db')
             // Gif links for the embed
         ],
         async execute( message, args, text, client){
+            if(client.guilds_config.get(message.guild.id).sightseeing === 1) return message.channel.send(descEmbed('This server is in sightseeing mode! The owner must turn it off first'))
             if(isNaN(+args[1])) return message.channel.send(descEmbed('User a proper number.'))
             
             const userEcon = client.economy.get(message.author.id)

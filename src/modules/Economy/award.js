@@ -1,6 +1,8 @@
 // check these routes!
 const basicEmbed = require('../../../utilities/basicEmbed')
 const errorEmbed = require('../../../utilities/errorEmbed')
+const descEmbed = require('../../../utilities/onlyDescEmbed')
+
 const {MessageEmbed} = require('discord.js')
 module.exports = {
     name: 'award',

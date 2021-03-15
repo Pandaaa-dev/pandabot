@@ -8,10 +8,7 @@ const xpCanvas = async (message, client, user) => {
     Canvas.registerFont(fontPath, {
         family: 'Roboto',
     })
-    const anotherFontPath =path.join(__dirname, '../src/assets/fonts/NewRocker.ttf')
-    Canvas.registerFont(anotherFontPath, {
-        family: 'NewRocker',
-    })
+
     const userxp = client.xp_level.get(user.id)
     let level = 1
     let points = 0
@@ -80,7 +77,7 @@ const xpCanvas = async (message, client, user) => {
     ctx.shadowOffsetY = 0;
     ctx.shadowBlur = 0;
     ctx.fillStyle = 'maroon'
-    ctx.font = '24px NewRocker'
+    // ctx.font = '35px Times New Roman'
     ctx.fillText('Global Rank', 268.24, 215)
     ctx.fill()
     ctx.closePath()
@@ -92,7 +89,7 @@ const xpCanvas = async (message, client, user) => {
     ctx.shadowOffsetY = 0;
     ctx.shadowBlur = 1;
     ctx.fillStyle = 'white'
-    ctx.font = '27px NewRocker'
+    // ctx.font = '27px NewRocker'
     ctx.fillText(GlobalRank, (268.24  + ctx.measureText('Global Rank').width/2 - ctx.measureText(GlobalRank.toString()).width), 250)
     ctx.fill()
     ctx.closePath()
@@ -104,7 +101,7 @@ const xpCanvas = async (message, client, user) => {
     ctx.shadowOffsetY = 0;
     ctx.shadowBlur = 0;
     ctx.fillStyle = 'maroon'
-    ctx.font = '24px NewRocker'
+    // ctx.font = '24px NewRocker'
     ctx.fillText('Server Rank', 520.24, 215)
     ctx.fill()
     ctx.closePath()
@@ -116,7 +113,7 @@ const xpCanvas = async (message, client, user) => {
     ctx.shadowOffsetY = 0;
     ctx.shadowBlur = 0;
     ctx.fillStyle = 'white'
-    ctx.font = '27px NewRocker'
+    // ctx.font = '27px NewRocker'
     ctx.fillText(guildRank, (520.24 + ctx.measureText('Server Rank').width/2 - ctx.measureText(guildRank.toString()).width), 250)
     ctx.fill()
     ctx.closePath()
@@ -128,7 +125,7 @@ const xpCanvas = async (message, client, user) => {
     ctx.shadowOffsetY = 0;
     ctx.shadowBlur = 0;
     ctx.fillStyle = 'white'
-    ctx.font = '27px NewRocker'
+    // ctx.font = '27px NewRocker'
     ctx.fillText(`${points} XP`, 270, 150)
     ctx.fill()
     ctx.closePath()
@@ -140,14 +137,14 @@ const xpCanvas = async (message, client, user) => {
     ctx.shadowOffsetY = 0;
     ctx.shadowBlur = 2;
     ctx.fillStyle = 'white'
-    ctx.font = '60px NewRocker'
+    // ctx.font = '60px NewRocker'
     ctx.fillText(level, ((268.24 + ctx.measureText('Global Rank').width + (520.24 - (268.24 + ctx.measureText('Global Rank').width)))/1.1) - ctx.measureText(level.toString()).width + ctx.measureText(level.toString()).width/3 + 4 , 220)
     ctx.fill()
     ctx.closePath()
     
     //User xp BAR empty
     ctx.beginPath()
-    ctx.font = '27px NewRocker'
+    // ctx.font = '27px NewRocker'
     ctx.fillStyle='rgba(0,0,0,0.8)'
     ctx.fillRect(268.24, 280, (520.24 + ctx.measureText('Server Rank').width) - 268.24, 20 )
     ctx.fill()
@@ -155,7 +152,7 @@ const xpCanvas = async (message, client, user) => {
 
     //User xp BAR fullfill
     ctx.beginPath()
-    ctx.font = '27px NewRocker'
+    // ctx.font = '27px NewRocker'
     ctx.fillStyle='maroon'
     ctx.fillRect(268.24, 280, ((520.24 + ctx.measureText('Server Rank').width) - 268.24)* ((points *100)/requiredPoints)/100, 20 )
     ctx.fill()
