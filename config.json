@@ -1,3 +1,18 @@
 {
-    
+    "TOKEN": "ODE4OTQwNDQ5MDQxMDIyOTc3.YEfXug.ojFuAcknKPBajU8pcBnKSAFSRtE",
+    "DB": {
+        "host": "na03-sql.pebblehost.com",
+        "user": "customer_178208_guilddetails",
+        "password": "Password*420",
+        "database": "customer_178208_guilddetails",
+        "port": 3306
+    },
+    "DB_TEST": {
+        "host": "127.0.0.1",
+        "user": "root",
+        "password": "milestonecollege",
+        "database": "customer_178208_guilddetails",
+        "port": 3306
+    },
+    "OWNER": ["349939035323498506"]
 }

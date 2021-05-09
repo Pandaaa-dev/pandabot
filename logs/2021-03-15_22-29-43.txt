@@ -1,0 +1,195 @@
+npm WARN panda-bot@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+audited 221 packages in 1.427s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+> panda-bot@1.0.0 start /home/minecraft/multicraft/servers/server178208
+> node ./src/index.js
+
+hmm
+Connected to the Database!
+Pandaa has logged in!
+Recycle Bin#4976 from Nightjar at 🥡┊random: it says i guessed it right as if im typing random letters
+SpicyNoodle#0685 from Nightjar at 🥡┊random: but i must talk to cat
+Recycle Bin#4976 from Nightjar at 🥡┊random: then talk to cat
+SpicyNoodle#0685 from Nightjar at 🥡┊random: yes
+SpicyNoodle#0685 from Nightjar at 🥡┊random: i will
+Panda~san#0001 from Nightjar at 🥡┊random: i dont know english help me
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 23 ✨
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .pick fffn
+[ '.pick', 'fffn' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: can u guess this
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 12 ✨
+Panda~san#0001 from Nightjar at 🥡┊random: .pick oybd
+[ '.pick', 'oybd' ]
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .pick 0ybd
+[ '.pick', '0ybd' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: hah
+Recycle Bin#4976 from Nightjar at 🥡┊random: yeah
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 19 ✨
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .pick ll1y
+[ '.pick', 'll1y' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: im a lessen the chances this is too much :v
+Recycle Bin#4976 from Nightjar at 🥡┊random: floods the chat
+SpicyNoodle#0685 from Nightjar at 🥡┊random: sigh
+Panda~san#0001 from Nightjar at 🥡┊random: ikr lmao
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: oh
+SpicyNoodle#0685 from Nightjar at 🥡┊random: what
+Recycle Bin#4976 from Nightjar at 🥡┊random: what
+Recycle Bin#4976 from Nightjar at 🥡┊random: 554?
+Panda~san#0001 from Nightjar at 🥡┊random: do .inv cat
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .inv
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: oh
+SpicyNoodle#0685 from Nightjar at 🥡┊random: im so confused
+Recycle Bin#4976 from Nightjar at 🥡┊random: oh no
+cat.exe#9499 from Nightjar at 🥡┊random: sword
+Recycle Bin#4976 from Nightjar at 🥡┊random: .inv
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: ok
+Recycle Bin#4976 from Nightjar at 🥡┊random: good
+cat.exe#9499 from Nightjar at 🥡┊random: .buy
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .huntshop
+(node:42) UnhandledPromiseRejectionWarning: ReferenceError: prefix is not defined
+    at Object.execute (/home/minecraft/multicraft/servers/server178208/src/modules/FoodHunt/huntshop.js:40:238)
+    at cmdHandler (/home/minecraft/multicraft/servers/server178208/cmdHandler.js:102:13)
+    at Client.<anonymous> (/home/minecraft/multicraft/servers/server178208/src/index.js:254:22)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:42) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:42) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+Recycle Bin#4976 from Nightjar at 🥡┊random: <@!567406677494726683> buy back your butter knife
+SpicyNoodle#0685 from Nightjar at 🥡┊random: wat
+cat.exe#9499 from Nightjar at 🥡┊random: .buy sword
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: ok
+Panda~san#0001 from Nightjar at 🥡┊random: what
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .huntshop
+(node:42) UnhandledPromiseRejectionWarning: ReferenceError: prefix is not defined
+    at Object.execute (/home/minecraft/multicraft/servers/server178208/src/modules/FoodHunt/huntshop.js:40:238)
+    at cmdHandler (/home/minecraft/multicraft/servers/server178208/cmdHandler.js:102:13)
+    at Client.<anonymous> (/home/minecraft/multicraft/servers/server178208/src/index.js:254:22)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:42) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+Panda~san#0001 from Nightjar at 🥡┊random: .huntshop
+(node:42) UnhandledPromiseRejectionWarning: ReferenceError: prefix is not defined
+    at Object.execute (/home/minecraft/multicraft/servers/server178208/src/modules/FoodHunt/huntshop.js:40:238)
+    at cmdHandler (/home/minecraft/multicraft/servers/server178208/cmdHandler.js:102:13)
+    at Client.<anonymous> (/home/minecraft/multicraft/servers/server178208/src/index.js:254:22)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:42) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 3)
+Panda~san#0001 from Nightjar at 🥡┊random: oh
+SpicyNoodle#0685 from Nightjar at 🥡┊random: is it drunk
+Recycle Bin#4976 from Nightjar at 🥡┊random: this bot is confusing me
+SpicyNoodle#0685 from Nightjar at 🥡┊random: the bots drunk guys
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 24 ✨
+intaetwined#2939 from Nightjar at 🥡┊random: .daily
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .pick ovm3
+[ '.pick', 'ovm3' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: .08,&
+intaetwined#2939 from Nightjar at 🥡┊random: .roll 100
+297
+Pandaa#2950 from Nightjar at 🥡┊random: 
+intaetwined#2939 from Nightjar at 🥡┊random: kkkk
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: oh .huntshop is a bit crooked ill fix it
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .roll 8
+127
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: wined
+intaetwined#2939 from Nightjar at 🥡┊random: ?
+Panda~san#0001 from Nightjar at 🥡┊random: i added a game wined
+Recycle Bin#4976 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: play it
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 8 ✨
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .roll 40
+671
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: .pick 4p54
+[ '.pick', '4p54' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: Go bin
+intaetwined#2939 from Nightjar at 🥡┊random: what game
+Recycle Bin#4976 from Nightjar at 🥡┊random: yeahaa
+Auttaja#0000 from Nightjar at 📚┊logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: yess
+intaetwined#2939 from Nightjar at 🥡┊random: the food hunt?
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: yez
+Auttaja#0000 from Nightjar at 📚┊logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .flip 10
+0.4239089982720672
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .roll 26
+587
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 20 ✨
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .pick jn1x
+[ '.pick', 'jn1x' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+intaetwined#2939 from Nightjar at 🥡┊random: .help food hunt
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+intaetwined#2939 from Nightjar at 🥡┊random: o
+SpicyNoodle#0685 from Nightjar at 🥡┊random: HSHSH
+intaetwined#2939 from Nightjar at 🥡┊random: .help foodhunt
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+intaetwined#2939 from Nightjar at 🥡┊random: gbere we go
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .huntshoo
+SpicyNoodle#0685 from Nightjar at 🥡┊random: O
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .huntshop
+(node:42) UnhandledPromiseRejectionWarning: ReferenceError: prefix is not defined
+    at Object.execute (/home/minecraft/multicraft/servers/server178208/src/modules/FoodHunt/huntshop.js:40:238)
+    at cmdHandler (/home/minecraft/multicraft/servers/server178208/cmdHandler.js:102:13)
+    at Client.<anonymous> (/home/minecraft/multicraft/servers/server178208/src/index.js:254:22)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:42) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)
+intaetwined#2939 from Nightjar at 🥡┊random: .huntshop
+(node:42) UnhandledPromiseRejectionWarning: ReferenceError: prefix is not defined
+    at Object.execute (/home/minecraft/multicraft/servers/server178208/src/modules/FoodHunt/huntshop.js:40:238)
+    at cmdHandler (/home/minecraft/multicraft/servers/server178208/cmdHandler.js:102:13)
+    at Client.<anonymous> (/home/minecraft/multicraft/servers/server178208/src/index.js:254:22)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:42) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 5)
+SpicyNoodle#0685 from Nightjar at 🥡┊random: omg
+intaetwined#2939 from Nightjar at 🥡┊random: o
+SpicyNoodle#0685 from Nightjar at 🥡┊random: why is this bot drunk
+Panda~san#0001 from Nightjar at 🥡┊random: wait im fixing it
+Recycle Bin#4976 from Nightjar at 🥡┊random: crystal you typed .huntshoo so the whole shop shooed away
+intaetwined#2939 from Nightjar at 🥡┊random: LMAO

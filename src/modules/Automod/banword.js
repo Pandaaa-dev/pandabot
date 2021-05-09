@@ -57,7 +57,7 @@ module.exports = {
             return message.channel.send(basicEmbed(client, message, args, text, `Max Limit Reached!`, `😲`, `You already have \`20\` banned words for this server! \n buy a [premium membership](https://google.com) or delete some of your existing commands!` ))
         }
         
-        connection.query(`INSERT INTO  s581_GUILD_CONFIG.banned_words(guildid, word)
+        connection.query(`INSERT INTO  customer_178208_guilddetails.banned_words(guildid, word)
         values("${message.guild.id}", '${args[0].toLowerCase()}');
         `, (err, res) => {
             if(err) console.log(err);

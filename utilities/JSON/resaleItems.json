@@ -39,37 +39,37 @@
     "Rare": [
         {
             "name": "Wagyu Beef",
-            "price": 350,
+            "price": 150,
             "code": "ra1a"
         },
         {
             "name": "Caviar",
-            "price": 500,
+            "price": 100,
             "code": "ra2b"
         },
         {
             "name": "Truffle",
-            "price": 400,
+            "price": 180,
             "code": "ra3c"
         },
         {
             "name": "Kopi Luwak Coffee",
-            "price": 500,
+            "price": 200,
             "code": "ra4d"
         },
         {
             "name": "Foie Gras",
-            "price": 450,
+            "price": 170,
             "code": "ra5e"
         },
         {
             "name": "Saffron",
-            "price": 500,
+            "price": 180,
             "code": "ra6f"
         },
         {
             "name": "Moose Cheese",
-            "price": 300,
+            "price": 200,
             "code": "ra7g"
         }
     ], 

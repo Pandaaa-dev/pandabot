@@ -34,7 +34,7 @@ module.exports = {
     async execute( message, args, text, client,connection){
         const guild = message.guild
         const guildconfig = client.guilds_config.get(guild.id)
-        connection.query(`UPDATE ${"s581_GUILD_CONFIG.guild_details"}
+        connection.query(`UPDATE ${"customer_178208_guilddetails.guild_details"}
         SET ${"nonewaccounts"} = ${+args[0]}
         WHERE ${"guildid"} = "${message.guild.id}";
         `,)

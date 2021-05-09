@@ -43,7 +43,7 @@ module.exports = {
                 ...guildConfig,
                 logging: newLogging
             })
-            connection.query(`UPDATE  s581_GUILD_CONFIG.guild_details
+            connection.query(`UPDATE  customer_178208_guilddetails.guild_details
                             SET logging = ${newLogging}
                             WHERE guildid = "${message.guild.id}";`)
             await message.channel.send(basicEmbed(client, message, args, text, `Logging ${newLogging === 0? 'Unset': 'Set'}!`, '😃', `Logging has been turned ${newLogging ===0? 'off': 'on'} for this server! ${newLogging ===1? `Please select a channel to start logging by typing \`${guildConfig.prefix}setlogchannel\` in the channel you want the bot to keep logs in.`: ''}`))

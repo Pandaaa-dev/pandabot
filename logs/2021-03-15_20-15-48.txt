@@ -1,0 +1,121 @@
+npm WARN panda-bot@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+audited 221 packages in 1.275s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+> panda-bot@1.0.0 start /home/minecraft/multicraft/servers/server178208
+> node ./src/index.js
+
+hmm
+Connected to the Database!
+Panda Bot Test has logged in!
+Panda~san#0001 from Test server 2 at general: a
+70
+Panda~san#0001 from Test server 2 at general: b
+68
+Panda~san#0001 from Test server 2 at general: c
+97
+Panda Bot Test#9294 from Test server 2 at general: Type .pick and the code in the picture to get 20 ✨
+43
+Panda~san#0001 from Test server 2 at general: .bal
+66
+Panda Bot Test#9294 from Test server 2 at general: 
+18
+Panda~san#0001 from Test server 2 at general: .pick nnj3
+64
+[ '.pick', 'nnj3' ]
+Panda Bot Test#9294 from Test server 2 at general: 
+25
+Panda~san#0001 from Test server 2 at general: i
+52
+Panda~san#0001 from Test server 2 at general: a
+49
+Panda~san#0001 from Test server 2 at general: b
+70
+Panda~san#0001 from Test server 2 at general: c
+61
+Panda~san#0001 from Test server 2 at general: d
+50
+Panda~san#0001 from Test server 2 at general: ej
+70
+Panda~san#0001 from Test server 2 at general: ads
+90
+Panda~san#0001 from Test server 2 at general: f
+99
+Panda Bot Test#9294 from Test server 2 at general: Type .pick and the code in the picture to get 22 ✨
+62
+Panda~san#0001 from Test server 2 at general: .pick mvwt
+21
+[ '.pick', 'mvwt' ]
+Panda Bot Test#9294 from Test server 2 at general: 
+19
+Panda~san#0001 from Test server 2 at general: .bruh
+85
+Panda~san#0001 from Test server 2 at general: thefuck
+70
+Panda~san#0001 from Test server 2 at general: is this
+31
+Panda~san#0001 from Test server 2 at general: kinda annoying ngl
+26
+Panda~san#0001 from Test server 2 at general: okay
+78
+Panda~san#0001 from Test server 2 at general: so this is how this works then
+13
+Panda~san#0001 from Test server 2 at general: hopefully
+80
+Panda~san#0001 from Test server 2 at general: it wont be fucked
+54
+Panda~san#0001 from Test server 2 at general: by all the other sTupid ppl
+96
+Panda Bot Test#9294 from Test server 2 at general: Type .pick and the code in the picture to get 11 ✨
+83
+Panda~san#0001 from Test server 2 at general: .pick pkwq
+82
+[ '.pick', 'pkwq' ]
+Panda Bot Test#9294 from Test server 2 at general: 
+99
+Panda Bot Test#9294 from Test server 2 at general: Type .pick and the code in the picture to get 6 ✨
+97
+Panda Bot Test#9294 from Test server 2 at general: Type .pick and the code in the picture to get 11 ✨
+89
+Panda~san#0001 from Test server 2 at general: .pick 09w1
+80
+[ '.pick', '09w1' ]
+[ '.pick', '09w1' ]
+Panda~san#0001 from Test server 2 at general: .pick 09w1
+68
+[ '.pick', '09w1' ]
+[ '.pick', '09w1' ]
+Panda~san#0001 from Test server 2 at general: .pick 8f4y
+19
+[ '.pick', '8f4y' ]
+[ '.pick', '8f4y' ]
+Panda Bot Test#9294 from Test server 2 at general: 
+81
+Panda~san#0001 from Test server 2 at general: .pick o9w1
+58
+[ '.pick', 'o9w1' ]
+Panda Bot Test#9294 from Test server 2 at general: 
+95
+Panda~san#0001 from Test server 2 at general: .bal
+38
+Panda Bot Test#9294 from Test server 2 at general: 
+34
+Panda~san#0001 from Test server 2 at general: a bit annoying
+75
+Panda~san#0001 from Test server 2 at general: <:thonk:490925371596996618>
+97
+Panda Bot Test#9294 from Test server 2 at general: Type .pick and the code in the picture to get 7 ✨
+79
+Panda~san#0001 from Test server 2 at general: .pick sksn
+2
+[ '.pick', 'sksn' ]
+Panda Bot Test#9294 from Test server 2 at general: 
+29

@@ -91,7 +91,8 @@ module.exports = {
             grandTotal = grandTotal +  numberOfItem * requiredItem.price 
             message.channel.send(basicEmbed(client, message, args, text, `Sold`, '💰', `You just sold ${numberOfItem} ${requiredItem.name}(s) for ${grandTotal} ${emoji}!`))
         }
-        points = points + grandTotal        
+        points = points + grandTotal    
+        if(points >= 500000) return message.channel.send(descEmbed('You cannot have more than 500000' + emoji))    
         client.economy.set(message.author.id, {
             userid: message.author.id,
             points: points

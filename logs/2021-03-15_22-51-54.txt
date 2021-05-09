@@ -1,0 +1,36 @@
+npm WARN panda-bot@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+audited 221 packages in 1.235s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+> panda-bot@1.0.0 start /home/minecraft/multicraft/servers/server178208
+> node ./src/index.js
+
+hmm
+Connected to the Database!
+Pandaa has logged in!
+Panda~san#0001 from Nightjar at 🥡┊random: yes lmao
+Kotaro-kun#6773 from Nightjar at 🥡┊random: : D
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .roll 100
+299
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: <:PepeLaugh:727916027748548669>
+Panda~san#0001 from Nightjar at 🥡┊random: not that great
+SpicyNoodle#0685 from Nightjar at 🥡┊random: HSVGSGGS
+Kotaro-kun#6773 from Nightjar at 🥡┊random: well cant win em all
+Recycle Bin#4976 from Nightjar at 🥡┊random: .pick qmnf
+Recycle Bin#4976 from Nightjar at 🥡┊random: ooo
+SpicyNoodle#0685 from Nightjar at 🥡┊random: BIN
+SpicyNoodle#0685 from Nightjar at 🥡┊random: BIM
+SpicyNoodle#0685 from Nightjar at 🥡┊random: BIM
+SpicyNoodle#0685 from Nightjar at 🥡┊random: HOW ARE YOU
+Recycle Bin#4976 from Nightjar at 🥡┊random: crystalpw
+Recycle Bin#4976 from Nightjar at 🥡┊random: im good
+Recycle Bin#4976 from Nightjar at 🥡┊random: wbu

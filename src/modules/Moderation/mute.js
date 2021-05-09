@@ -104,7 +104,7 @@ module.exports = {
 
             mutedMember.roles.add(muterole)
 
-            connection.query(`INSERT INTO s581_GUILD_CONFIG.muted_members(guildid, userid, currtime, expiresin)
+            connection.query(`INSERT INTO customer_178208_guilddetails.muted_members(guildid, userid, currtime, expiresin)
                 VALUES(${message.guild.id}, ${mutedMember.id}, ${present}, ${expiresin});`)
            
                 message.channel.send(basicEmbed(client, message, args, text, `Muted!`, `🤫`, `${mutedMember} was muted by ${message.author}\n**Duration:** ${time}${denoter}`))

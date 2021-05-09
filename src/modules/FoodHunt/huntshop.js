@@ -37,6 +37,7 @@ module.exports = {
         const embed = new MessageEmbed()
         .setTimestamp()
         .setColor(Math.floor(Math.random()*16777215).toString(16))
+        .setDescription(`Welcome to the Pandaa Hunting shop! You can find Swords and Potions here to help with your future endeavours. Fear not warrior! The right sword will find you!\n*Type\`${client.guilds_config.get(message.guild.id).prefix}buy <sword/potion name>\` to buy*`)
         .setTitle('>> Hunting Shop')
         .addField('***__Swords__*** ⚔️', 'Your quests are filled with heinous monsters! But fear not! The right sword will always help you defeat any monster at ease! Buy your sword and go on your quests warrior!', false)
         huntShop.Swords.forEach(sword=> {

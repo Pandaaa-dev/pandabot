@@ -41,7 +41,7 @@ module.exports = {
         } else if(user){
             points= user.points
         }
-        
+         if(points >= 500000) return message.channel.send(descEmbed('You already have max amount of ' + emoji + '!'))
         let number = args[0]
         if(isNaN(number) && number.toLowerCase() !='all' ) return
         if(number =='all'){
@@ -63,7 +63,9 @@ module.exports = {
         gainedPoints = number * multiple
 
         points = points + gainedPoints
-
+            if(points >= 500000) {
+                points = 500000
+            }
         const embed = new MessageEmbed()
             .setColor(Math.floor(Math.random()*16777215).toString(16))
             .setDescription(`You flipped ${number}${emoji} and got ${gainedPoints}${emoji}.`)

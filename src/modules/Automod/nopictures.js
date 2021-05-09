@@ -37,12 +37,12 @@ module.exports = {
             if(client.noPictureChannels.get(message.channel.id)){
                 message.channel.send(basicEmbed(client, message, args, text, "NoPictures turned off!", "👍" ,"NoPictures for this channel has been turned off!"))
                 client.noPictureChannels.delete(message.channel.id)
-                 connection.query(`DELETE FROM  s581_GUILD_CONFIG.no_pictures
+                 connection.query(`DELETE FROM  customer_178208_guilddetails.no_pictures
                                    WHERE channelid = ${message.channel.id};`)
                 return
             }
 
-            connection.query(`INSERT INTO  s581_GUILD_CONFIG.no_pictures(channelid, guildid)
+            connection.query(`INSERT INTO  customer_178208_guilddetails.no_pictures(channelid, guildid)
             VALUES(${message.channel.id}, ${message.guild.id});`)
 
             client.noPictureChannels.set(message.channel.id, {

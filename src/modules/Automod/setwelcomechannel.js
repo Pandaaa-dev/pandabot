@@ -40,7 +40,7 @@ module.exports = {
             }
             client.guilds_config.set(message.guild.id, newConfig)
 
-            connection.query(`UPDATE  s581_GUILD_CONFIG.guild_details
+            connection.query(`UPDATE  customer_178208_guilddetails.guild_details
                               SET welcomechannelid = NULL
                                 WHERE guildid = "${message.guild.id}";`)
             return message.channel.send(basicEmbed(client, message, args, text, `Welcome channel unset`, '😲', `Your previous welcome channel has been **unset.**\nIf you want to set a new one, use this command on the new welcome channel again.`))
@@ -52,7 +52,7 @@ module.exports = {
             }
             client.guilds_config.set(message.guild.id, newConfig)
 
-            connection.query(`UPDATE  s581_GUILD_CONFIG.guild_details
+            connection.query(`UPDATE  customer_178208_guilddetails.guild_details
                               SET welcomechannelid = "${message.channel.id}"
                               WHERE guildid = "${message.guild.id}";`)
             return message.channel.send(basicEmbed(client, message, args, text, `Welcome channel set`, '😄', `This channel has been **set** as the new welcome channel. I will send my welcome messages for all the new members here!`))

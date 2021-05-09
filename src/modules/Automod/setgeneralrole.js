@@ -51,7 +51,7 @@ module.exports = {
             ...guildConfig,
             generalrole: role.id
         })
-        connection.query(`UPDATE s581_GUILD_CONFIG.guild_details
+        connection.query(`UPDATE customer_178208_guilddetails.guild_details
                         SET generalrole = ${whatToSet}
                         WHERE guildid = ${message.guild.id}`)
         message.channel.send(basicEmbed(client, message, args, text, `General role set!`, '👍', `Set the general role to ${role? role : 'nothing' }. ${role? 'I will add this role to every member that joins now!' : ''}`))

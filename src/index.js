@@ -61,7 +61,7 @@ client.once('ready', async () => {
         client.xpTimestamps.set(guild.id, new Discord.Collection())
     })
     
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.guild_details`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.guild_details`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length ==0) return
@@ -69,7 +69,7 @@ client.once('ready', async () => {
             client.guilds_config.set(eachguild.guildid, eachguild)
         })
     })
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.shop`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.shop`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length ==0) return
@@ -77,7 +77,7 @@ client.once('ready', async () => {
             client.shop.set(eachthing.name, eachthing)
         })
     })
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.tickets`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.tickets`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length ==0) return
@@ -85,7 +85,7 @@ client.once('ready', async () => {
             client.tickets.set(eachthing.id, eachthing)
         })
     })
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.huntshop_inventory`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.huntshop_inventory`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length ==0) return
@@ -93,7 +93,7 @@ client.once('ready', async () => {
             client.hunting_inv.set(eachthing.userid, eachthing)
         })
     })
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.gift_inventory`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.gift_inventory`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length == 0) return
@@ -101,7 +101,7 @@ client.once('ready', async () => {
             client.gift_inv.set(eachthing.userid, eachthing)
         })
     })
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.economy`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.economy`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length ==0) return
@@ -109,7 +109,7 @@ client.once('ready', async () => {
             client.economy.set(eachuser.userid, eachuser)
         })
     })
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.waifu`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.waifu`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length ==0) return
@@ -117,7 +117,7 @@ client.once('ready', async () => {
             client.waifu.set(eachWaifu.waifu, eachWaifu)
         })
     })
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.only_pictures`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.only_pictures`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length ==0) return
@@ -125,7 +125,7 @@ client.once('ready', async () => {
             client.onlyPictureChannels.set(eachChannel.channelid, eachChannel)
         })
     })
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.no_pictures`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.no_pictures`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length ==0) return
@@ -134,7 +134,7 @@ client.once('ready', async () => {
         })
     })
     
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.muted_members`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.muted_members`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length ==0) return
@@ -142,7 +142,7 @@ client.once('ready', async () => {
             client.muted_members.set(member.id, member)
         })
     })
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.banned_words`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.banned_words`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length ==0) return
@@ -150,7 +150,7 @@ client.once('ready', async () => {
             client.banned_words.set(word.id, word)
         })
     })
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.no_links`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.no_links`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length ==0) return
@@ -158,7 +158,7 @@ client.once('ready', async () => {
             client.noLinkChannels.set(eachChannel.channelid, eachChannel)
         })
     })
-    connection.query(`SELECT * FROM s581_GUILD_CONFIG.xp_level`, (err, res)=> {
+    connection.query(`SELECT * FROM customer_178208_guilddetails.xp_level`, (err, res)=> {
         if(err) console.log(err)
         if(!res) return
         if(res.length ==0) return
@@ -273,7 +273,7 @@ client.once('ready', async () => {
         const muterole = null
         const nonewaccounts = null
         connection.query(`
-        INSERT INTO  s581_GUILD_CONFIG.guild_details(guildid, prefix, premium,  nonewaccounts, muterole, ticketsystem, ticketcategoryid, lastticket, welcomechannelid, loggingchannelid, logging, sightseeing, generalrole)
+        INSERT INTO  customer_178208_guilddetails.guild_details(guildid, prefix, premium,  nonewaccounts, muterole, ticketsystem, ticketcategoryid, lastticket, welcomechannelid, loggingchannelid, logging, sightseeing, generalrole)
         values("${id}", "${prefix}", ${premium}, ${noNewAccounts}, ${muterole}, ${0}, ${null}, ${0}, ${null}, ${null}, ${0}, ${0}, ${null});
         `, (err, res) => {
             if(err) console.log(err);
@@ -315,6 +315,53 @@ client.once('ready', async () => {
             if(guildConfig.sightseeing === 1) return
 
             const prefix = guildConfig.prefix
+
+             // Random Code generation 
+
+            // Create a message collector
+    const roll = Math.floor(Math.random() * 100) + 1 
+    if(roll > 97 && message.author.id !== client.user.id) {
+    const {attachment, code, numberOfCurr} = await codeCanvas()
+    const messageText = `Type .pick and the code in the picture to get ${numberOfCurr} ${client.bot_config.get('_1').emoji}`
+    // messageattachments.setFile(attachment, 'userfile.png')
+  const sentMessage = await message.channel.send(messageText, {
+        files: [{
+            ...attachment
+        }]
+    })
+    const filter = m => m.content.startsWith(guildConfig.prefix + 'pick');
+    const collector = message.channel.createMessageCollector(filter);
+    collector.on('collect', m => {
+        if(m.content.trim().startsWith(guildConfig.prefix + 'pick')){
+            
+            const args = m.content.split(' ');
+            console.log(args)
+            if(args[1].toLowerCase() === code.toLowerCase()){
+                collector.stop()
+                const user  = client.economy.get(m.author.id)
+                let points = 0
+                if(!user){
+                        points = 0
+                } else if(user){
+                        points= user.points
+                }
+                sentMessage.delete()
+                points = points + numberOfCurr
+                client.economy.set(m.author.id, {
+                    userid: m.author.id,
+                    points: points
+                })
+                m.channel.send(descEmbed(`${m.author} guessed it right! They get ${numberOfCurr} ${client.bot_config.get('_1').emoji}`))
+            }
+        }
+    });
+    collector.on('end', collected => {
+        
+    });
+}
+
+    // Random Code generation end    
+
             if (message.content.startsWith(prefix) || message.author.bot) return;
             if(client.user.id === message.author.id) return
             const bannedWords = []
@@ -421,49 +468,49 @@ client.once('ready', async () => {
 
         // Random Code generation 
 
-// Create a message collector
-const roll = Math.floor(Math.random() * 100) + 1 
-if(roll > 95) {
-    const {attachment, code, numberOfCurr} = await codeCanvas()
-    const messageText = `Type .pick and the code in the picture to get ${numberOfCurr} ${client.bot_config.get('_1').emoji}`
-    // messageattachments.setFile(attachment, 'userfile.png')
-  const sentMessage = await message.channel.send(messageText, {
-        files: [{
-            ...attachment
-        }]
-    })
-    const filter = m => m.content.startsWith(guildConfig.prefix + 'pick');
-    const collector = message.channel.createMessageCollector(filter);
-    collector.on('collect', m => {
-        if(m.content.trim().startsWith(guildConfig.prefix + 'pick')){
+// // Create a message collector
+// const roll = Math.floor(Math.random() * 100) + 1 
+// if(roll > 95) {
+//     const {attachment, code, numberOfCurr} = await codeCanvas()
+//     const messageText = `Type .pick and the code in the picture to get ${numberOfCurr} ${client.bot_config.get('_1').emoji}`
+//     // messageattachments.setFile(attachment, 'userfile.png')
+//   const sentMessage = await message.channel.send(messageText, {
+//         files: [{
+//             ...attachment
+//         }]
+//     })
+//     const filter = m => m.content.startsWith(guildConfig.prefix + 'pick');
+//     const collector = message.channel.createMessageCollector(filter);
+//     collector.on('collect', m => {
+//         if(m.content.trim().startsWith(guildConfig.prefix + 'pick')){
             
-            const args = m.content.split(' ');
-            console.log(args)
-            if(args[1].toLowerCase() === code.toLowerCase()){
-                collector.stop()
-                const user  = client.economy.get(m.author.id)
-                let points = 0
-                if(!user){
-                        points = 0
-                } else if(user){
-                        points= user.points
-                }
-                sentMessage.delete()
-                points = points + numberOfCurr
-                client.economy.set(m.author.id, {
-                    userid: m.author.id,
-                    points: points
-                })
-                m.channel.send(descEmbed(`${m.author} guessed it right! They get ${numberOfCurr} ${client.bot_config.get('_1').emoji}`))
-            }
-        }
-    });
-    collector.on('end', collected => {
+//             const args = m.content.split(' ');
+//             console.log(args)
+//             if(args[1].toLowerCase() === code.toLowerCase()){
+//                 collector.stop()
+//                 const user  = client.economy.get(m.author.id)
+//                 let points = 0
+//                 if(!user){
+//                         points = 0
+//                 } else if(user){
+//                         points= user.points
+//                 }
+//                 sentMessage.delete()
+//                 points = points + numberOfCurr
+//                 client.economy.set(m.author.id, {
+//                     userid: m.author.id,
+//                     points: points
+//                 })
+//                 m.channel.send(descEmbed(`${m.author} guessed it right! They get ${numberOfCurr} ${client.bot_config.get('_1').emoji}`))
+//             }
+//         }
+//     });
+//     collector.on('end', collected => {
         
-    });
-}
+//     });
+// }
 
-    // Random Code generation end        
+//     // Random Code generation end        
 
         client.xp_level.set(message.author.id, {
             guildid: message.guild.id,
@@ -497,7 +544,7 @@ if(roll > 95) {
                    
               
                     
-                    connection.query(`DELETE FROM s581_GUILD_CONFIG.muted_members 
+                    connection.query(`DELETE FROM customer_178208_guilddetails.muted_members 
                                     WHERE guildid = ${member.guildid} AND userid = ${member.userid}`)
                     guildMember.roles.remove(actualRole)
                 })
@@ -507,7 +554,7 @@ if(roll > 95) {
 
      setInterval((() => {
         if(!client.xp_level || client.xp_level.array().length < 1) return
-          connection.query(`DELETE FROM  s581_GUILD_CONFIG.xp_level;`, (res, rej) => {
+          connection.query(`DELETE FROM  customer_178208_guilddetails.xp_level;`, (res, rej) => {
             // const allXP = []
            const allXP = []
            const allxpButObj = client.xp_level.array()
@@ -517,14 +564,14 @@ if(roll > 95) {
                allXP.push(array)
            })
             if(!allXP) return
-            connection.query(`INSERT into  s581_GUILD_CONFIG.xp_level (guildid, userid, points, level) VALUES ?`, [allXP])
+            connection.query(`INSERT into  customer_178208_guilddetails.xp_level (guildid, userid, points, level) VALUES ?`, [allXP])
             })
 
     }), (60000*2.5))
 
     setInterval((() => {
         if(!client.waifu || client.waifu.array().length < 1) return
-          connection.query(`DELETE FROM  s581_GUILD_CONFIG.waifu;`, (res, rej) => {
+          connection.query(`DELETE FROM  customer_178208_guilddetails.waifu;`, (res, rej) => {
            const allWaifu = []
            const allWaifuButObj = client.waifu.array()
            if(!allWaifuButObj) return
@@ -535,7 +582,7 @@ if(roll > 95) {
             if(!allWaifu) return
             if(allWaifu.length == 0) return
             console.log('WAIFU INTERVAL')
-            connection.query(`INSERT into  s581_GUILD_CONFIG.waifu (waifu, husbandu, amount, divorceCount) VALUES ?`, [allWaifu], (err,res) => {
+            connection.query(`INSERT into  customer_178208_guilddetails.waifu (waifu, husbandu, amount, divorceCount) VALUES ?`, [allWaifu], (err,res) => {
                 if(err) console.log(err)
             })
             })
@@ -544,7 +591,7 @@ if(roll > 95) {
     
     setInterval(() => {
         if(!client.economy || client.economy.array().length < 1) return
-        connection.query(`DELETE FROM  s581_GUILD_CONFIG.economy;`, (res, rej) => {
+        connection.query(`DELETE FROM  customer_178208_guilddetails.economy;`, (res, rej) => {
             const array = client.economy.array(); 
             const arrayForDB = [];
             if(array.length < 1) return
@@ -552,14 +599,14 @@ if(roll > 95) {
                 const newArr = Object.values(obj)
                 arrayForDB.push(newArr)
             })
-            connection.query(`INSERT into  s581_GUILD_CONFIG.economy (userid, points) VALUES ?`, [arrayForDB])
+            connection.query(`INSERT into  customer_178208_guilddetails.economy (userid, points) VALUES ?`, [arrayForDB])
         });
         
     }, 60000 * 3.5);
     
     setInterval(() => {
         if(!client.economy || client.economy.array().length < 1) return
-        connection.query(`DELETE FROM  s581_GUILD_CONFIG.gift_inventory;`, (res, rej) => {
+        connection.query(`DELETE FROM  customer_178208_guilddetails.gift_inventory;`, (res, rej) => {
             const array = client.gift_inv.array(); 
             const arrayForDB = [];
             if(array.length < 1) return
@@ -567,7 +614,7 @@ if(roll > 95) {
                 const newArr = Object.values(obj)
                 arrayForDB.push(newArr)
             })
-            connection.query(`INSERT into  s581_GUILD_CONFIG.gift_inventory (userid, Apple, Rose, Chocolate, Dog, Cat, tiger, PS5, Laptop, Car, House, Airplane, Dragon, World, Moon, Comet, Love) VALUES ?`, [arrayForDB])
+            connection.query(`INSERT into  customer_178208_guilddetails.gift_inventory (userid, Apple, Rose, Chocolate, Dog, Cat, tiger, PS5, Laptop, Car, House, Airplane, Dragon, World, Moon, Comet, Love) VALUES ?`, [arrayForDB])
         });
         
     }, 60000 * 6.5);
@@ -575,7 +622,7 @@ if(roll > 95) {
 
     setInterval(() => {
         if(!client.hunting_inv || client.hunting_inv.array().length < 1) return
-        connection.query(`DELETE FROM  s581_GUILD_CONFIG.huntshop_inventory;`, (res, rej) => {
+        connection.query(`DELETE FROM  customer_178208_guilddetails.huntshop_inventory;`, (res, rej) => {
             const array = client.hunting_inv.array(); 
             const arrayForDB = [];
             if(array.length < 1) return
@@ -583,10 +630,10 @@ if(roll > 95) {
                 const newArr = Object.values(obj)
                 arrayForDB.push(newArr)
             })
-            connection.query(`INSERT INTO s581_GUILD_CONFIG.huntshop_inventory (userid, presentSword, swordQuestNo, presentPotion, potionQuestNo, ch1a, ch2b, ch3c, ch4d, ch5e, ch6f, ch7g, ra1a, ra2b, ra3c, ra4d, ra5e, ra6f, ra7g, su1a, su2b, su3c, su4d, su5e, su6f) VALUES ?`, [arrayForDB])
+            connection.query(`INSERT INTO customer_178208_guilddetails.huntshop_inventory (userid, presentSword, swordQuestNo, presentPotion, potionQuestNo, ch1a, ch2b, ch3c, ch4d, ch5e, ch6f, ch7g, ra1a, ra2b, ra3c, ra4d, ra5e, ra6f, ra7g, su1a, su2b, su3c, su4d, su5e, su6f) VALUES ?`, [arrayForDB])
         });
         
-    }, 60000 * 0.15);
+    }, 60000 * 8);
    
     fs.readdir(path.join(__dirname, '../utilities/Logging'), (err, files) => { // We use the method readdir to read what is in the events folder
         if (err) return console.error(err); // If there is an error during the process to read all contents of the ./events folder, throw an error in the console

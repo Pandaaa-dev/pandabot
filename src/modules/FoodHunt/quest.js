@@ -29,7 +29,7 @@ module.exports = {
     emoji: null,
     module: 'FoodHunt',
     uniqueText: "uniquetext",
-    cooldown: 21600,
+    cooldown: 7200,
     giflinks: [ 
         // Gif links for the embed
     ],
@@ -39,7 +39,7 @@ module.exports = {
         let huntingDetailsForUser = client.hunting_inv.get(message.author.id);
         const guild = client.guilds_config.get(message.guild.id)
 
-        if(!huntingDetailsForUser || !huntingDetailsForUser.presentSword) return message.channel.send(descEmbed(`You dont have a sword! Buy a sword to begin your quest journey! Type \`${guild.prefix}huntshop\` to know about the available swords.`))
+        if(!huntingDetailsForUser || !huntingDetailsForUser.presentSword) return message.channel.send(descEmbed(`You dont have a sword! Always check your inventory by typing \`${guild.prefix}inv\`.Buy a sword to begin your quest journey! Type \`${guild.prefix}huntshop\` to know about the available swords. In order for you to remember that **You always need a sword to do a quest**, you will have the normal 3 hour cooldown without even doing the quest. Sorry i dont make the rules, my owner does. `))
         const arr = []
         const sword = huntShop.Swords.find(sword => sword.name.toLowerCase().trim() === huntingDetailsForUser.presentSword.toLowerCase().trim())
         if(!sword) return message.channel.send(descEmbed('There was an error, please contact my failure of a dev because hes the reason im broken 😠'))

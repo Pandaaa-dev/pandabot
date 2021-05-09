@@ -54,12 +54,6 @@ module.exports = {
         if(number > points) return
 
         points = points - number 
-
-        client.economy.set(message.author.id, {
-            userid: message.author.id,
-            points: points
-        })
-        
         const userTOGive = message.mentions.users.first().id
 
         const userToGiveCurr  = client.economy.get(userTOGive)
@@ -70,7 +64,14 @@ module.exports = {
         } else if(userToGiveCurr){
             userToGivePoints= userToGiveCurr.points
         }
-        const newUserPoints = userToGivePoints + number 
+         const newUserPoints = userToGivePoints + number 
+        if(newUserPoints >= 500000) return message.channel.send(descEmbed('Sorry, user cannot have more than 500000 ' + emoji ))
+      
+        client.economy.set(message.author.id, {
+            userid: message.author.id,
+            points: points
+        })
+        
         client.economy.set(userTOGive, {
             userid: userTOGive,
             points: newUserPoints

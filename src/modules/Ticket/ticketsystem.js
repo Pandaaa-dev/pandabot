@@ -51,7 +51,7 @@ module.exports = {
                     }
                 )
     
-                connection.query(`UPDATE s581_GUILD_CONFIG.guild_details
+                connection.query(`UPDATE customer_178208_guilddetails.guild_details
                 SET ticketsystem = ${ticketSystem},
                     ticketcategoryid = "${categoryChannel.id}"
                 WHERE guildid = "${message.guild.id}";`, (res, rej) => {
@@ -68,7 +68,7 @@ module.exports = {
             }else if(guildConfig.ticketsystem == 1){
                 ticketSystem = 0
                 message.channel.send(basicEmbed(client, message, args, text, `Shutting down ticket system!`, '😃', `Shutting down the ticket system for this server! You can delete the category channel made by the bot if the bot made any.`))
-                connection.query(`UPDATE s581_GUILD_CONFIG.guild_details
+                connection.query(`UPDATE customer_178208_guilddetails.guild_details
                 SET ticketsystem = 0,
                     ticketcategoryid = null
                 WHERE guildid = "${message.guild.id}";`, (res, rej) => {

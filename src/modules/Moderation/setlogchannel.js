@@ -38,7 +38,7 @@ module.exports = {
                     ...guildConfig,
                     loggingchannelid: message.channel.id
                 })
-                connection.query(`UPDATE  s581_GUILD_CONFIG.guild_details
+                connection.query(`UPDATE  customer_178208_guilddetails.guild_details
                                 SET loggingchannelid = '${message.channel.id}'
                                 WHERE guildid = "${message.guild.id}";`)
                 await message.channel.send(basicEmbed(client, message, args, text, `Logging Channel Set!`, '😃', `This channel has been set as the new logging channel.`))

@@ -1,0 +1,393 @@
+npm WARN panda-bot@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+audited 221 packages in 1.629s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+> panda-bot@1.0.0 start /home/minecraft/multicraft/servers/server178208
+> node ./src/index.js
+
+hmm
+Connected to the Database!
+Pandaa has logged in!
+Panda~san#0001 from Nightjar at 💬┊general: you cant get upto a million anymore
+Panda~san#0001 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: .econlb
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+SpicyCracker#0685 from Nightjar at 💬┊general: .bal
+Pandaa#2950 from Nightjar at 💬┊general: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+SpicyCracker#0685 from Nightjar at 💬┊general: WHY IS IT GONE AGAIN
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Zane Castiel#0418 from Nightjar at 💬┊general: because the economy had to be reset
+Zane Castiel#0418 from Nightjar at 💬┊general: at least the 2 billion will rest within my memory
+SpicyCracker#0685 from Nightjar at 💬┊general: ok
+Zane Castiel#0418 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+SpicyCracker#0685 from Nightjar at 🥡┊random: .quest
+5
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Zane Castiel#0418 from Nightjar at 🥡┊random: .inv
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyCracker#0685 from Nightjar at 🥡┊random: oh mg god
+SpicyCracker#0685 from Nightjar at 🥡┊random: .sell all
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: someone reply the last .econlb
+Zane Castiel#0418 from Nightjar at 🥡┊random: .econlb
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: not this one
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: this is a previously saved one
+Panda~san#0001 from Nightjar at 🥡┊random: oh
+Panda~san#0001 from Nightjar at 🥡┊random: .take 9024
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: sdlfknsdlfns
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Zane Castiel#0418 from Nightjar at 🥡┊random: the last econlb is actually me on 100 mil
+Zane Castiel#0418 from Nightjar at 🥡┊random: which was on general
+Panda~san#0001 from Nightjar at 🥡┊random: yeah reply to that
+Panda~san#0001 from Nightjar at 🥡┊random: and mention me
+Panda~san#0001 from Nightjar at 🥡┊random: im
+Panda~san#0001 from Nightjar at 🥡┊random: supposed to be on a break
+Panda~san#0001 from Nightjar at 🥡┊random: ffs
+Panda~san#0001 from Nightjar at 🥡┊random: 😩
+SpicyCracker#0685 from Nightjar at 🥡┊random: blame zane
+Zane Castiel#0418 from Nightjar at 💬┊general: <@!349939035323498506>
+Panda~san#0001 from Nightjar at 🎰┊bots: Zane Castiel#0418
+153877971✨
+Castiel Yu#0288
+10397870✨
+Kotaro-kun#6773
+297870✨
+rowose#7555
+200644✨
+SpicyCracker#0685
+100112✨
+snekiko#2935
+28009✨
+Recycle Bin#4976
+19151✨
+cat?#9499
+15799✨
+lauren#4444
+10985✨
+https.HoneyCookie#0879
+7937✨
+Alex Montenegro#2732
+6712✨
+Panda~san#0001
+6238✨
+Sazzad#7255
+5641✨
+Bar#2433
+5128✨
+Jesmin#9948
+4800✨
+intaetwined#2939
+4351✨
+nao#6507
+4300✨
+Court#4444
+3731✨
+iBawkUOwe#4444
+2200✨
+kajtoJACKSON#7169
+1888✨
+Johnny Appleseed#6005
+1817✨
+ThatFoxNamedJulien 🦊#8768
+1800✨
+RadioactiveRobby#2432
+1750✨
+MimeH0N0r/|\Chrono#6091
+1750✨
+Panda~san#0001 from Nightjar at 🎰┊bots: .econlb
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🎰┊bots: .help economy gift
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🎰┊bots: .help economy award
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Zane Castiel#0418 from Nightjar at 🥡┊random: .waifuinfo <@!615692908817023016>
+Collection [Map] {
+  '570652676438622209' => TextRow {
+    waifu: '570652676438622209',
+    husbandu: '615692908817023016',
+    amount: 500,
+    divorceCount: 0
+  }
+}
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🎰┊bots: .award <@!438005478413303810>  1200
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🎰┊bots: .award <@!502182390710403072> 4000
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Pandaa#2950 from Nightjar at 📚┊other-logs: Type .pick and the code in the picture to get 6 ✨
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🎰┊bots: .award <@!326413563784724480> 8000
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🎰┊bots: .award <@!312675883842535425> 3000
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Alex Montenegro#2732 from Nightjar at 🎰┊bots: .bal
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Alex Montenegro#2732 from Nightjar at 🎰┊bots: .econlb
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🎰┊bots: <@!523163911537557504> is that actually by gambling or did you use any bug? Just curious <:Thonk:264701195573133315>  you too <@!567406677494726683>
+Zane Castiel#0418 from Nightjar at 🎰┊bots: its by gambling
+Alex Montenegro#2732 from Nightjar at 🥡┊random: .roll 10000000
+Alex Montenegro#2732 from Nightjar at 🥡┊random: fuck
+Zane Castiel#0418 from Nightjar at 🎰┊bots: I was there to witness
+Panda~san#0001 from Nightjar at 🎰┊bots: .award <@!523163911537557504> 200000
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+SpicyCracker#0685 from Nightjar at 🎰┊bots: i got the money from zane
+WAIFU INTERVAL
+SpicyCracker#0685 from Nightjar at 🎰┊bots: Ngl B)
+Zane Castiel#0418 from Nightjar at 🎰┊bots: oh yeah that too
+Panda~san#0001 from Nightjar at 🎰┊bots: oh then no
+Zane Castiel#0418 from Nightjar at 🎰┊bots: I gave crystal 100k
+SpicyCracker#0685 from Nightjar at 🎰┊bots: yes
+Panda~san#0001 from Nightjar at 🎰┊bots: ok well
+Zane Castiel#0418 from Nightjar at 🎰┊bots: other than that Kotaro just gambled and i gave em like 100k
+Panda~san#0001 from Nightjar at 🎰┊bots: .award <@!567406677494726683> 3000
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🎰┊bots: so -100k kotaro if i dont give crystal anything right
+Zane Castiel#0418 from Nightjar at 🎰┊bots: yes
+Panda~san#0001 from Nightjar at 🎰┊bots: .take <@!523163911537557504> 100000
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Recycle Bin#4976 from Nightjar at 💬┊general: yeaaaaaaaaaaaaaah
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Recycle Bin#4976 from Nightjar at 💬┊general: look at me
+Recycle Bin#4976 from Nightjar at 💬┊general: .bal
+Pandaa#2950 from Nightjar at 💬┊general: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Recycle Bin#4976 from Nightjar at 💬┊general: oh
+Panda~san#0001 from Nightjar at 🎰┊bots: whos rowose
+Zane Castiel#0418 from Nightjar at 🎰┊bots: oh its gwenna
+Zane Castiel#0418 from Nightjar at 🎰┊bots: dw I gave her the same amount
+Panda~san#0001 from Nightjar at 🎰┊bots: my guess she gets nothign too
+Zane Castiel#0418 from Nightjar at 🎰┊bots: ye
+Zane Castiel#0418 from Nightjar at 🎰┊bots: she gets nothing
+Panda~san#0001 from Nightjar at 🎰┊bots: yeah i never thought shed be someone who actually grinds for that
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🎰┊bots: .econlb
+Pandaa#2950 from Nightjar at 🎰┊bots: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: o.o
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Zane Castiel#0418 from Nightjar at 🎰┊bots: also the castiel yu is my alt so it only gets like 2000
+Zane Castiel#0418 from Nightjar at 🎰┊bots: since I actually gave the 2k amount before the thing
+Panda~san#0001 from Nightjar at 🥡┊random: .econlb
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .daily
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Zane Castiel#0418 from Nightjar at 🎰┊bots: other than that there's nothing else
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .roll 50
+977
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .flip 200
+0.7113807342103879
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .roll 200
+617
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: woa nice luck
+Kotaro-kun#6773 from Nightjar at 🥡┊random: ik c :
+Zane Castiel#0418 from Nightjar at 🥡┊random: .roll 1000
+994
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Zane Castiel#0418 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: Zane no
+Zane Castiel#0418 from Nightjar at 🥡┊random: what
+Panda~san#0001 from Retired Gamers at 📙【holy-bible: ?award <@!703240332770541639> 5000
+Pandaa#2950 from Retired Gamers at 📙【holy-bible: 
+Zane Castiel#0418 from Nightjar at 🥡┊random: LMAO
+Kotaro-kun#6773 from Nightjar at 🥡┊random: not again
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 15 ✨
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: +
+Zane Castiel#0418 from Nightjar at 🥡┊random: oh god
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .pick hssi
+[ '.pick', 'hssi' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: ohh i think it didnt work <:Thonk:264701195573133315>
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .roll 15
+908
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: i actually changed the odds
+Panda~san#0001 from Nightjar at 🥡┊random: but
+Zane Castiel#0418 from Nightjar at 🥡┊random: .roll 1000
+256
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Zane Castiel#0418 from Nightjar at 🥡┊random: ye
+Panda~san#0001 from Nightjar at 🥡┊random: it doesnt show
+Zane Castiel#0418 from Nightjar at 🥡┊random: .roll 1000
+972
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Zane Castiel#0418 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+SpicyCracker#0685 from Nightjar at 💬┊general: .bal
+Pandaa#2950 from Nightjar at 💬┊general: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+SpicyCracker#0685 from Nightjar at 💬┊general: im so rich
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Zane Castiel#0418 from Nightjar at 🥡┊random: .roll 1000
+972
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: yeah stop for now
+Panda~san#0001 from Nightjar at 🥡┊random: im changing it <:Thonk:264701195573133315>
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 25 ✨
+Kotaro-kun#6773 from Nightjar at 🥡┊random: <:aiight:706297450440163359>
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .pick 3ddf
+[ '.pick', '3ddf' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Zane Castiel#0418 from Nightjar at 🥡┊random: damn it
+Zane Castiel#0418 from Nightjar at 🥡┊random: forever will be embedded here
+Yeetery#4658 from Retired Gamers at 📙【holy-bible: Eida ki coaching er taka naki bhai
+MimeH0N0r/|\Chrono#6091 from Jester Grounds at 🤖┊bot-commands: $Tu
+Mudae#0807 from Jester Grounds at 🤖┊bot-commands: **MimeH0N0r/|\Chrono**, you __can__ claim right now! The next claim reset is in **1h 25** min.
+You have **10** rolls left. Next rolls reset in **25** min.
+Next $daily reset in **10h 30** min.
+
+You __can__ react to kakera right now!
+Power: **100%**
+Each kakera reaction consumes 100% of your reaction power.
+Your characters with 10+ keys consume half the power (50%)
+Stock: **3523**<:kakera:469835869059153940>
+
+$dk is ready!
+You may vote again in **2h 36** min.
+**=>** $tuarrange
+MimeH0N0r/|\Chrono#6091 from Jester Grounds at 🤖┊bot-commands: $w
+Mudae#0807 from Jester Grounds at 🤖┊bot-commands: 
+Pandaa#2950 from Jester Grounds at 🤖┊bot-commands: Type .pick and the code in the picture to get 14 ✨
+MimeH0N0r/|\Chrono#6091 from Jester Grounds at 🤖┊bot-commands: $w
+Mudae#0807 from Jester Grounds at 🤖┊bot-commands: 
+MimeH0N0r/|\Chrono#6091 from Jester Grounds at 🤖┊bot-commands: $w
+Mudae#0807 from Jester Grounds at 🤖┊bot-commands: 
+MimeH0N0r/|\Chrono#6091 from Jester Grounds at 🤖┊bot-commands: $dk
+Mudae#0807 from Jester Grounds at 🤖┊bot-commands: **+157**<:kakera:469835869059153940>added to your kakera collection! (**3680** total)
+MimeH0N0r/|\Chrono#6091 from Jester Grounds at 🤖┊bot-commands: $w
+Mudae#0807 from Jester Grounds at 🤖┊bot-commands: 
+MimeH0N0r/|\Chrono#6091 from Jester Grounds at 🤖┊bot-commands: $w
+Mudae#0807 from Jester Grounds at 🤖┊bot-commands: 
+MimeH0N0r/|\Chrono#6091 from Jester Grounds at 🤖┊bot-commands: $w
+Mudae#0807 from Jester Grounds at 🤖┊bot-commands: 
+MimeH0N0r/|\Chrono#6091 from Jester Grounds at 🤖┊bot-commands: $W
+Mudae#0807 from Jester Grounds at 🤖┊bot-commands: 
+MimeH0N0r/|\Chrono#6091 from Jester Grounds at 🤖┊bot-commands: $w
+Mudae#0807 from Jester Grounds at 🤖┊bot-commands: 
+MimeH0N0r/|\Chrono#6091 from Jester Grounds at 🤖┊bot-commands: $w
+Mudae#0807 from Jester Grounds at 🤖┊bot-commands: 
+MimeH0N0r/|\Chrono#6091 from Jester Grounds at 🤖┊bot-commands: $w
+Mudae#0807 from Jester Grounds at 🤖┊bot-commands: 
+https.HoneyCookie#0879 from Nightjar at 💬┊general: we're all broke now
+https.HoneyCookie#0879 from Nightjar at 💬┊general: omg it's just like real life
+Kotaro-kun#6773 from Nightjar at 💬┊general: wha bye bye?
+Panda~san#0001 from Nightjar at 💬┊general: i
+Kotaro-kun#6773 from Nightjar at 💬┊general: .bal
+Pandaa#2950 from Nightjar at 💬┊general: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Panda~san#0001 from Nightjar at 💬┊general: just fixed it
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 💬┊general: also
+Panda~san#0001 from Nightjar at 💬┊general: i hate you guys
+Panda~san#0001 from Nightjar at 💬┊general: <:angreeping:640912369349951488>

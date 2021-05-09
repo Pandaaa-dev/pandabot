@@ -38,7 +38,7 @@ module.exports = {
             }
              client.banned_words.delete(wordToDelete.id)
              
-            connection.query(`DELETE FROM ${"s581_GUILD_CONFIG.banned_words"}
+            connection.query(`DELETE FROM ${"customer_178208_guilddetails.banned_words"}
                                      WHERE word = "${wordToDelete.word}"
                                      AND guildid = "${message.guild.id.toString()}"; `,(rej,res) => { 
                 if(rej) console.log(rej)

@@ -25,61 +25,61 @@
             "name": "Kitchen Knife",
             "Price": 650,
             "questNumber": 25,
-            "itemsPerQuest": 5,
+            "itemsPerQuest": 2,
             "emoji": "🔪"
         },
         {
             "name": "Dagger",
             "Price": 800,
             "questNumber": 35,
-            "itemsPerQuest": 5,
+            "itemsPerQuest": 3,
             "emoji": "🗡️"
         },
         {
             "name": "Diamond Sword",
             "Price": 1250,
             "questNumber": 50,
-            "itemsPerQuest": 6,
+            "itemsPerQuest": 3,
             "emoji": "⚔️"
         },
         {
             "name": "Rust",
             "Price": 1500,
             "questNumber": 65,
-            "itemsPerQuest": 6,
+            "itemsPerQuest": 4,
             "emoji":"⚔️"
         },
         {
             "name": "Heart Seeker",
             "Price": 3000,
             "questNumber": 100,
-            "itemsPerQuest": 7,
+            "itemsPerQuest": 4,
             "emoji":"💘"
         },
         {
             "name": "Vengance",
             "Price": 5000,
-            "questNumber": 150,
-            "itemsPerQuest": 8,
+            "questNumber": 120,
+            "itemsPerQuest": 5,
             "emoji": "⚔️"
         },
         {
             "name": "Dragon Slayer",
             "Price": 8000,
             "questNumber": 120,
-            "itemsPerQuest": 10,
+            "itemsPerQuest": 6,
             "emoji": "🐲"
         },
         {
             "name": "Excalibur",
             "Price": 10000,
             "questNumber": 300,
-            "itemsPerQuest": 6, 
+            "itemsPerQuest": 4, 
             "emoji": "⚔️"
         },
         {
             "name": "One Shot",
-            "Price": 25000,
+            "Price": 15000,
             "questNumber": 1,
             "itemsPerQuest": 100,
             "emoji": "🎯"

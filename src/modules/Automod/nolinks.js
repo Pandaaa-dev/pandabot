@@ -41,7 +41,7 @@ module.exports = {
             channelid: message.channel.id,
             guildid: message.guild.id
         })
-        connection.query(`INSERT INTO  s581_GUILD_CONFIG.no_links(channelid, guildid)
+        connection.query(`INSERT INTO  customer_178208_guilddetails.no_links(channelid, guildid)
         VALUES(${message.channel.id.toString()}, ${message.guild.id.toString()});
 `)
         return  message.channel.send(basicEmbed(client, message, args, text, "NoLinks turned on!", "👍" ,"NoLinks for this channel has been turned on!"))

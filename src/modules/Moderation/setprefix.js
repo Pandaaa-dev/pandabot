@@ -38,7 +38,7 @@ module.exports = {
              prefix: newPrefix
          }
          client.guilds_config.set(message.guild.id, newConfig)
-         connection.query(`UPDATE ${"s581_GUILD_CONFIG.guild_details"}
+         connection.query(`UPDATE ${"customer_178208_guilddetails.guild_details"}
          SET ${"prefix"} = "${newPrefix}"
          WHERE ${"guildid"} = "${message.guild.id}";
          `, (rej, res) => {

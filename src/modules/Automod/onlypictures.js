@@ -34,7 +34,7 @@ module.exports = {
     async execute( message, args, text, client,connection){
             if(client.onlyPictureChannels.get(message.channel.id)){
                 // client.emit('deleteOnlyPicturesChannelDB', message.channel.id)
-                connection.query(`DELETE FROM  s581_GUILD_CONFIG.only_pictures
+                connection.query(`DELETE FROM  customer_178208_guilddetails.only_pictures
                 WHERE channelid = ${message.channel.id};
                  `)
                 client.onlyPictureChannels.delete(message.channel.id)
@@ -45,7 +45,7 @@ module.exports = {
                 guildid: message.guild.id
             })
             // client.emit('setOnlyPicturesChannelDB', message.channel.id.toString(), message.guild.id.toString())
-            connection.query(`INSERT INTO  s581_GUILD_CONFIG.only_pictures(channelid, guildid)
+            connection.query(`INSERT INTO  customer_178208_guilddetails.only_pictures(channelid, guildid)
             VALUES(${message.channel.id.toString()}, ${message.guild.id.toString()});
 `)
             return  message.channel.send(basicEmbed(client, message, args, text, "OnlyPictures turned on!", "👍" ,"OnlyPictures for this channel has been turned on!"))

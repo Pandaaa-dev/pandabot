@@ -20,5 +20,6 @@
     "discord.js": "^12.5.1",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.6"
-  }
+  },
+  "nodeVersion": "12.16.3"
 }

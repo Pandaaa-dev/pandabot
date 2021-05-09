@@ -63,10 +63,10 @@ module.exports = {
         })
 
         ticketChannel.send(basicEmbed(client, message, args, text, `Ticket ${lastTicketIdx + 1} created`, ``, `**By:** ${message.author}\nPlease wait till the correspoinding officials tend to you. Thank you for your patience`))
-        connection.query(`INSERT INTO s581_GUILD_CONFIG.tickets (guildid, channelid, userid)
+        connection.query(`INSERT INTO customer_178208_guilddetails.tickets (guildid, channelid, userid)
                           VALUES(${message.guild.id.toString()}, ${ticketChannel.id.toString()}, ${message.author.id.toString()})`)
 
-        connection.query(`UPDATE s581_GUILD_CONFIG.guild_details
+        connection.query(`UPDATE customer_178208_guilddetails.guild_details
                         SET lastticket = ${lastTicketIdx + 1}
                         WHERE guildid = ${message.guild.id}`)
 

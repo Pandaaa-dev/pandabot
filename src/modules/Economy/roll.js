@@ -42,7 +42,7 @@ module.exports = {
         } else if(user){
             points= user.points
         }
-        
+        if(points >= 500000) return message.channel.send(descEmbed('You already have max amount of ' + emoji + '!'))
         let number = args[0]
         if(isNaN(number) && number.toLowerCase() !='all' ) return
         if(number =='all'){
@@ -55,23 +55,25 @@ module.exports = {
         const roll = Math.floor(Math.random()*1000)
         console.log(roll)
         let multiple = ''
-        if(roll >=0 && roll <450){
+        if(roll >=0 && roll <425){
             multiple = 0
         }
-        if(roll >=450 && roll <650){
+        if(roll >=425 && roll <680){
             multiple = 1
         } 
-        if(roll >= 650 && roll < 800){
+        if(roll >= 680 && roll < 985){
             multiple = 2 
-        } if(roll >= 800 && roll < 950){
+        } if(roll >= 985 && roll < 995){
+            multiple = 3.5
+        } if(roll >= 995 && roll <= 1000){
             multiple = 4
-        } if(roll >= 950 && roll <= 1000){
-            multiple = 10
         }
-        gainedPoints = number * multiple
+        gainedPoints = Math.floor(number * multiple) 
 
         points = points + gainedPoints
-
+        if(points >= 500000) {
+            points = 500000
+        } 
         const embed = new MessageEmbed()
             .setColor(Math.floor(Math.random()*16777215).toString(16))
             .setDescription(`You rolled ${number}${emoji}. You got ${gainedPoints}${emoji}`)

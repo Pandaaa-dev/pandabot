@@ -1,0 +1,254 @@
+npm WARN panda-bot@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+audited 221 packages in 1.321s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+> panda-bot@1.0.0 start /home/minecraft/multicraft/servers/server178208
+> node ./src/index.js
+
+hmm
+Connected to the Database!
+Pandaa has logged in!
+Panda~san#0001 from Nightjar at 🥡┊random: a
+Panda~san#0001 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: .econlb
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: HAHAHA
+Arctic#6211 from ZINNEN at supreme-court: yikes <:6491_FeelsOKMan:790478330951630909>
+Panda~san#0001 from Nightjar at 🥡┊random: .inv
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: .econkb
+Panda~san#0001 from Nightjar at 🥡┊random: .econlb
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: .xplb
+353
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Arctic#6211 from ZINNEN at supreme-court: That reply <:3938_peepoLaughPoint:790478330213826571>
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: .hug a
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: .roll 600000
+Auttaja#0000 from Nightjar at 📚┊logs: 
+kajtoJACKSON#7169 from ZINNEN at supreme-court: <:3938_peepoLaughPoint:790478330213826571>
+Panda~san#0001 from Nightjar at 🥡┊random: .roll 50000
+kajtoJACKSON#7169 from ZINNEN at supreme-court: <@125162946463531008>
+kajtoJACKSON#7169 from ZINNEN at supreme-court: r6?
+ИЦCLΞДЯ ЩIИΓΞЯ#1728 from ZINNEN at supreme-court: tuina tired bole chole geli
+kajtoJACKSON#7169 from ZINNEN at supreme-court: ghum gesega
+kajtoJACKSON#7169 from ZINNEN at supreme-court: tired to ekhono asi
+ИЦCLΞДЯ ЩIИΓΞЯ#1728 from ZINNEN at supreme-court: harami re
+kajtoJACKSON#7169 from ZINNEN at supreme-court: <:6757_Sadge:791195597951598592>
+kajtoJACKSON#7169 from ZINNEN at supreme-court: in gaem vc to reduce latency
+ИЦCLΞДЯ ЩIИΓΞЯ#1728 from ZINNEN at supreme-court: set diskard to heigh prior
+kajtoJACKSON#7169 from ZINNEN at supreme-court: oh men can alt tab
+kajtoJACKSON#7169 from ZINNEN at supreme-court: damn
+Pandaa#2950 from ZINNEN at supreme-court: Type .pick and the code in the picture to get 22 ✨
+kajtoJACKSON#7169 from ZINNEN at supreme-court: power of 8gb
+WAIFU INTERVAL
+SpicyCracker#0685 from Nightjar at 💬┊general: <@471983239024607247> GOODMORNING
+SpicyCracker#0685 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+SpicyCracker#0685 from Nightjar at 🥡┊random: WHAT
+SpicyCracker#0685 from Nightjar at 🥡┊random: NO
+SpicyCracker#0685 from Nightjar at 🥡┊random: IFNFBEBE
+Auttaja#0000 from Nightjar at 📚┊logs: 
+lauren#4444 from Nightjar at 🥡┊random: well
+r/worldnews • YAGPDB#0000 from Radioactive Playground at 📰╎world-news: 
+SpicyCracker#0685 from Nightjar at 🥡┊random: .waifuinfo <@691343814757056613>
+Collection [Map] {
+  '567406677494726683' => TextRow {
+    waifu: '567406677494726683',
+    husbandu: '691343814757056613',
+    amount: 500,
+    divorceCount: 0
+  },
+  '673268823335370755' => TextRow {
+    waifu: '673268823335370755',
+    husbandu: '691343814757056613',
+    amount: 500,
+    divorceCount: 0
+  }
+}
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyCracker#0685 from Nightjar at 🥡┊random: i need to buy more gifts
+Recycle Bin#4976 from Nightjar at 🥡┊random: .quest
+10
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: .sell all
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyCracker#0685 from Nightjar at 🥡┊random: .quesy
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 10 ✨
+SpicyCracker#0685 from Nightjar at 🥡┊random: o
+Recycle Bin#4976 from Nightjar at 🥡┊random: .pick q9f3
+[ '.pick', 'q9f3' ]
+SpicyCracker#0685 from Nightjar at 🥡┊random: .quest
+6
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda Bebe#0637 from Nightjar at 💬┊general: hi
+SpicyCracker#0685 from Nightjar at 🥡┊random: oh
+Recycle Bin#4976 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Panda Bebe#0637 from Nightjar at 💬┊general: How are you
+SpicyCracker#0685 from Nightjar at 🥡┊random: .sell all
+Pandaa#2950 from Nightjar at 🥡┊random: 
+kajtoJACKSON#7169 from ZINNEN at supreme-court: /bsou
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: what
+SpicyCracker#0685 from Nightjar at 🥡┊random: ISBFHDBW
+kajtoJACKSON#7169 from ZINNEN at supreme-court: /pick bsou
+[ '/pick', 'bsou' ]
+Pandaa#2950 from ZINNEN at supreme-court: 
+SpicyCracker#0685 from Nightjar at 🥡┊random: .inv
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyCracker#0685 from Nightjar at 🥡┊random: im so cool
+Recycle Bin#4976 from Nightjar at 🥡┊random: scam
+Recycle Bin#4976 from Nightjar at 🥡┊random: .daily
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyCracker#0685 from Nightjar at 🥡┊random: HAHDHSHAHA
+SpicyCracker#0685 from Nightjar at 🥡┊random: AHAHAH
+lauren#4444 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+lauren#4444 from Nightjar at 🥡┊random: .waifuinfo
+Collection [Map] {
+  '312675883842535425' => TextRow {
+    waifu: '312675883842535425',
+    husbandu: '610015396266770442',
+    amount: 500,
+    divorceCount: 0
+  },
+  '622883441683333122' => TextRow {
+    waifu: '622883441683333122',
+    husbandu: '610015396266770442',
+    amount: 500,
+    divorceCount: 0
+  }
+}
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyCracker#0685 from Nightjar at 🥡┊random: .bal <@326413563784724480>
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+SpicyCracker#0685 from Nightjar at 🥡┊random: .waifuinfo
+Collection [Map] {
+  '691343814757056613' => TextRow {
+    waifu: '691343814757056613',
+    husbandu: '567406677494726683',
+    amount: 650,
+    divorceCount: 0
+  }
+}
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: <@!610015396266770442> tell omi to give me back my money
+SpicyCracker#0685 from Nightjar at 🥡┊random: .roll 20
+535
+Pandaa#2950 from Nightjar at 🥡┊random: 
+lauren#4444 from Nightjar at 🥡┊random: shhhh
+lauren#4444 from Nightjar at 🥡┊random: he has to fix it
+SpicyCracker#0685 from Nightjar at 🥡┊random: yes bin shhh
+Recycle Bin#4976 from Nightjar at 🥡┊random: no
+lauren#4444 from Nightjar at 🥡┊random: why would you guys gamble that much anyway? you all should know better than to gamble that much money when it has like a lot of zeros :/
+Recycle Bin#4976 from Nightjar at 🥡┊random: i dont gamble
+lauren#4444 from Nightjar at 🥡┊random: bartender never handled that much either
+lauren#4444 from Nightjar at 🥡┊random: it’s not you bin dw
+Recycle Bin#4976 from Nightjar at 🥡┊random: i am an exception
+Panda~san#0001 from Nightjar at 🥡┊random: everything works
+Panda~san#0001 from Nightjar at 🥡┊random: just not economy
+Panda~san#0001 from Nightjar at 🥡┊random: i mean the economy was wiped
+Recycle Bin#4976 from Nightjar at 🥡┊random: i want 8k at least
+Recycle Bin#4976 from Nightjar at 🥡┊random: oooooooooooooooooooooo
+Recycle Bin#4976 from Nightjar at 🥡┊random: .remind me 12h daily
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: i probably can use a previous version of the db
+Recycle Bin#4976 from Nightjar at 🥡┊random: .remind me 2h quest
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: but i wont
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 7 ✨
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: .remind me 2h quest
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: .pick dm5j
+[ '.pick', 'dm5j' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: because yall dont deserve it if yall cant be like 'oh i found a bug maybe i should tell omi and NOT exploit it'
+Panda~san#0001 from Nightjar at 🥡┊random: <:HT_MonikaShrug:736760241701519420>
+snekiko#2935 from Nightjar at 💬┊general: bruh
+lauren#4444 from Nightjar at 🥡┊random: ^^
+snekiko#2935 from Nightjar at 💬┊general: WHATTHE FUCK
+Panda~san#0001 from Nightjar at 💬┊general: zane
+Panda~san#0001 from Nightjar at 💬┊general: broke the bot
+Panda~san#0001 from Nightjar at 💬┊general: and now
+Panda~san#0001 from Nightjar at 💬┊general: everyones bl is nil
+lauren#4444 from Nightjar at 💬┊general: our money went bye bye
+snekiko#2935 from Nightjar at 💬┊general: wait
+snekiko#2935 from Nightjar at 💬┊general: .bal
+Panda~san#0001 from Nightjar at 💬┊general: and im not restoring it
+Pandaa#2950 from Nightjar at 💬┊general: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Pandaa#2950 from Nightjar at 📚┊other-logs: Type .pick and the code in the picture to get 25 ✨
+snekiko#2935 from Nightjar at 💬┊general: WHAT
+Auttaja#0000 from Nightjar at 📚┊logs: 
+lauren#4444 from Nightjar at 💬┊general: LOL
+snekiko#2935 from Nightjar at 💬┊general: ZANE
+lauren#4444 from Nightjar at 💬┊general: omi is supposed to be on break rn btw
+lauren#4444 from Nightjar at 💬┊general: but it got interrupted
+kajtoJACKSON#7169 from ZINNEN at general🧶: <@!125162946463531008> match e dhuktesi ferot ashle mention dish
+snekiko#2935 from Nightjar at 💬┊general: ok but
+snekiko#2935 from Nightjar at 💬┊general: how did he even get so lucky
+snekiko#2935 from Nightjar at 💬┊general: to get up to 2 billion
+Panda~san#0001 from Nightjar at 💬┊general: im
+Panda~san#0001 from Nightjar at 💬┊general: probably making a maximum
+snekiko#2935 from Nightjar at 💬┊general: hahahaha yes
+Panda~san#0001 from Nightjar at 💬┊general: because yall dont deserver unlimited
+Panda~san#0001 from Nightjar at 💬┊general: <a:PepeLaugh:793907300821237810>
+WAIFU INTERVAL
+SpicyCracker#0685 from Nightjar at 💬┊general: I BARELY EVEN TALK
+Recycle Bin#4976 from Nightjar at 💬┊general: its not like you dont count crystal
+SpicyCracker#0685 from Nightjar at 💬┊general: ok
+shawtyana#6259 from the second dimension👽 at 👽-general: Mmm
+Doe#2290 from Nightjar at 💬┊general: I deserve it

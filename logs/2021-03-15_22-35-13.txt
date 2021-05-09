@@ -1,0 +1,360 @@
+npm WARN panda-bot@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+audited 221 packages in 1.641s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+> panda-bot@1.0.0 start /home/minecraft/multicraft/servers/server178208
+> node ./src/index.js
+
+hmm
+Connected to the Database!
+Pandaa has logged in!
+Panda~san#0001 from Nightjar at 🥡┊random: .huntshop
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: yes
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .roll 78
+127
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: ok
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .buy butter knife
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .inv
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .quest
+15
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: oh
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .inv
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: .quest
+64
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: yeah
+Recycle Bin#4976 from Nightjar at 🥡┊random: wait
+Recycle Bin#4976 from Nightjar at 🥡┊random: .remind me 2h quest
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: .quest
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: ok
+Recycle Bin#4976 from Nightjar at 🥡┊random: .daily
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: .remind me 12h daily
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: alright
+Auttaja#0000 from Nightjar at 📚┊logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .daily
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: if you guys find any more problems
+Recycle Bin#4976 from Nightjar at 🥡┊random: can u remove reminders
+Panda~san#0001 from Nightjar at 🥡┊random: pls do tell me
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .roll all
+93
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: goodnight
+Recycle Bin#4976 from Nightjar at 🥡┊random: .sell all
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .sell all
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: <\3
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .roll 5
+159
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: nah i make reminders in an irreversible way so sadly it wont work like that
+Recycle Bin#4976 from Nightjar at 🥡┊random: .give <@!567406677494726683> 12
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: hwhahshhs
+Auttaja#0000 from Nightjar at 📚┊logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: ty bim ily
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .roll all
+305
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: hah
+Recycle Bin#4976 from Nightjar at 🥡┊random: never happened
+SpicyNoodle#0685 from Nightjar at 🥡┊random: I JUST HAHD MYSELF
+Recycle Bin#4976 from Nightjar at 🥡┊random: .give <@!567406677494726683> 16
+Pandaa#2950 from Nightjar at 🥡┊random: 
+intaetwined#2939 from Nightjar at 🥡┊random: .huntshop
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: i even fixed the roll adds for yall <:PepeLaugh:727916027748548669>
+Panda~san#0001 from Nightjar at 🥡┊random: odds*
+intaetwined#2939 from Nightjar at 🥡┊random: oh my God
+Panda~san#0001 from Nightjar at 🥡┊random: yes wined
+intaetwined#2939 from Nightjar at 🥡┊random: I can afford NOTHING
+Panda~san#0001 from Nightjar at 🥡┊random: ahaha
+Panda~san#0001 from Nightjar at 🥡┊random: thats okay
+Panda~san#0001 from Nightjar at 🥡┊random: gamble
+Panda~san#0001 from Nightjar at 🥡┊random: then buy
+Panda~san#0001 from Nightjar at 🥡┊random: then sell
+Panda~san#0001 from Nightjar at 🥡┊random: then gamble
+intaetwined#2939 from Nightjar at 🥡┊random: I wish I can
+Panda~san#0001 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: .giftshop
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Pandaa#2950 from Nightjar at 📚┊other-logs: Type .pick and the code in the picture to get 6 ✨
+Panda~san#0001 from Nightjar at 🥡┊random: theres this too
+intaetwined#2939 from Nightjar at 🥡┊random: your bot gives me 0 every time
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: <:PepeLaugh:727916027748548669>
+SpicyNoodle#0685 from Nightjar at 🥡┊random: <@691343814757056613>
+SpicyNoodle#0685 from Nightjar at 🥡┊random: CATTO
+Panda~san#0001 from Nightjar at 🥡┊random: i even fixed the odds ahahaha
+SpicyNoodle#0685 from Nightjar at 🥡┊random: CATY
+SpicyNoodle#0685 from Nightjar at 🥡┊random: CATTY
+Aurelian Spodarec#3075 from JavaScript React 🎃  Web Developers Programming 🔥 at off-topic: 😦
+SpicyNoodle#0685 from Nightjar at 🥡┊random: UNOFFLINE
+SpicyNoodle#0685 from Nightjar at 🥡┊random: RN
+cat.exe#9499 from Nightjar at 🥡┊random: Wha
+Panda~san#0001 from Nightjar at 🥡┊random: but yeah might fix it a bit more so yeah
+SpicyNoodle#0685 from Nightjar at 🥡┊random: I SHOULD CLAIM YOU
+cat.exe#9499 from Nightjar at 🥡┊random: I was summoned
+cat.exe#9499 from Nightjar at 🥡┊random: sure
+cat.exe#9499 from Nightjar at 🥡┊random: if ya want tooooo
+SpicyNoodle#0685 from Nightjar at 🥡┊random: <@312675883842535425>  UNOFFLINE I NEED LIKE 5K
+cat.exe#9499 from Nightjar at 🥡┊random: *what do u need 5k for*
+SpicyNoodle#0685 from Nightjar at 🥡┊random: *claiming you*
+intaetwined#2939 from Nightjar at 🥡┊random: I'll try it again once I have enough moolah
+cat.exe#9499 from Nightjar at 🥡┊random: *but 5K?!*
+Recycle Bin#4976 from Nightjar at 🥡┊random: i thought it was 500
+Recycle Bin#4976 from Nightjar at 🥡┊random: .waifuinfo
+Collection [Map] {
+  '696547545614123018' => TextRow {
+    waifu: '696547545614123018',
+    husbandu: '326413563784724480',
+    amount: 500,
+    divorceCount: 0
+  },
+  '703142587208433786' => TextRow {
+    waifu: '703142587208433786',
+    husbandu: '326413563784724480',
+    amount: 575,
+    divorceCount: 0
+  },
+  '713118434530951199' => TextRow {
+    waifu: '713118434530951199',
+    husbandu: '326413563784724480',
+    amount: 500,
+    divorceCount: 0
+  }
+}
+Pandaa#2950 from Nightjar at 🥡┊random: 
+DerpyStyle#6731 from Radioactive Playground at 👽╎reactor-chat: .pick 619b
+ALFIE#2871 from Radioactive Playground at 👽╎reactor-chat: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: *yes but im extra*
+Dyno#0000 from Radioactive Playground at logs-action: 
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 19 ✨
+Panda~san#0001 from Nightjar at 🥡┊random: ,pick s9l7
+Panda~san#0001 from Nightjar at 🥡┊random: ,ouc =skhdbc
+Panda~san#0001 from Nightjar at 🥡┊random: fuck
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .waifuinfo
+Collection [Map] {}
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: sighhh
+cat.exe#9499 from Nightjar at 🥡┊random: be extra later
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .waifuinfo <@691343814757056613>
+Collection [Map] {
+  '567406677494726683' => TextRow {
+    waifu: '567406677494726683',
+    husbandu: '691343814757056613',
+    amount: 500,
+    divorceCount: 0
+  },
+  '673268823335370755' => TextRow {
+    waifu: '673268823335370755',
+    husbandu: '691343814757056613',
+    amount: 500,
+    divorceCount: 0
+  }
+}
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: one day
+cat.exe#9499 from Nightjar at 🥡┊random: HUGUYFUYFUYFUYFUH
+Recycle Bin#4976 from Nightjar at 🥡┊random: im gonna take icky
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 23 ✨
+Recycle Bin#4976 from Nightjar at 🥡┊random: .pick srpu
+[ '.pick', 'srpu' ]
+[ '.pick', 'srpu' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: yes do it
+Panda~san#0001 from Nightjar at 🥡┊random: now u can see ur gifts in waifuinfo too
+Panda~san#0001 from Nightjar at 🥡┊random: so basically
+cat.exe#9499 from Nightjar at 🥡┊random: JUST CLAIM ME WITH 500 RN THEN CLAIM ME WITH 5K LATER
+Panda~san#0001 from Nightjar at 🥡┊random: .gift <@!326413563784724480> apple
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: .waifuinfo <@!326413563784724480>
+Collection [Map] {
+  '696547545614123018' => TextRow {
+    waifu: '696547545614123018',
+    husbandu: '326413563784724480',
+    amount: 500,
+    divorceCount: 0
+  },
+  '703142587208433786' => TextRow {
+    waifu: '703142587208433786',
+    husbandu: '326413563784724480',
+    amount: 575,
+    divorceCount: 0
+  },
+  '713118434530951199' => TextRow {
+    waifu: '713118434530951199',
+    husbandu: '326413563784724480',
+    amount: 500,
+    divorceCount: 0
+  }
+}
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: .waifuinfo
+Collection [Map] {
+  '696547545614123018' => TextRow {
+    waifu: '696547545614123018',
+    husbandu: '326413563784724480',
+    amount: 500,
+    divorceCount: 0
+  },
+  '703142587208433786' => TextRow {
+    waifu: '703142587208433786',
+    husbandu: '326413563784724480',
+    amount: 575,
+    divorceCount: 0
+  },
+  '713118434530951199' => TextRow {
+    waifu: '713118434530951199',
+    husbandu: '326413563784724480',
+    amount: 500,
+    divorceCount: 0
+  }
+}
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: nice
+cat.exe#9499 from Nightjar at 🥡┊random: .gift apple <@!567406677494726683>
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: BIN CAN I BORROW 650
+cat.exe#9499 from Nightjar at 🥡┊random: .shop
+Recycle Bin#4976 from Nightjar at 🥡┊random: .give 650 <@!567406677494726683>
+Recycle Bin#4976 from Nightjar at 🥡┊random: oops
+Recycle Bin#4976 from Nightjar at 🥡┊random: .give <@!567406677494726683> 0
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: MOTHER SNEK HAS MY MONEY TO SAFE ME FROM MYSELF
+Recycle Bin#4976 from Nightjar at 🥡┊random: well
+Recycle Bin#4976 from Nightjar at 🥡┊random: if you have money from her then
+SpicyNoodle#0685 from Nightjar at 🥡┊random: BIN ILL PAY BACK
+SpicyNoodle#0685 from Nightjar at 🥡┊random: PLS
+Panda~san#0001 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Pandaa#2950 from Nightjar at 📚┊logs: Type .pick and the code in the picture to get 25 ✨
+Recycle Bin#4976 from Nightjar at 🥡┊random: promise
+Panda~san#0001 from Nightjar at 🥡┊random: .roll all
+996
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: what
+SpicyNoodle#0685 from Nightjar at 🥡┊random: CATTOS GONNA BE OFFLINENWHEN I AWAKEN
+Recycle Bin#4976 from Nightjar at 🥡┊random: .give <@!567406677494726683> 650
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: YES
+Panda~san#0001 from Nightjar at 🥡┊random: um
+Panda~san#0001 from Nightjar at 🥡┊random: .inv
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: .quest
+3
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: heyyu <@349939035323498506>
+cat.exe#9499 from Nightjar at 🥡┊random: mm
+Panda~san#0001 from Nightjar at 🥡┊random: .sell 1 spinach
+spinach
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: .daily
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .claim <@691343814757056613>  650
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 8 ✨
+Recycle Bin#4976 from Nightjar at 🥡┊random: .quest
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 25 ✨
+Recycle Bin#4976 from Nightjar at 🥡┊random: .pick m2bf
+[ '.pick', 'm2bf' ]
+[ '.pick', 'm2bf' ]
+[ '.pick', 'm2bf' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: .pick bvjv
+[ '.pick', 'bvjv' ]
+[ '.pick', 'bvjv' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: hi <:PepeLaugh:727916027748548669>
+Recycle Bin#4976 from Nightjar at 🥡┊random: <@349939035323498506> give me some cash <:NJJJBA_YareYareDaze:667510098230247446>
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .pick s9l7
+[ '.pick', 's9l7' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: HSHDHSH
+SpicyNoodle#0685 from Nightjar at 🥡┊random: POOR ICKY
+SpicyNoodle#0685 from Nightjar at 🥡┊random: WAIFU CAT WAIFU CAT WAIFU CAT WAIFU CAT WAIFU CAT WAIFU CAT WAIFU CAT WAIFU CAT
+Panda~san#0001 from Nightjar at 🥡┊random: gOOdnight
+WAIFU INTERVAL
+Panda~san#0001 from Nightjar at 🥡┊random: anyways
+Panda~san#0001 from Nightjar at 🥡┊random: ima go sleep
+Panda~san#0001 from Nightjar at 🥡┊random: gnight
+cat.exe#9499 from Nightjar at 🥡┊random: SHAHUGAUGAGS
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 16 ✨
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .pick xj2x
+[ '.pick', 'xj2x' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: sleep well man, you´ve earned it Omi! <:NJPandaLove:666768616338751493>
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .roll 16
+840
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: damn
+Kotaro-kun#6773 from Nightjar at 🥡┊random: nice
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 

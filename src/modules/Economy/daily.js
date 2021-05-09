@@ -47,6 +47,7 @@ module.exports = {
                 userPoints = xpObject.points
             }
             userPoints = userPoints + dailyEcon
+             if(userPoints >= 500000) return message.channel.send(descEmbed('You already have max amount of ' + emoji + '!'))
             const embed = new MessageEmbed()
                     .setColor(Math.floor(Math.random()*16777215).toString(16))
                     .setDescription(`You have taken your daily and increased by ${dailyEcon}${emoji}. Your balance is ${userPoints}${emoji}`)

@@ -49,6 +49,7 @@ module.exports = {
              points= user.points
         }
         points = points + Number(amount)
+         if(points >= 500000) return message.channel.send(descEmbed('You already have max amount of ' + emoji + '!'))
         client.economy.set(userToAward.id, {
             userid: userToAward.id,
             points: points

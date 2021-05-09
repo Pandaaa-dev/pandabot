@@ -1,8 +1,8 @@
 const mysql = require('mysql2');
-const {DB} = require("../../config.json")
+const {DB_TEST} = require("../../config.json")
 
 // create the connection to database
-const connection = mysql.createConnection({...DB})
+const connection = mysql.createConnection({...DB_TEST})
  
  connection.connect((err) => {
    if(err) {
@@ -11,10 +11,10 @@ const connection = mysql.createConnection({...DB})
    console.log("Connected to the Database!")
  })
 console.log('hmm')
- connection.query('CREATE DATABASE IF NOT EXISTS s581_GUILD_CONFIG')
+ connection.query('CREATE DATABASE IF NOT EXISTS customer_178208_guilddetails')
 
 
- connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.guild_details(
+ connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.guild_details(
                     guildid varchar(255),
                     prefix varchar(255),
                     premium boolean,
@@ -32,21 +32,21 @@ console.log('hmm')
   if(err) console.log(err)
 })
 
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.xp_level(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.xp_level(
                   guildid varchar(255),
                   userid varchar(255),
                   points int,
                   level int);`, (err, res)=> {
 if(err) console.log(err)
 })
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.economy(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.economy(
                   userid Varchar(255),
                   points int,
                   PRIMARY KEY(userid));`, (err, res)=> {
 if(err) console.log(err)
 })
 
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.shop(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.shop(
                   id int NOT NULL AUTO_INCREMENT, 
                   name Varchar(255),
                   price int,
@@ -54,7 +54,7 @@ connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.shop(
 if(err) console.log(err)
 })
 
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.muted_members(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.muted_members(
   id int NOT NULL AUTO_INCREMENT,
   guildid varchar(255),
   userid varchar(255),
@@ -64,25 +64,25 @@ connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.muted_members(
 if(err) console.log(err)
 })
 
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.only_pictures(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.only_pictures(
   channelid varchar(255),
   guildid varchar(255));`, (err, res)=> {
 if(err) console.log(err)
 })
 
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.no_pictures(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.no_pictures(
   channelid varchar(255),
   guildid varchar(255));`, (err, res)=> {
 if(err) console.log(err)
 })
 
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.no_links(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.no_links(
   channelid varchar(255),
   guildid varchar(255));`, (err, res)=> {
 if(err) console.log(err)
 })
 
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.banned_words(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.banned_words(
   id int NOT NULL AUTO_INCREMENT, 
   guildid varchar(255),
   word varchar(255),
@@ -90,7 +90,7 @@ connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.banned_words(
   , (err, res)=> {
 if(err) console.log(err)
 })
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.tickets(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.tickets(
   id int NOT NULL AUTO_INCREMENT, 
   guildid varchar(255),
   channelid varchar(255),
@@ -100,7 +100,7 @@ connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.tickets(
 if(err) console.log(err)
 })
 
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.waifu(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.waifu(
   waifu varchar(255),
   husbandu varchar(255),
   amount int,
@@ -110,7 +110,7 @@ connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.waifu(
 if(err) console.log(err)
 })
 
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.level_rewards(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.level_rewards(
   id int NOT NULL AUTO_INCREMENT, 
   type varchar(255),
   5award int, 
@@ -126,7 +126,7 @@ connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.level_rewards(
   , (err, res)=> {
 if(err) console.log(err)
 })
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.gift_inventory(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.gift_inventory(
   userid varchar(255),
   Apple int, 
   Rose int,
@@ -149,7 +149,7 @@ connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.gift_inventory(
 if(err) console.log(err)
 })
 
-connection.query(`CREATE TABLE IF NOT EXISTS s581_GUILD_CONFIG.huntshop_inventory(
+connection.query(`CREATE TABLE IF NOT EXISTS customer_178208_guilddetails.huntshop_inventory(
   userid varchar(255),
   presentSword varchar(255), 
   swordQuestNo int,
@@ -195,7 +195,7 @@ if(err) console.log(err)
 
 
 
-// connection.query(`ALTER TABLE s581_GUILD_CONFIG.huntshop_inventory
+// connection.query(`ALTER TABLE customer_178208_guilddetails.huntshop_inventory
 //                   drop su7g;`
 //   , (err, res)=> {
 // if(err) console.log(err)

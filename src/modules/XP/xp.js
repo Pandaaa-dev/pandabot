@@ -145,7 +145,7 @@ module.exports = {
         ctx.shadowBlur = 0;
         ctx.fillStyle = '#ec213d'
         ctx.font = '27px Calibri'
-        ctx.fillText('Server Rank', 520.24, 215)
+        ctx.fillText('Server Rank', 518, 215)
         ctx.fill()
         ctx.closePath()
 
@@ -181,7 +181,7 @@ module.exports = {
         ctx.shadowBlur = 2;
         ctx.fillStyle = '#ec213d'
         ctx.font = '60px Roboto'
-        ctx.fillText(level, ((268.24 + ctx.measureText('Global Rank').width + (520.24 - (268.24 + ctx.measureText('Global Rank').width)))/1.1) - ctx.measureText(level.toString()).width + ctx.measureText(level.toString()).width/3  , 240)
+        ctx.fillText(level, ((230 + ctx.measureText('Global Rank').width + (520.24 - (268.24 + ctx.measureText('Global Rank').width)))) - ctx.measureText(level.toString()).width + ctx.measureText(level.toString()).width/3 + 6 , 240)
         ctx.fill()
         ctx.closePath()
         
@@ -205,7 +205,7 @@ module.exports = {
         ctx.beginPath()
         ctx.font = '20px Roboto'
         ctx.fillStyle='white'
-        ctx.fillText(`${points}/${requiredPoints}`,((700+145)/2)-ctx.measureText(`${points}/${requiredPoints}`).width/6, 330 )
+        ctx.fillText(`${points}/${requiredPoints}`,((700+145)/2)-ctx.measureText(`${points}/${requiredPoints}`).width/3, 330 )
         ctx.fill()
         ctx.closePath()
 

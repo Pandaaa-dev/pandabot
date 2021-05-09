@@ -1,0 +1,202 @@
+npm WARN panda-bot@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+audited 221 packages in 1.468s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+> panda-bot@1.0.0 start /home/minecraft/multicraft/servers/server178208
+> node ./src/index.js
+
+hmm
+Connected to the Database!
+Pandaa has logged in!
+Recycle Bin#4976 from Nightjar at 🥡┊random: ehat happened
+Panda~san#0001 from Nightjar at 🥡┊random: life happened
+SpicyNoodle#0685 from Nightjar at 🥡┊random: yes
+cat.exe#9499 from Nightjar at 🥡┊random: .flip 25
+0.41602950041173403
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from JavaScript React 🎃  Web Developers Programming 🔥 at off-topic: tracking xp here is redundant :v so meh
+cat.exe#9499 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+cat.exe#9499 from Nightjar at 🥡┊random: .flip 16
+0.3287023709900141
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+cat.exe#9499 from Nightjar at 🥡┊random: k
+Panda~san#0001 from Nightjar at 🥡┊random: oh
+Panda~san#0001 from Nightjar at 🥡┊random: actually
+Panda~san#0001 from Nightjar at 🥡┊random: flip
+Panda~san#0001 from Nightjar at 🥡┊random: is broken
+Panda~san#0001 from Nightjar at 🥡┊random: i
+Kotaro-kun#6773 from Nightjar at 🥡┊random: idk man, i got a runny nose and a sore voice today..
+Panda~san#0001 from Nightjar at 🥡┊random: just saw it lmao
+Recycle Bin#4976 from Nightjar at 🥡┊random: well thats good
+SpicyNoodle#0685 from Nightjar at 🥡┊random: ..give <@567406677494726683>  900
+SpicyNoodle#0685 from Nightjar at 🥡┊random: <@691343814757056613> <@691343814757056613>
+Recycle Bin#4976 from Nightjar at 🥡┊random: .give <@!326413563784724480> 0
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: .give <@!326413563784724480> 292929
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .give <@326413563784724480> 0
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: no problem
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .give <@567406677494726683> 00
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .roll 0
+450
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Recycle Bin#4976 from Nightjar at 🥡┊random: tysm ily
+SpicyNoodle#0685 from Nightjar at 🥡┊random: .flip 0
+0.5057777443563078
+Pandaa#2950 from Nightjar at 🥡┊random: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: omg im so lucky
+Panda~san#0001 from Nightjar at 🥡┊random: woa
+Panda~san#0001 from Nightjar at 🥡┊random: i
+Panda~san#0001 from Nightjar at 🥡┊random: didnt know you could do that
+Panda~san#0001 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: .flip 6000
+0.4847680563345258
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: .flip all
+0.6623642152910858
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: .roll all
+650
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: .roll all
+908
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Panda~san#0001 from Nightjar at 🥡┊random: .bal
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: .flip all
+0.07690503817576833
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Panda~san#0001 from Nightjar at 🥡┊random: fuck
+Kotaro-kun#6773 from Nightjar at 🥡┊random: secret is to trust rolling more
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .daily
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .roll 25
+529
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .roll 25
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+Logger#0000 from Nightjar at 📚┊other-logs: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .roll 25
+192
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Auttaja#0000 from Nightjar at 📚┊logs: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .roll 25
+495
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Aurelian Spodarec#3075 from JavaScript React 🎃  Web Developers Programming 🔥 at off-topic: 🙂
+Kotaro-kun#6773 from Nightjar at 🥡┊random: .roll 25
+261
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Kotaro-kun#6773 from Nightjar at 🥡┊random: :c
+Panda~san#0001 from Nightjar at 🥡┊random: <:PepeLaugh:727916027748548669> cool secret there
+Kotaro-kun#6773 from Nightjar at 🥡┊random: flip is just a double..
+SpicyNoodle#0685 from Nightjar at 🥡┊random: only reason hes rich is because the odds were so high😔 😔 😔
+SpicyNoodle#0685 from Nightjar at 🥡┊random: (im kidding pls dont cry)
+Kotaro-kun#6773 from Nightjar at 🥡┊random: ?
+SpicyNoodle#0685 from Nightjar at 🥡┊random: yes
+Panda~san#0001 from Nightjar at 🥡┊random: yeah that time ahh i hate remembering that <:PepeLaugh:727916027748548669>
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 10 ✨
+Panda~san#0001 from Nightjar at 🥡┊random: .pick u3s5
+[ '.pick', 'u3s5' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: BDHSHSV
+Panda~san#0001 from Nightjar at 🥡┊random: <:PepeLaugh:727916027748548669>
+Kotaro-kun#6773 from Nightjar at 🥡┊random: dont hate the player, hate the game B)
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: i got you 55 dildos
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: pls hunt
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: You went hunting in the woods and brought NOTHING! 😆
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: pls fish
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: You cast out your line and brought back 4 Common Fish <:commonfish:714980893999104051>!
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: pls beg
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: 
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: pls work
+Pandaa#2950 from the second dimension👽 at 📺-bot-spam-1: Type .pick and the code in the picture to get 9 ✨
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: **Work for Scientist** - Color Match - Match the color to the selected word.
+<:blue:573152473926205442> `einstein`
+<:red:573150416926408704> `newton`
+<:green:573151850136600596> `technician`
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: green
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: **BOSS** Terrible effort <@607365355521966100>, I expected better from you. I'm only going to give you `⏣ 4,893` for that hour of work. I don't want to see this mistake happen again.
+SpicyNoodle#0685 from Nightjar at 🥡┊random: hate both
+Kotaro-kun#6773 from Nightjar at 🥡┊random: wow ok
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: pls  daily
+SpicyNoodle#0685 from Nightjar at 🥡┊random: JKJK ILY
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: pls risky
+Kotaro-kun#6773 from Nightjar at 🥡┊random: LY TOO
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: pls daily
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: 
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: owo daily
+OwO#8456 from the second dimension👽 at 📺-bot-spam-1: 💰 **| kikii🦋**, Here is your daily **<:cowoncy:416043450337853441> 1000 Cowoncy**!
+**<:blank:427371936482328596> |** You're on a **217 daily streak**!
+**<:box:427352600476647425> |** You received a **lootbox**!
+**⏱ |** Your next daily is in: 7H 57M 35S
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: pls beg
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: 
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: pls bj 200
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: What do you want to do?
+Type `h` to **hit**, type `s` to **stand**, or type `e` to **end** the game.
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: h
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: Type `h` to **hit**, type `s` to **stand**, or type `e` to **end** the game.
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: s
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: 
+Panda~san#0001 from Nightjar at 🥡┊random: no
+Panda~san#0001 from Nightjar at 🥡┊random: hate the guy who made the game
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: pls pm
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: <@607365355521966100> **__What type of meme do you want to post?__**
+`f` ■  **Fresh Meme**
+`r` ■  **Reposted Meme**
+`i` ■  **Intellectual Meme**
+`c` ■  **Copypasta**
+`k` ■  **Kind Meme**
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: k
+Panda~san#0001 from Nightjar at 🥡┊random: i do it u should too
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: <@607365355521966100> Your meme is **__EXPLODING__** online. You get **⏣ 1,165**, niceeee meme bro
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: pls dep all
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: <@607365355521966100> **⏣ 3,570** deposited, current bank balance is **⏣ 1,116,179**.
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: 
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: Type `b﻿a﻿n﻿g﻿`
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: hang
+Kotaro-kun#6773 from Nightjar at 🥡┊random: i dont, he´s so cool.
+kikii🦋#9777 from the second dimension👽 at 📺-bot-spam-1: bang
+Dank Memer#5192 from the second dimension👽 at 📺-bot-spam-1: 
+WAIFU INTERVAL
+Kotaro-kun#6773 from Nightjar at 🥡┊random: <:PandaCool:666770632524169230>
+Recycle Bin#4976 from Nightjar at 🥡┊random: i dont think so
+SpicyNoodle#0685 from Nightjar at 🥡┊random: yk crystal is reallt cool
+Lowie.vdz#3922 from the second dimension👽 at 👽-general: Not u
+Lowie.vdz#3922 from the second dimension👽 at 👽-general: <@770927722566254592>
+Recycle Bin#4976 from Nightjar at 🥡┊random: sometimesp
+SpicyNoodle#0685 from Nightjar at 🥡┊random: :(
+SpicyNoodle#0685 from Nightjar at 🥡┊random: ok
+Pandaa#2950 from Nightjar at 🥡┊random: Type .pick and the code in the picture to get 16 ✨
+r/worldnews • YAGPDB#0000 from Radioactive Playground at 📰╎world-news: 
+cat.exe#9499 from Nightjar at 🥡┊random: ?
+Panda~san#0001 from Nightjar at 🥡┊random: .pick c47u
+[ '.pick', 'c47u' ]
+Pandaa#2950 from Nightjar at 🥡┊random: 
+Pandaa#2950 from Nightjar at 📚┊panda-logs: 
+SpicyNoodle#0685 from Nightjar at 🥡┊random: do this <@691343814757056613>
+cat.exe#9499 from Nightjar at 🥡┊random: haha no
+SpicyNoodle#0685 from Nightjar at 🥡┊random: ok

@@ -65,7 +65,7 @@ const xpCanvas = async (message, client, user) => {
     ctx.shadowOffsetY = 0;
     ctx.shadowBlur = 3;
     ctx.fillStyle = 'maroon'
-    ctx.font = '40px Roboto'
+    ctx.font = '45px Roboto'
     ctx.fillText(userTag, 23.76, 55.73)
     ctx.fill()
     ctx.closePath()
@@ -77,6 +77,7 @@ const xpCanvas = async (message, client, user) => {
     ctx.shadowOffsetY = 0;
     ctx.shadowBlur = 0;
     ctx.fillStyle = 'maroon'
+     ctx.font = '40px Roboto'
     // ctx.font = '35px Times New Roman'
     ctx.fillText('Global Rank', 268.24, 215)
     ctx.fill()
@@ -89,6 +90,7 @@ const xpCanvas = async (message, client, user) => {
     ctx.shadowOffsetY = 0;
     ctx.shadowBlur = 1;
     ctx.fillStyle = 'white'
+    
     // ctx.font = '27px NewRocker'
     ctx.fillText(GlobalRank, (268.24  + ctx.measureText('Global Rank').width/2 - ctx.measureText(GlobalRank.toString()).width), 250)
     ctx.fill()
@@ -102,7 +104,7 @@ const xpCanvas = async (message, client, user) => {
     ctx.shadowBlur = 0;
     ctx.fillStyle = 'maroon'
     // ctx.font = '24px NewRocker'
-    ctx.fillText('Server Rank', 520.24, 215)
+    ctx.fillText('Server Rank', 518, 215)
     ctx.fill()
     ctx.closePath()
 
@@ -138,7 +140,7 @@ const xpCanvas = async (message, client, user) => {
     ctx.shadowBlur = 2;
     ctx.fillStyle = 'white'
     // ctx.font = '60px NewRocker'
-    ctx.fillText(level, ((268.24 + ctx.measureText('Global Rank').width + (520.24 - (268.24 + ctx.measureText('Global Rank').width)))/1.1) - ctx.measureText(level.toString()).width + ctx.measureText(level.toString()).width/3 + 4 , 220)
+    ctx.fillText(level, ((270 + ctx.measureText('Global Rank').width + (520.24 - (268.24 + ctx.measureText('Global Rank').width)))) - ctx.measureText(level.toString()).width + ctx.measureText(level.toString()).width/3 + 8 , 220)
     ctx.fill()
     ctx.closePath()
     

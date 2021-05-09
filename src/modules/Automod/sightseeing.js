@@ -47,7 +47,7 @@ module.exports = {
 
         message.channel.send(basicEmbed(client, message, args, text, `Sightseeing turned ${guildConfig.sightseeing === 1 ? " Off" : " On"}!`, guildConfig.sightseeing === 1 ? "❌" : "✔️",
             `Sightseeing has been turned ${guildConfig.sightseeing === 1 ? " Off" : " On"}. ${guildConfig.sightseeing === 1 ? "The bot will start tracking xp, economy and the foodhunt game here again!" : "The bot will not track any xp, economy, or the foodhunt game here anymore." } ` ))
-        connection.query(`UPDATE s581_GUILD_CONFIG.guild_details
+        connection.query(`UPDATE customer_178208_guilddetails.guild_details
                         SET sightseeing = ${guildConfig.sightseeing === 1? 0 : 1}
                         WHERE guildid = ${message.guild.id}`)
     }

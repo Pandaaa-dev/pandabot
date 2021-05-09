@@ -44,7 +44,7 @@ module.exports = {
             muterole : newRole.id
         }
 
-        connection.query(`UPDATE ${"s581_GUILD_CONFIG.guild_details"}
+        connection.query(`UPDATE ${"customer_178208_guilddetails.guild_details"}
         SET ${"muterole"} = "${newRole.id}"
         WHERE ${"guildid"} = "${message.guild.id}";
         `, (rej, res) => {
