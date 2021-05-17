@@ -464,53 +464,7 @@ client.once('ready', async () => {
                 })
                 message.channel.send(descEmbed(`You levelled up to level ${level}! As a result, you have earned ${award}${botConfig.emoji} as your prize!`)) 
             }
-        }
-
-        // Random Code generation 
-
-// // Create a message collector
-// const roll = Math.floor(Math.random() * 100) + 1 
-// if(roll > 95) {
-//     const {attachment, code, numberOfCurr} = await codeCanvas()
-//     const messageText = `Type .pick and the code in the picture to get ${numberOfCurr} ${client.bot_config.get('_1').emoji}`
-//     // messageattachments.setFile(attachment, 'userfile.png')
-//   const sentMessage = await message.channel.send(messageText, {
-//         files: [{
-//             ...attachment
-//         }]
-//     })
-//     const filter = m => m.content.startsWith(guildConfig.prefix + 'pick');
-//     const collector = message.channel.createMessageCollector(filter);
-//     collector.on('collect', m => {
-//         if(m.content.trim().startsWith(guildConfig.prefix + 'pick')){
-            
-//             const args = m.content.split(' ');
-//             console.log(args)
-//             if(args[1].toLowerCase() === code.toLowerCase()){
-//                 collector.stop()
-//                 const user  = client.economy.get(m.author.id)
-//                 let points = 0
-//                 if(!user){
-//                         points = 0
-//                 } else if(user){
-//                         points= user.points
-//                 }
-//                 sentMessage.delete()
-//                 points = points + numberOfCurr
-//                 client.economy.set(m.author.id, {
-//                     userid: m.author.id,
-//                     points: points
-//                 })
-//                 m.channel.send(descEmbed(`${m.author} guessed it right! They get ${numberOfCurr} ${client.bot_config.get('_1').emoji}`))
-//             }
-//         }
-//     });
-//     collector.on('end', collected => {
-        
-//     });
-// }
-
-//     // Random Code generation end        
+        }       
 
         client.xp_level.set(message.author.id, {
             guildid: message.guild.id,
@@ -635,6 +589,9 @@ client.once('ready', async () => {
         
     }, 60000 * 8);
    
+
+
+    // Basic Event Logger i found from a website i totally forgot 
     fs.readdir(path.join(__dirname, '../utilities/Logging'), (err, files) => { // We use the method readdir to read what is in the events folder
         if (err) return console.error(err); // If there is an error during the process to read all contents of the ./events folder, throw an error in the console
         files.forEach(file => {
